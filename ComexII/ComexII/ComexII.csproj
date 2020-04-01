@@ -180,6 +180,11 @@
     <Content Include="Views\Home\ComexIITramosPorSegmento.cshtml" />
     <Content Include="Views\Home\ComexIIBandejaSolicitudes.cshtml" />
     <Content Include="Views\Home\ComexIIConsultaCampañas.cshtml" />
+    <Content Include="Views\Home\ComexIIMonitoreoCompraDivisa.cshtml" />
+    <Content Include="Views\Home\ComexIIHistoricoCompraDivisa.cshtml" />
+    <Content Include="Views\Home\ComexIIParametroControlCompraDivisa.cshtml" />
+    <Content Include="Views\Home\ComexIIControlTiempoCompraDivisa.cshtml" />
+    <Content Include="Views\Home\ComexIIRutClientePreciosEspeciales.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

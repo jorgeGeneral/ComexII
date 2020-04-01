@@ -1,0 +1,249 @@
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\ComexII.dll.config
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\ComexII.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\ComexII.pdb
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\csc.exe
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\csc.exe.config
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\csc.rsp
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\csi.exe
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\csi.exe.config
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\csi.rsp
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.AppContext.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Console.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.IO.Compression.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.IO.Pipes.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Security.Claims.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.ValueTuple.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Xml.XPath.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\vbc.exe
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\vbc.exe.config
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\vbc.rsp
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\VBCSCompiler.exe
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\Antlr3.Runtime.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\Newtonsoft.Json.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.Helpers.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.Mvc.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.Optimization.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.Razor.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.WebPages.Deployment.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.WebPages.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.WebPages.Razor.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\WebGrease.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.Helpers.xml
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.Mvc.xml
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.Optimization.xml
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.Razor.xml
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.WebPages.xml
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.WebPages.Deployment.xml
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\System.Web.WebPages.Razor.xml
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\Newtonsoft.Json.xml
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\Antlr3.Runtime.pdb
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\es\System.Web.Helpers.resources.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\es\System.Web.Mvc.resources.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\es\System.Web.Optimization.resources.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\es\System.Web.Razor.resources.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\es\System.Web.WebPages.resources.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\obj\Debug\ComexII.csprojAssemblyReference.cache
+C:\Users\jrivera6\source\repos\ComexII\ComexII\obj\Debug\ComexII.csproj.CoreCompileInputs.cache
+C:\Users\jrivera6\source\repos\ComexII\ComexII\obj\Debug\ComexII.csproj.CopyComplete
+C:\Users\jrivera6\source\repos\ComexII\ComexII\obj\Debug\ComexII.dll
+C:\Users\jrivera6\source\repos\ComexII\ComexII\obj\Debug\ComexII.pdb
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\ComexII.dll.config
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\ComexII.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\ComexII.pdb
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\csc.exe
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\csc.exe.config
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\csc.rsp
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\csi.exe
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\csi.exe.config
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\csi.rsp
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.AppContext.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Console.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.IO.Compression.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.IO.Pipes.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Security.Claims.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.ValueTuple.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Xml.XPath.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\vbc.exe
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\vbc.exe.config
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\vbc.rsp
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\VBCSCompiler.exe
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\Antlr3.Runtime.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\Newtonsoft.Json.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.Helpers.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.Mvc.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.Optimization.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.Razor.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.WebPages.Deployment.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.WebPages.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.WebPages.Razor.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\WebGrease.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.Helpers.xml
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.Mvc.xml
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.Optimization.xml
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.Razor.xml
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.WebPages.xml
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.WebPages.Deployment.xml
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\System.Web.WebPages.Razor.xml
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\Newtonsoft.Json.xml
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\Antlr3.Runtime.pdb
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\es\System.Web.Helpers.resources.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\es\System.Web.Mvc.resources.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\es\System.Web.Optimization.resources.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\es\System.Web.Razor.resources.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\es\System.Web.WebPages.resources.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\obj\Debug\ComexII.csprojAssemblyReference.cache
+C:\Users\fckik\Desktop\ComexII\ComexII\obj\Debug\ComexII.csproj.CoreCompileInputs.cache
+C:\Users\fckik\Desktop\ComexII\ComexII\obj\Debug\ComexII.csproj.CopyComplete
+C:\Users\fckik\Desktop\ComexII\ComexII\obj\Debug\ComexII.dll
+C:\Users\fckik\Desktop\ComexII\ComexII\obj\Debug\ComexII.pdb
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\ComexII.dll.config
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\ComexII.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\ComexII.pdb
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\csc.exe
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\csc.exe.config
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\csc.rsp
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\csi.exe
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\csi.exe.config
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\csi.rsp
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.AppContext.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Collections.Immutable.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Console.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.IO.Compression.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.IO.FileSystem.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.IO.Pipes.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Reflection.Metadata.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Security.AccessControl.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Security.Claims.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.ValueTuple.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Xml.XPath.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\vbc.exe
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\vbc.exe.config
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\vbc.rsp
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\VBCSCompiler.exe
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\roslyn\VBCSCompiler.exe.config
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\Antlr3.Runtime.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\Microsoft.Web.Infrastructure.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\Newtonsoft.Json.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.Helpers.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.Mvc.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.Optimization.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.Razor.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.WebPages.Deployment.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.WebPages.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.WebPages.Razor.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\WebGrease.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.Helpers.xml
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.Mvc.xml
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.Optimization.xml
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.Razor.xml
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.WebPages.xml
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.WebPages.Deployment.xml
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\System.Web.WebPages.Razor.xml
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\Newtonsoft.Json.xml
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\Antlr3.Runtime.pdb
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\es\System.Web.Helpers.resources.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\es\System.Web.Mvc.resources.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\es\System.Web.Optimization.resources.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\es\System.Web.Razor.resources.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\es\System.Web.WebPages.resources.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\obj\Debug\ComexII.csprojAssemblyReference.cache
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\obj\Debug\ComexII.csproj.CoreCompileInputs.cache
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\obj\Debug\ComexII.csproj.CopyComplete
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\obj\Debug\ComexII.dll
+D:\Banco Estado\Comex\Prototipo Comex II\ComexII\ComexII\obj\Debug\ComexII.pdb

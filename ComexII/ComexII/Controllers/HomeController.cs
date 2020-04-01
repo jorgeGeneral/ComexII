@@ -77,6 +77,27 @@ namespace ComexII.Controllers
         {
             return View();
         }
+
+        public ActionResult ComexIIMonitoreoCompraDivisa()
+        {
+            return View();
+        }
+        public ActionResult ComexIIHistoricoCompraDivisa()
+        {
+            return View();
+        }
+        public ActionResult ComexIIParametroControlCompraDivisa()
+        {
+            return View();
+        }
+        public ActionResult ComexIIControlTiempoCompraDivisa()
+        {
+            return View();
+        }
+        public ActionResult ComexIIRutClientePreciosEspeciales()
+        {
+            return View();
+        }
     }
     
 }
