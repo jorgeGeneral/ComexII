@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "Buscar Cliente";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0" />
+    <link rel="shortcut icon" href="" />
+    <meta name="description" content="Comex II - Buscar Cliente" />
+    <meta name="author" content="Sermaluc S.A." />
+
+
+    @Styles.Render("~/Content/css")
+
+    <style type="text/css">
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #ACB4B9 url('/pu46/pux/ComexIIConsultas/Content/jqueryui1114/images/page-loader.gif') 50% 50% no-repeat;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        }
+
+        body.loading .modal {
+            overflow: hidden;
+        }
+
+        body.loading .modal {
+            display: block;
+        }
+
+        .table2 {
+            border: 1px solid #ACB4B9;
+            background-color: #FFFFFF;
+            font-family: Verdana;
+            font-size: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div id="wait" class="modal"></div>
+
+        <div id="dialog-message" title="Buscar Cliente" style="display: none">
+            <br />
+            <strong>
+                <label class="labelBE" id="lblMsg" style="text-align: center"></label>
+            </strong>
+        </div>
+
+        <div id="dialog-error" title="Error" style="display: none">
+            <br />
+            <strong>
+                <label class="labelBE2" id="lblError" style="text-align: center;">
+                </label>
+            </strong>
+            <br />
+            <div id="myDIV" style="display: none">
+                <code id="error1"></code>
+                <br />
+                <code id="error2"></code>
+                <br />
+                <code id="error3"></code>
+            </div>
+        </div>
+
+        <div id="divFiltrosODP">
+            <table style="width: 40%">
+                <tr>
+                    <td>
+                        <div class="Titulo1BE">
+                            Buscar Cliente
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 40%; border-top: 5px">
+                <tr>
+                    <td colspan="4">
+                        <label><img src="~/Content/Images/clienteRut.png" height="80" width="80"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <label class="labelBE2">Rut Cliente :</label>
+                    </td>
+                    <td width="20%">
+                        <input id="txtRut" type="text" placeholder="12345678-9" maxlength="10" onkeypress="validaRut(1, event)"/>
+                    </td>
+                    <td width="40%">
+                        &nbsp;&nbsp;
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 40%; border-top: 5px">
+                <tr>
+                    <td align="right">
+                        <button id="btnAceptar" class="botonBE" onclick="validaRutButton(1)">
+                            Aceptar
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+
+    </center>
+
+</body>
+</html>

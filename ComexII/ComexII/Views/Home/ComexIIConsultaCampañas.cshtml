@@ -1,0 +1,179 @@
+﻿@{
+    ViewBag.Title = "Consulta Campañas";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0" />
+    <link rel="shortcut icon" href="" />
+    <meta name="description" content="Comex II - Consulta Cliente Tarifado" />
+    <meta name="author" content="Sermaluc S.A." />
+
+
+    @Styles.Render("~/Content/css")
+
+    <style type="text/css">
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #ACB4B9 url('/pu46/pux/ComexIIConsultas/Content/jqueryui1114/images/page-loader.gif') 50% 50% no-repeat;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        }
+
+        body.loading .modal {
+            overflow: hidden;
+        }
+
+        body.loading .modal {
+            display: block;
+        }
+
+        .table2 {
+            border: 1px solid #ACB4B9;
+            background-color: #FFFFFF;
+            font-family: Verdana;
+            font-size: 9px;
+        }
+
+        .table3 {
+            border: 0px;
+            background-color: #FFFFFF;
+            font-family: Verdana;
+            font-size: 9px;
+        }
+
+        .TDBorder {
+            border-color: #ACB4B9;
+            border-style: solid;
+            border-width: 1px;
+        }
+        /*css para icono detalle*/
+
+        img.icon-det {
+            width: 25%;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        img.icon-det-disabled {
+            width: 25%;
+            text-align: center;
+            border-radius: 5px;
+            opacity: 0.4;
+        }
+
+        img.icon-det:hover {
+            box-shadow: 0 0 1px 1px rgba(0, 140, 186, 0.5);
+        }
+    </style>
+
+</head>
+
+<body onload="cargaListadoCampañas()">
+    <center>
+        <div id="wait" class="modal"></div>
+
+        <div id="dialog-message" title="Consulta Campañas" style="display: none">
+            <br/>
+            <strong>
+                <label class="labelBE" id="lblMsg" style="text-align: center"></label>
+            </strong>
+        </div>
+
+        <div id="dialog-error" title="Error" style="display: none">
+            <br />
+            <strong>
+                <label class="labelBE2" id="lblError" style="text-align: center;">
+                </label>
+            </strong>
+            <br/>
+            <div id="myDIV" style="display: none">
+                <code id="error1"></code>
+                <br />
+                <code id="error2"></code>
+                <br />
+                <code id="error3"></code>
+            </div>
+        </div>
+
+        <div id="divFiltrosODP">
+            <table style="width: 100%">
+                <tr>
+                    <td colspan="2">
+                        <div class="Titulo1BE">
+                            Consulta Campañas
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <a href="#"><img src="~/Content/Images/excel-icon.png" alt="Exportar" height="20" width="20">&nbsp;exportar</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="#"><img src="~/Content/Images/print-icon.png" alt="Imprimir" height="20" width="20">&nbsp;imprimir</a>
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 100%; border-top: 5px">
+                <tr><td colspan="2"></td></tr>
+                <tr>
+                    <td align="right">
+                        <button id="btnConsultar" class="botonBE" onclick="nuevaCampaña()">
+                            Nueva Campaña
+                        </button>
+                        @*<button id="btnLimpiar" class="botonBE" onclick="modificarCampaña()">
+                            Modificar Campaña
+                        </button>*@
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td colspan="4">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Listado de Campañas</label></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <table id="tblListadoCampañas" style="width: 100%; border: 1px solid; border-color: darkgray">
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:17%">
+                                    <label class="labelBE2">Id Campaña</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:17%">
+                                    <label class="labelBE2">Nombre Campaña</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:17%">
+                                    <label class="labelBE2">Fecha Inicio</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:17%">
+                                    <label class="labelBE2">Fecha Termino</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
+                                    <label class="labelBE2">Responsable</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
+                                    <label class="labelBE2">Estado</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 10%;">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+            </table>
+            
+        </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+
+    </center>
+
+</body>
+</html>

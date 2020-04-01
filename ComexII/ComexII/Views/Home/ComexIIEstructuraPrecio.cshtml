@@ -1,0 +1,912 @@
+﻿@{
+    ViewBag.Title = "Estructura de Precios";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0" />
+    <link rel="shortcut icon" href="" />
+    <meta name="description" content="Comex II - Estructura de Precios" />
+    <meta name="author" content="Sermaluc S.A." />
+
+
+    @Styles.Render("~/Content/css")
+
+    <style type="text/css">
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #ACB4B9 url('/pu46/pux/ComexIIConsultas/Content/jqueryui1114/images/page-loader.gif') 50% 50% no-repeat;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        }
+
+        body.loading .modal {
+            overflow: hidden;
+        }
+
+        body.loading .modal {
+            display: block;
+        }
+
+        .table2 {
+            border: 1px solid #ACB4B9;
+            background-color: #FFFFFF;
+            font-family: Verdana;
+            font-size: 9px;
+        }
+
+        .table3 {
+            border: 0px;
+            background-color: #FFFFFF;
+            font-family: Verdana;
+            font-size: 9px;
+        }
+
+        .TDBorder {
+            border-color: #ACB4B9;
+            border-style: solid;
+            border-width: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div id="wait" class="modal"></div>
+
+        <div id="dialog-message" title="Estructura de Precios" style="display: none">
+            <br />
+            <strong>
+                <label class="labelBE" id="lblMsg" style="text-align: center"></label>
+            </strong>
+        </div>
+
+        <div id="dialog-error" title="Error" style="display: none">
+            <br />
+            <strong>
+                <label class="labelBE2" id="lblError" style="text-align: center;">
+                </label>
+            </strong>
+            <br />
+            <div id="myDIV" style="display: none">
+                <code id="error1"></code>
+                <br />
+                <code id="error2"></code>
+                <br />
+                <code id="error3"></code>
+            </div>
+        </div>
+
+        <div id="divFiltrosODP">
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        <div class="Titulo1BE">
+                            Estructura de Precios
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <a href="#"><img src="~/Content/Images/print-icon.png" alt="Imprimir" height="20" width="20">&nbsp;imprimir</a>
+                    </td>
+                </tr>
+            </table>
+
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td width="15%">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tipo Producto :</label></b>
+                    </td>
+                    <td width="20%">
+                        <div class="custom-select" style="width: 100%; float: left">
+                            <select id="cboTipoProducto" onchange="cambiaGrillaEstructuraPrecio()">
+                                <option value="1" selected="selected">ODP al Exterior</option>
+                                <option value="2">Financiamiento Contado</option>
+                                <option value="3">Otro Financiamiento</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td width="60%">&nbsp;</td>
+                </tr>
+
+            </table>
+
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tabla de Precios :</label></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblTarifado" style="width: 40%; border: 1px solid; border-color: darkgray">
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 0px solid; border-color: darkgray; background-color: white">
+                                    <label class="labelBE2"></label>
+                                </td>
+                                <td id="tdca" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" colspan="2">
+                                    <label class="labelBE2">Microempresas</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Monto Transado (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Costo SWIFT (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión</label>
+                                </td>
+                                <td id="td1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión Prorroga (USD)</label>
+                                </td>
+                                <td id="td2" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
+                                </td>
+                                <td id="td3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">0 - 500</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">50,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">320</label>
+                                </td>
+                                <td id="td4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">12,00</label>
+                                </td>
+                                <td id="td5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">4,50</label>
+                                </td>
+                                <td id="td6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">01/12/2015</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">501 - 1.000</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">654,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">75</label>
+                                </td>
+                                <td id="td7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">14,00</label>
+                                </td>
+                                <td id="td8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">3,50</label>
+                                </td>
+                                <td id="td9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">14/06/2012</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">1001 - 1.500</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">123,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">90</label>
+                                </td>
+                                <td id="td10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">85,00</label>
+                                </td>
+                                <td id="td11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">1,50</label>
+                                </td>
+                                <td id="td12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">18/09/2013</label>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table id="tblTarifado2" style="width: 40%; border: 1px solid; border-color: darkgray">
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 0px solid; border-color: darkgray; background-color: white">
+                                    <label class="labelBE2"></label>
+                                </td>
+                                <td id="tdca2" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" colspan="2">
+                                    <label class="labelBE2">Pequeña Empresa</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Monto Transado (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Costo SWIFT (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión</label>
+                                </td>
+                                <td id="tda1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión Prorroga (USD)</label>
+                                </td>
+                                <td id="tda2" style="text-align: right; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
+                                </td>
+                                <td id="tda3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">1.501 - 2.000</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">351,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">20</label>
+                                </td>
+                                <td id="tda4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">23,00</label>
+                                </td>
+                                <td id="tda5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">2,50</label>
+                                </td>
+                                <td id="tda6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">24/11/2019</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">2.001 - 2.500</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">234,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">54</label>
+                                </td>
+                                <td id="tda7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">13,00</label>
+                                </td>
+                                <td id="tda8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">2,34</label>
+                                </td>
+                                <td id="tda9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">27/08/2016</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">2.501 - 3.000</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">200,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">45</label>
+                                </td>
+                                <td id="tda10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">33,00</label>
+                                </td>
+                                <td id="tda11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">1,20</label>
+                                </td>
+                                <td id="tda12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">15/05/2011</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">3.001 - 3.500</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">200,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">45</label>
+                                </td>
+                                <td id="tdf13" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">33,00</label>
+                                </td>
+                                <td id="tdf14" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">1,20</label>
+                                </td>
+                                <td id="tdf15" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">15/05/2011</label>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table id="tblTarifado3" style="width: 40%; border: 1px solid; border-color: darkgray">
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 0px solid; border-color: darkgray; background-color: white">
+                                    <label class="labelBE2"></label>
+                                </td>
+                                <td id="tdca3" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" colspan="2">
+                                    <label class="labelBE2">Medianas Empresas</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Monto Transado (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Costo SWIFT (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión</label>
+                                </td>
+                                <td id="tdb1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión Prorroga (USD)</label>
+                                </td>
+                                <td id="tdb2" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
+                                </td>
+                                <td id="tdb3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">3.001 - 3.500</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">250,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">76</label>
+                                </td>
+                                <td id="tdb4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">43,00</label>
+                                </td>
+                                <td id="tdb5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">6,35</label>
+                                </td>
+                                <td id="tdb6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">30/08/2012</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">3.501 - 4.000</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">221,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">24</label>
+                                </td>
+                                <td id="tdb7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">17,00</label>
+                                </td>
+                                <td id="tdb8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">6,10</label>
+                                </td>
+                                <td id="tdb9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">30/06/2017</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">4.001 - 4.500</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">200,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">65</label>
+                                </td>
+                                <td id="tdb10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">81,00</label>
+                                </td>
+                                <td id="tdb11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">3,56</label>
+                                </td>
+                                <td id="tdb12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">19/02/2014</label>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table id="tblTarifado4" style="width: 40%; border: 1px solid; border-color: darkgray">
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 0px solid; border-color: darkgray; background-color: white">
+                                    <label class="labelBE2"></label>
+                                </td>
+                                <td id="tdca4" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" colspan="2">
+                                    <label class="labelBE2">Grandes empresas</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Monto Transado (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Costo SWIFT (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión</label>
+                                </td>
+                                <td id="tdc1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión Prorroga (USD)</label>
+                                </td>
+                                <td id="tdc2" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
+                                </td>
+                                <td id="tdc3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">4.501 - 5.000</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">250,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">28</label>
+                                </td>
+                                <td id="tdc4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">33,00</label>
+                                </td>
+                                <td id="tdc5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">1,12</label>
+                                </td>
+                                <td id="tdc6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">06/10/2014</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">5.001 - 5.500</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">245,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">24</label>
+                                </td>
+                                <td id="tdc7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">34,00</label>
+                                </td>
+                                <td id="tdc8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">7,10</label>
+                                </td>
+                                <td id="tdc9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">12/09/2018</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">5.501 - 6.000</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">123,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">45</label>
+                                </td>
+                                <td id="tdc10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">63,00</label>
+                                </td>
+                                <td id="tdc11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">3,50</label>
+                                </td>
+                                <td id="tdc12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">11/03/2010</label>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table id="tblTarifado5" style="width: 40%; border: 1px solid; border-color: darkgray">
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 0px solid; border-color: darkgray; background-color: white">
+                                    <label class="labelBE2"></label>
+                                </td>
+                                <td id="tdca5" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" colspan="2">
+                                    <label class="labelBE2">Inmobiliaria</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Monto Transado (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Costo SWIFT (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión</label>
+                                </td>
+                                <td id="tdd1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión Prorroga (USD)</label>
+                                </td>
+                                <td id="tdd2" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
+                                </td>
+                                <td id="tdd3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">6.001 - 6.500</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">356,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">35</label>
+                                </td>
+                                <td id="tdd4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">45,00</label>
+                                </td>
+                                <td id="tdd5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">8,50</label>
+                                </td>
+                                <td id="tdd6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">04/05/2011</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">6.501 - 7.000</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">321,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">42</label>
+                                </td>
+                                <td id="tdd7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">34,00</label>
+                                </td>
+                                <td id="tdd8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">1,78</label>
+                                </td>
+                                <td id="tdd9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">05/12/2013</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">7.001 - 7.500</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">324,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">60</label>
+                                </td>
+                                <td id="tdd10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">13,00</label>
+                                </td>
+                                <td id="tdd11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">9,12</label>
+                                </td>
+                                <td id="tdd12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">29/07/2014</label>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table id="tblTarifado6" style="width: 40%; border: 1px solid; border-color: darkgray">
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 0px solid; border-color: darkgray; background-color: white">
+                                    <label class="labelBE2"></label>
+                                </td>
+                                <td id="tdca6" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" colspan="2">
+                                    <label class="labelBE2">Institucional</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Monto Transado (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Costo SWIFT (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión</label>
+                                </td>
+                                <td id="tde1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión Prorroga (USD)</label>
+                                </td>
+                                <td id="tde2" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
+                                </td>
+                                <td id="tde3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">7.501 - 8.000</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">124,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">50</label>
+                                </td>
+                                <td id="tde4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">43,00</label>
+                                </td>
+                                <td id="tde5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">6,50</label>
+                                </td>
+                                <td id="tde6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">18/04/2011</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">8.001 - 8.500</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">543,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">24</label>
+                                </td>
+                                <td id="tde7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">42,00</label>
+                                </td>
+                                <td id="tde8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">1,89</label>
+                                </td>
+                                <td id="tde9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">31/04/2010</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">8.501 - 9.000</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">234,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">60</label>
+                                </td>
+                                <td id="tde10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">13,00</label>
+                                </td>
+                                <td id="tde11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">12,90</label>
+                                </td>
+                                <td id="tde12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">02/02/2016</label>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table id="tblTarifado7" style="width: 40%; border: 1px solid; border-color: darkgray">
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 0px solid; border-color: darkgray; background-color: white">
+                                    <label class="labelBE2"></label>
+                                </td>
+                                <td id="tdca7" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" colspan="2">
+                                    <label class="labelBE2">Corporativa</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Monto Transado (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Costo SWIFT (USD)</label>
+                                </td>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión</label>
+                                </td>
+                                <td id="tdf1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Comisión Prorroga (USD)</label>
+                                </td>
+                                <td id="tdf2" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
+                                </td>
+                                <td id="tdf3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">9.001 - 9.500</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">412,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">12</label>
+                                </td>
+                                <td id="tdf4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">34,00</label>
+                                </td>
+                                <td id="tdf5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">5,45</label>
+                                </td>
+                                <td id="tdf6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">13/05/2018</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">9.501 - 10.000</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">123,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">43</label>
+                                </td>
+                                <td id="tdf7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">12,00</label>
+                                </td>
+                                <td id="tdf8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">5,75</label>
+                                </td>
+                                <td id="tdf9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">04/05/2013</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">10.001 - 10.500</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">132,00</label>
+                                </td>
+                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">50</label>
+                                </td>
+                                <td id="tdf10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">34,00</label>
+                                </td>
+                                <td id="tdf11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">4,60</label>
+                                </td>
+                                <td id="tdf12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
+                                    <label class="labelBE2">24/09/2019</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+            </table>
+
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td colspan="6">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Seleccione segmento y rango de monto transado a modificar :</label></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="14%">
+                        <label class="labelBE2">Segmento / Plataforma :</label>
+                    </td>
+                    <td width="20%">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboSegmento" onchange="llenarComboEstructura()">
+                                <option value="0" selected="selected">Seleccione</option>
+                                <option value="1">Microempresas</option>
+                                <option value="2">Pequeña Empresas</option>
+                                <option value="3">Medianas Empresas</option>
+                                <option value="4">Grandes Empresas</option>
+                                <option value="5">Inmobiliaria</option>
+                                <option value="6">Intitucional</option>
+                                <option value="7">Corporativa</option>
+
+                            </select>
+                        </div>
+                    </td>
+                    <td width="5%">&nbsp</td>
+                    <td width="15%">
+                        <label class="labelBE2">Seleccione monto transado :</label>
+                    </td>
+                    <td width="20%">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboSegmentoParam"></select>
+                        </div>
+                    </td>
+                    <td width="10%">&nbsp</td>
+                </tr>
+            </table>
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td colspan="5">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Parametros :</label></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <label class="labelBE2">Costo SWIFT (por MT 103) :</label>
+                    </td>
+                    <td width="20%">
+                        <input type="text" style="text-align:right" /> <label class="labelBE">USD</label>
+                    </td>
+                    <td width="60%">&nbsp</td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <label class="labelBE2">Comisión:</label>
+                    </td>
+                    <td width="20%">
+                        <input type="text" style="text-align:right" />
+                    </td>
+                    <td width="60%">&nbsp</td>
+                </tr>
+                <tr class="tr_mod3" style="display: none;">
+                    <td width="20%">
+                        <label class="labelBE2">Comisión Prorroga (USD) :</label>
+                    </td>
+                    <td width="20%">
+                        <input type="text" style="text-align:right" />
+                    </td>
+                    <td width="60%">&nbsp</td>
+                </tr>
+                <tr class="tr_mod3" style="display: none;">
+                    <td width="20%">
+                        <label class="labelBE2">Spread Ejecutivo (%) :</label>
+                    </td>
+                    <td width="20%">
+                        <input type="text" style="text-align:right" />
+                    </td>
+                    <td width="60%">&nbsp</td>
+                </tr>
+                <tr class="tr_mod3" style="display: none;">
+                    <td width="20%">
+                        <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
+                    </td>
+                    <td width="20%">
+                        <input type="text" placeholder="dd/mm/aaaa"/>
+                    </td>
+                    <td width="60%">&nbsp</td>
+                </tr>
+            </table>
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td width="20%">
+                        <label class="labelBE2">Fecha de Vigencia :</label>
+                    </td>
+                    <td width="60%">
+                        <label class="labelBE2">Desde</label> <input type="text" placeholder="dd/mm/aaaa" />&nbsp&nbsp<label class="labelBE2">Hasta</label> <input type="text" placeholder="dd/mm/aaaa" />
+                    </td>
+                    <td width="20%">&nbsp</td>
+                </tr>
+            </table>
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td align="right">
+                        <button id="btnNuevo" class="botonBE">
+                            Nuevo Tramo
+                        </button> &nbsp;&nbsp;
+                        <button id="btnModificar" class="botonBE">
+                            Modificar
+                        </button>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+
+    </center>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+﻿@{
+    ViewBag.Title = "Matriz de Tarifado";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0" />
+    <link rel="shortcut icon" href="" />
+    <meta name="description" content="Comex II - Matriz de Tarifado" />
+    <meta name="author" content="Sermaluc S.A." />
+
+
+    @Styles.Render("~/Content/css")
+
+    <style type="text/css">
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #ACB4B9 url('/pu46/pux/ComexIIConsultas/Content/jqueryui1114/images/page-loader.gif') 50% 50% no-repeat;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        }
+
+        body.loading .modal {
+            overflow: hidden;
+        }
+
+        body.loading .modal {
+            display: block;
+        }
+
+        .table2 {
+            border: 1px solid #ACB4B9;
+            background-color: #FFFFFF;
+            font-family: Verdana;
+            font-size: 9px;
+        }
+
+        .table3 {
+            border: 0px;
+            background-color: #FFFFFF;
+            font-family: Verdana;
+            font-size: 9px;
+        }
+
+        .TDBorder {
+            border-color: #ACB4B9;
+            border-style: solid;
+            border-width: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div id="wait" class="modal"></div>
+
+        <div id="dialog-message" title="Matriz de Tarifado" style="display: none">
+            <br />
+            <strong>
+                <label class="labelBE" id="lblMsg" style="text-align: center"></label>
+            </strong>
+        </div>
+
+        <div id="dialog-error" title="Error" style="display: none">
+            <br />
+            <strong>
+                <label class="labelBE2" id="lblError" style="text-align: center;">
+                </label>
+            </strong>
+            <br />
+            <div id="myDIV" style="display: none">
+                <code id="error1"></code>
+                <br />
+                <code id="error2"></code>
+                <br />
+                <code id="error3"></code>
+            </div>
+        </div>
+
+        <div id="divFiltrosODP">
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        <div class="Titulo1BE">
+                            Matriz de Tarifado
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <a href="#"><img src="~/Content/Images/print-icon.png" alt="Imprimir" height="20" width="20">&nbsp;imprimir</a>
+                    </td>
+                </tr>
+            </table>
+
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td>
+                        <label class="labelBE2">Nombre Empresa</label>
+                    </td>
+                    <td>
+                        <label class="labelBE2" id="lbl">: Sociedad Importadora Lorden S.A.</label>
+                    </td>
+                    <td>
+                        <label class="labelBE2">Rut Empresa</label>
+                    </td>
+                    <td>
+                        <label class="labelBE2" id="lbl">: 96.599.240-9</label>
+                    </td>
+                    <td>
+                        <label class="labelBE2">Fecha - Hora</label>
+                    </td>
+                    <td>
+                        <label class="labelBE2" id="lbl">: 28/01/2020 - 10:00</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="labelBE2">Segmento</label>
+                    </td>
+                    <td>
+                        <label class="labelBE2" id="lbl">: Grandes Empresas</label>
+                    </td>
+                    <td>
+                        <label class="labelBE2">Ejecutivo</label>
+                    </td>
+                    <td>
+                        <label class="labelBE2" id="lbl">: Hernandez Javier</label>
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tipo Producto</label></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="custom-select" style="width: 80%; float: left">
+                            <select id="cboTipoProducto" onchange="cambiaGrillaTarifado()">
+                                <option value="0" selected="selected">Seleccione</option>
+                                <option value="1">ODP al Exterior</option>
+                                <option value="2">Financiamiento Contado</option>
+                                <option value="3">Otro Financiamiento</option>
+                                <option value="4">Todos los productos</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tabla de Precios</label></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblTarifadoData" style="width: 80%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
+                    </td>
+            </table>
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td colspan="5">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Fecha de Vigencia :</label></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="10%">
+                        <label class="labelBE2">Desde</label>
+                    </td>
+                    <td width="15%">
+                        <label class="labelBE2" id="lbl">: 01/09/2018</label>
+                    </td>
+                    <td width="10%">
+                        <label class="labelBE2">Hasta</label>
+                    </td>
+                    <td width="15%">
+                        <label class="labelBE2" id="lbl">: 31/12/2018</label>
+                    </td>
+                    <td width="60%">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td colspan="5">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Ultima Modificación :</label></b>
+                    </td>
+                </tr>
+                <tr style="border: 1px solid; border-color: darkgray">
+                    <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                        <label class="labelBE2">Usuario Modificador</label>
+                    </td>
+                    <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                        <label class="labelBE2">Fecha Modificación</label>
+                    </td>
+                    <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                        <label class="labelBE2">Usuario Autorizador</label>
+                    </td>
+                    <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
+                        <label class="labelBE2">Fecha Autorización</label>
+                    </td>
+                </tr>
+                <tr style="border: 1px solid; border-color: darkgray">
+                    <td style="border: 1px solid; border-color: darkgray">
+                        <label class="labelBE2">1-9</label>
+                    </td>
+                    <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                        <label class="labelBE2">01/03/2020</label>
+                    </td>
+                    <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                        <label class="labelBE2">1-7</label>
+                    </td>
+                    <td style="text-align: right; border: 1px solid; border-color: darkgray">
+                        <label class="labelBE2">02/03/2020</label>
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td class="labelBE2">
+                        <label> <a href="#">Historico Modificaciones</a></label>
+                    </td>
+                </tr>
+            </table>
+
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td align="right">
+                        <button id="btnVolver" class="botonBE" onclick="window.location.href = '/Home/ComexIIConsultaClienteTarifado';">Volver</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+
+    </center>
+
+</body>
+</html>
