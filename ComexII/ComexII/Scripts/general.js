@@ -389,6 +389,23 @@ function alerta() {
     alert("El valor de la campaña es mayor que el precio pizarra");
 }
 
+function msgCancelaCampaña() {
+    alert("Se va a cancelar una campaña vigente ¿esta seguro?");
+}
+
+function msgCrearCampaña() {
+    alert("Se creo una nueva campaña de manera correcta");
+}
+/////////////////// Nueva Campaña ////////////////////
+function cambiaTipoProducto() {
+    if (document.getElementById("cboTipoProducto").value == "2") {
+        $(".tr_mod").show();
+    } else {
+        $(".tr_mod").hide();
+    }
+}
+
+
 function agregarFila() {
     eliminarFila();
     llenarCombo();
@@ -435,10 +452,10 @@ function agregarFila() {
 
 function eliminarFila() {
     $('#tblTarifado tr:not(:first)').remove();
-    $("#cboSegmentoParam").empty();
 }
 
 function llenarCombo() {
+    $("#cboSegmentoParam").empty();
     if ($("#cboSegmento").val() == "2") {
         $("#cboSegmentoParam").append('<option value="1" selected="selected">0 - 500</option>');
     }
@@ -822,12 +839,16 @@ function cargaGrillaDinamica() {
 function cargaListadoCampañas() {
 
     //$('#tblListadoCampañas').empty();
-    document.getElementById("tblListadoCampañas").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">0001</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Campaña Verano 2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">19/02/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">19/03/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">ENRIQUE FUENTES</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">VIGENTE</label></td></tr><td style="text-align: center; border: 1px solid; border-color: darkgray; "><a href="/Home/ComexIITarifasCampañas"><img src="../../Content/Images/lupa.png" class="icon-det" title="Ver Detalle Campaña"></a></td></tr>';
-    document.getElementById("tblListadoCampañas").insertRow(-1).innerHTML = '<tr style=" order: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">0002</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Campaña Coronavirus 2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">20/03/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">20/04/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">JORGE RIVERA  </label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">NO VIGENTE</label></td></tr><td style="text-align: center; border: 1px solid; border-color: darkgray; "><a href="/Home/ComexIITarifasCampañas"><img src="../../Content/Images/lupa.png" class="icon-det" title="Ver Detalle Campaña"></a></td></tr>';
+    document.getElementById("tblListadoCampañas").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">0001</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Campaña Verano 2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Pequeñas Empresas</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">19/02/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">19/03/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">ENRIQUE FUENTES</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">CADUCADA</label></td></tr><td style="text-align: center; border: 1px solid; border-color: darkgray; "><a href="/Home/ComexIITarifasCampañas"><img src="../../Content/Images/lupa.png" class="icon-det" title="Ver Detalle Campaña"></a></td></tr>';
+    document.getElementById("tblListadoCampañas").insertRow(-1).innerHTML = '<tr style=" order: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">0003</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Campaña Vuelta a Clases 2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Pequeñas Empresas</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">20/03/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">20/04/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">ENRIQUE FUENTES</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">CANCELADA</label></td></tr><td style="text-align: center; border: 1px solid; border-color: darkgray; "><a href="/Home/ComexIITarifasCampañas"><img src="../../Content/Images/lupa.png" class="icon-det" title="Ver Detalle Campaña"></a></td></tr>';
+    document.getElementById("tblListadoCampañas").insertRow(-1).innerHTML = '<tr style=" order: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">0002</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Campaña Todos en Casa 2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Micro Empresas</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">01/04/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">01/05/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">JORGE RIVERA</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">VIGENTE</label></td></tr><td style="text-align: center; border: 1px solid; border-color: darkgray; "><a href="/Home/ComexIITarifasCampañas"><img src="../../Content/Images/lupa.png" class="icon-det" title="Ver Detalle Campaña"></a></td></tr>';
+    document.getElementById("tblListadoCampañas").insertRow(-1).innerHTML = '<tr style=" order: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">0004</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Campaña Solidaria 2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Micro Empresas</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">01/04/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">01/05/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">JORGE RIVERA</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">VIGENTE</label></td></tr><td style="text-align: center; border: 1px solid; border-color: darkgray; "><a href="/Home/ComexIITarifasCampañas"><img src="../../Content/Images/lupa.png" class="icon-det" title="Ver Detalle Campaña"></a></td></tr>';
+    document.getElementById("tblListadoCampañas").insertRow(-1).innerHTML = '<tr style=" order: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">0005</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Campaña Fiestas Patrias 2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Grandes Empresas</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">05/09/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">05/10/2020</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">SERGIO SANCHEZ</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">PROGRAMADA</label></td></tr><td style="text-align: center; border: 1px solid; border-color: darkgray; "><a href="/Home/ComexIITarifasCampañas"><img src="../../Content/Images/lupa.png" class="icon-det" title="Ver Detalle Campaña"></a></td></tr>';
+    
 }
 
 function nuevaCampaña() {
-    window.location.href = '/Home/ComexIITarifasCampañas';
+    window.location.href = '/Home/ComexIINuevaCampaña';
 }
 
 ////////////////////////////////////

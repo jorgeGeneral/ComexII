@@ -98,6 +98,10 @@ namespace ComexII.Controllers
         {
             return View();
         }
+        public ActionResult ComexIINuevaCampaña()
+        {
+            return View();
+        }
     }
     
 }

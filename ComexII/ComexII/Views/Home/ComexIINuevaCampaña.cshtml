@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Monitoreo Compra Divisa";
+    ViewBag.Title = "Nueva Campaña";
 }
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0" />
     <link rel="shortcut icon" href="" />
-    <meta name="description" content="Comex II - Monitoreo Compra Divisa" />
+    <meta name="description" content="Comex II - Nueva Campaña" />
     <meta name="author" content="Sermaluc S.A." />
 
 
@@ -63,7 +63,7 @@
     <center>
         <div id="wait" class="modal"></div>
 
-        <div id="dialog-message" title="Monitoreo Compra Divisa" style="display: none">
+        <div id="dialog-message" title="Nueva Campaña" style="display: none">
             <br />
             <strong>
                 <label class="labelBE" id="lblMsg" style="text-align: center"></label>
@@ -91,7 +91,7 @@
                 <tr>
                     <td>
                         <div class="Titulo1BE">
-                            Monitoreo Compra Divisa
+                            Nueva Campaña
                         </div>
                     </td>
                 </tr>
@@ -104,12 +104,17 @@
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
+                    <td colspan="5">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Parametros :</label></b>
+                    </td>
+                </tr>
+                <tr>
                     <td width="20%">
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tipo Producto</label></b>
+                        <label class="labelBE2">Tipo Producto :</label>
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoProducto" onchange="cambiaGrillaTarifa()">
+                            <select id="cboTipoProducto" onchange="cambiaTipoProducto()">
                                 <option value="1" selected="selected">ODP al Exterior</option>
                                 <option value="2">Financiamiento Contado</option>
                                 <option value="3">Otro Financiamiento</option>
@@ -120,11 +125,11 @@
                 </tr>
                 <tr>
                     <td width="20%">
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Segmento</label></b>
+                        <label class="labelBE2">Segmento :</label>
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboSegmento" onchange="agregarFila()">
+                            <select id="cboSegmento" onchange="llenarCombo()">
                                 <option value="1" selected="selected">Seleccione</option>
                                 <option value="2">Corporativo</option>
                                 <option value="3">Micro</option>
@@ -135,55 +140,83 @@
                     </td>
                     <td width="60%">&nbsp;</td>
                 </tr>
+                <tr>
+                    <td width="20%">
+                        <label class="labelBE2">Seleccione Monto Transado para Campaña :</label>
+                    </td>
+                    <td width="20%">
+                        <div class="custom-select" style="width: 100%; float: left">
+                            <select id="cboSegmentoParam"></select>
+                        </div>
+                    </td>
+                    <td width="60%">&nbsp</td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <label class="labelBE2">Costo SWIFT (por MT 103) :</label>
+                    </td>
+                    <td width="20%">
+                        <input type="text" size="27" style="text-align:right" />
+                    </td>
+                    <td width="60%">&nbsp</td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <label class="labelBE2">Comisión:</label>
+                    </td>
+                    <td width="20%">
+                        <input type="text" size="27" style="text-align:right" />
+                    </td>
+
+                    <td width="60%">&nbsp</td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <label class="labelBE2">Fecha de Vigencia :</label>
+                    </td>
+                    <td width="20%" colspan="2">
+                        <label class="labelBE2">Desde</label> <input type="text" placeholder="dd/mm/aaaa" />  <label class="labelBE2">Hasta</label> <input type="text" placeholder="dd/mm/aaaa" />
+                    </td>
+                </tr>
+                <tr class="tr_mod" style="display: none;">
+                    <td width="20%">
+                        <label class="labelBE2">Comisión Prorroga (USD) :</label>
+                    </td>
+                    <td width="20%">
+                        <input type="text" size="27" style="text-align:right" />
+                    </td>
+                    <td width="60%">&nbsp</td>
+                </tr>
+                <tr class="tr_mod" style="display: none;">
+                    <td width="20%">
+                        <label class="labelBE2">Spread Ejecutivo (%) :</label>
+                    </td>
+                    <td width="20%">
+                        <input type="text" size="27" style="text-align:right" />
+                    </td>
+                    <td width="60%">&nbsp</td>
+                </tr>
+                <tr class="tr_mod" style="display: none;">
+                    <td width="20%">
+                        <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
+                    </td>
+                    <td width="20%">
+                        <input type="text" placeholder="dd/mm/aaaa" size="27" />
+                    </td>
+                    <td width="60%">&nbsp</td>
+                </tr>
+
             </table>
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
-                    <td colspan="4">
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tabla de Precios</label></b>
+                    <td align="right">
+                        <button id="btnCrearCampaña" class="botonBE" onclick="msgCrearCampaña()">Crear Campaña</button>
+                        <button id="btnCancelarCampaña" class="botonBE" onclick="msgCancelaCampaña()">Cancelar</button>
+                        <button id="btnVolver" class="botonBE" onclick="javascript:window.history.back()">Volver</button>
                     </td>
                 </tr>
-                <tr>
-                    <td colspan="4">
-                        <table id="tblTarifado" style="width: 40%; border: 1px solid; border-color: darkgray">
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Rut Cliente</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Nombre Cliente</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Monto Compra</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Fecha Compra</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Tipo Moneda</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray;">
-                                    <label class="labelBE2">1-9</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray;">
-                                    <label class="labelBE2">Roberto Gomez Bolaños</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray;">
-                                    <label class="labelBE2">1,000</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray;">
-                                    <label class="labelBE2">01-04-2020</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray;">
-                                    <label class="labelBE2">USD</label>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
             </table>
-
         </div>
 
         @Scripts.Render("~/bundles/jquery")

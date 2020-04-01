@@ -185,6 +185,7 @@
     <Content Include="Views\Home\ComexIIParametroControlCompraDivisa.cshtml" />
     <Content Include="Views\Home\ComexIIControlTiempoCompraDivisa.cshtml" />
     <Content Include="Views\Home\ComexIIRutClientePreciosEspeciales.cshtml" />
+    <Content Include="Views\Home\ComexIINuevaCampaña.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
