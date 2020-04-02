@@ -68,7 +68,7 @@ namespace ComexII.Controllers
             return View();
         }
 
-        public ActionResult ComexIIBandejaSolicitudes()
+        public ActionResult ComexIIBandejaAutorizaciones()
         {
             return View();
         }

@@ -178,7 +178,7 @@
     <Content Include="Views\Home\ComexIIClonaDatos.cshtml" />
     <Content Include="Views\Home\ComexIIConsultaClienteTarifado.cshtml" />
     <Content Include="Views\Home\ComexIITramosPorSegmento.cshtml" />
-    <Content Include="Views\Home\ComexIIBandejaSolicitudes.cshtml" />
+    <Content Include="Views\Home\ComexIIBandejaAutorizaciones.cshtml" />
     <Content Include="Views\Home\ComexIIConsultaCampañas.cshtml" />
     <Content Include="Views\Home\ComexIIMonitoreoCompraDivisa.cshtml" />
     <Content Include="Views\Home\ComexIIHistoricoCompraDivisa.cshtml" />
