@@ -115,39 +115,69 @@
 
             <table style="width: 100%; border-top: 5px; border-bottom: 0px">
                 <tr>
-                    <td colspan="7">
+                    <td colspan="6">
                         <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Criterios de Busqueda</label></b>
                     </td>
                 </tr>
                 <tr>
-                    <td width="10%">
-                        &nbsp;<b><label class="labelBE">Rut Ejecutivo: </label></b>
+                    <td align="right">
+                        <b><label class="labelBE">Gerente :</label></b>
                     </td>
-                    <td width="10%">
-                        <input id="txtRutBdj" type="text" size="15" />
-                    </td>
-                    <td width="10%">
-                        &nbsp;<b><label class="labelBE">Estado: </label></b>
-                    </td>
-                    <td width="15%">
-                        <div class="custom-select" style="width: 80%; float: left">
-                            <select id="cboEstadoBdj">
+                    <td>
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboGerente">
                                 <option value="1" selected="selected">Seleccione</option>
-                                <option value="2">Pendiente</option>
-                                <option value="3">Rechazado</option>
-                                <option value="4">Aprobado</option>
+                                <option value="2">Gerente Ejemplo Prueba</option>
                             </select>
                         </div>
                     </td>
-                    <td width="10%">
-                        &nbsp;<b><label class="labelBE">Fecha Ingreso: </label></b>
+                    <td align="right">
+                        <b><label class="labelBE">Eje. Jefe :</label></b>
                     </td>
-                    <td width="10%">
+                    <td>
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboJefe">
+                                <option value="1" selected="selected">Seleccione</option>
+                                <option value="2">Jefe Ejemplo Prueba</option>
+                                <option value="3">Todos</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td align="right">
+                        <b><label class="labelBE">Ejecutivos :</label></b>
+                    </td>
+                    <td>
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboEjecutivo">
+                                <option value="1" selected="selected">Seleccione</option>
+                                <option value="2">Ejecutivo Ejemplo Prueba</option>
+                                <option value="3">Todos</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        &nbsp;<b><label class="labelBE">Estado :</label></b>
+                    </td>
+                    <td>
+                        <div class="custom-select" style="width: 80%; float: left">
+                            <select id="cboEstadoBdj">
+                                <option value="1" selected="selected">Pendiente de Firma</option>
+                                <option value="2">Rechazado</option>
+                                <option value="3">Autorizado</option>
+                                <option value="4">Todos</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td align="right">
+                        &nbsp;<b><label class="labelBE">Fecha Ingreso :</label></b>
+                    </td>
+                    <td>
                         <input id="txtFechaBdj" type="text" size="15" placeholder="dd/mm/yyyy" />
                     </td>
-                    <td width="10%"></td>
+                    <td colspan="2"></td>
                 </tr>
-
             </table>
 
             <table style="width: 100%; border-top: 5px">
@@ -203,6 +233,8 @@
         @Scripts.Render("~/bundles/bootstrap")
 
     </center>
-
+    <script>
+        resulTbBandeja();
+    </script>
 </body>
 </html>
