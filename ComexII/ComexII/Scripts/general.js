@@ -143,13 +143,13 @@ function cambiaGrillaEstructuraPrecio() {
         document.getElementById("tdf15").style.display = "";
         $(".tr_mod3").show();
     } else {
-        document.getElementById("tblTarifado").style.width = "40%";
-        document.getElementById("tblTarifado2").style.width = "40%";
-        document.getElementById("tblTarifado3").style.width = "40%";
-        document.getElementById("tblTarifado4").style.width = "40%";
-        document.getElementById("tblTarifado5").style.width = "40%";
-        document.getElementById("tblTarifado6").style.width = "40%";
-        document.getElementById("tblTarifado7").style.width = "40%";
+        document.getElementById("tblTarifado").style.width = "50%";
+        document.getElementById("tblTarifado2").style.width = "50%";
+        document.getElementById("tblTarifado3").style.width = "50%";
+        document.getElementById("tblTarifado4").style.width = "50%";
+        document.getElementById("tblTarifado5").style.width = "50%";
+        document.getElementById("tblTarifado6").style.width = "50%";
+        document.getElementById("tblTarifado7").style.width = "50%";
         document.getElementById("td1").style.display = "none";
         document.getElementById("td2").style.display = "none";
         document.getElementById("td3").style.display = "none";
