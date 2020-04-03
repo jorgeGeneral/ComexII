@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Consulta Campañas";
+    ViewBag.Title = "Consulta Historico Precios Especiales";
 }
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0" />
     <link rel="shortcut icon" href="" />
-    <meta name="description" content="Comex II - Consulta Cliente Tarifado" />
+    <meta name="description" content="Comex II - Historico Precios Especiales" />
     <meta name="author" content="Sermaluc S.A." />
 
 
@@ -78,11 +78,11 @@
 
 </head>
 
-<body onload="cargaListadoCampañas()">
+<body onload="cargaHistoricoPE()">
     <center>
         <div id="wait" class="modal"></div>
 
-        <div id="dialog-message" title="Consulta Campañas" style="display: none">
+        <div id="dialog-message" title="Historico Precios Especiales" style="display: none">
             <br/>
             <strong>
                 <label class="labelBE" id="lblMsg" style="text-align: center"></label>
@@ -110,7 +110,7 @@
                 <tr>
                     <td colspan="2">
                         <div class="Titulo1BE">
-                            Consulta Campañas
+                            Historico Precios Especiales
                         </div>
                     </td>
                 </tr>
@@ -121,50 +121,40 @@
                     </td>
                 </tr>
             </table>
-            <table style="width: 100%; border-top: 5px">
-                <tr><td colspan="2"></td></tr>
-                <tr>
-                    <td align="right">
-                        <button id="btnConsultar" class="botonBE" onclick="nuevaCampaña()">Nueva Campaña</button>
-                    </td>
-                </tr>
-            </table>
+            
             <table style="width: 100%; border-top: 5px">
                 <tr>
                     <td colspan="4">
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Listado de Campañas</label></b>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Listado de Precios Especiales</label></b>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <table id="tblListadoCampañas" style="width: 100%; border: 1px solid; border-color: darkgray">
+                        <table id="tblHistoricoPE" style="width: 100%; border: 1px solid; border-color: darkgray">
                             <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
-                                    <label class="labelBE2">Id Campaña</label>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 18%;">
+                                    <label class="labelBE2">Tipo Producto</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:20%">
-                                    <label class="labelBE2">Nombre Campaña</label>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 13%;">
+                                    <label class="labelBE2">Costo SWIFT</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
-                                    <label class="labelBE2">Segmento</label>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 10%;">
+                                    <label class="labelBE2">Comisión</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
-                                    <label class="labelBE2">Fecha Inicio</label>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 10%;">
+                                    <label class="labelBE2">Comisión Prorroga</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
-                                    <label class="labelBE2">Fecha Termino</label>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 10%;">
+                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:12%">
-                                    <label class="labelBE2">Responsable</label>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 13%;">
+                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:12%">
-                                    <label class="labelBE2">Estado</label>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 13%;">
+                                    <label class="labelBE2">Fecha Desde</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 8%;">
-                                    <label class="labelBE2">Ver</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 8%;">
-                                    <label class="labelBE2">Cancelar</label>
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 13%;">
+                                    <label class="labelBE2">Fecha Hasta</label>
                                 </td>
                             </tr>
                         </table>

@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body>
+<body onload="cambiaGrillaHistCamp();">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -109,7 +109,7 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoProducto" onchange="cambiaGrillaTarifa()">
+                            <select id="cboTipoProducto" onchange="cambiaGrillaHistCamp()">
                                 <option value="1" selected="selected">ODP al Exterior</option>
                                 <option value="2">Financiamiento Contado</option>
                                 <option value="3">Otro Financiamiento</option>
@@ -124,12 +124,8 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboSegmento" onchange="agregarFila()">
-                                <option value="1" selected="selected">Seleccione</option>
-                                <option value="2">Corporativo</option>
-                                <option value="3">Micro</option>
-                                <option value="4">Pequeña</option>
-                                <option value="5">Grandes Empresas</option>
+                            <select id="cboSegmento" disabled>
+                                <option value="5" selected="selected">Grandes Empresas</option>
                             </select>
                         </div>
                     </td>
@@ -148,13 +144,13 @@
                         <label class="labelBE2">Id Campaña :</label>
                     </td>
                     <td width="20%">
-                        <input type="text" disabled value="0001" />
+                        <input type="text" disabled value="0005" />
                     </td>
                     <td width="8%">
                         <label class="labelBE2">Nombre :</label>
                     </td>
                     <td width="20%">
-                        <input type="text" disabled value="Campaña Verano 2020" size="30" />
+                        <input type="text" disabled value="Campaña Fiestas Patrias 2020" size="30"/>
                     </td>
                     <td width="44%"></td>
                 </tr>
@@ -163,13 +159,13 @@
                         <label class="labelBE2">Fecha Inicio :</label>
                     </td>
                     <td width="20%">
-                        <input type="text" disabled placeholder="19/02/2020" />
+                        <input type="text" disabled placeholder="05/09/2020" />
                     </td>
                     <td width="8%">
                         <label class="labelBE2">Fecha Fin :</label>
                     </td>
                     <td width="20%">
-                        <input type="text" disabled placeholder="19/03/2020" />
+                        <input type="text" disabled placeholder="05/10/2020" />
                     </td>
                     <td width="44%"></td>
                 </tr>
@@ -212,7 +208,6 @@
                     </td>
                 </tr>
             </table>
-            
         </div>
 
         @Scripts.Render("~/bundles/jquery")
