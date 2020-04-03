@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Consulta Campañas";
+    ViewBag.Title = "Consulta Historico Campañas";
 }
 
 <!DOCTYPE html>
@@ -78,11 +78,11 @@
 
 </head>
 
-<body onload="cargaListadoCampañas()">
+<body onload="cargaHistoricoCampañas()">
     <center>
         <div id="wait" class="modal"></div>
 
-        <div id="dialog-message" title="Consulta Campañas" style="display: none">
+        <div id="dialog-message" title="Consulta Historico Campañas" style="display: none">
             <br/>
             <strong>
                 <label class="labelBE" id="lblMsg" style="text-align: center"></label>
@@ -110,7 +110,7 @@
                 <tr>
                     <td colspan="2">
                         <div class="Titulo1BE">
-                            Consulta Campañas
+                            Consulta Historico Campañas
                         </div>
                     </td>
                 </tr>
@@ -122,14 +122,6 @@
                 </tr>
             </table>
             <table style="width: 100%; border-top: 5px">
-                <tr><td colspan="2"></td></tr>
-                <tr>
-                    <td align="right">
-                        <button id="btnConsultar" class="botonBE" onclick="nuevaCampaña()">Nueva Campaña</button>
-                    </td>
-                </tr>
-            </table>
-            <table style="width: 100%; border-top: 5px">
                 <tr>
                     <td colspan="4">
                         <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Listado de Campañas</label></b>
@@ -137,7 +129,7 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <table id="tblListadoCampañas" style="width: 100%; border: 1px solid; border-color: darkgray">
+                        <table id="tblHistCampañas" style="width: 100%; border: 1px solid; border-color: darkgray">
                             <tr style="border: 1px solid; border-color: darkgray">
                                 <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
                                     <label class="labelBE2">Id Campaña</label>
@@ -145,7 +137,7 @@
                                 <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:20%">
                                     <label class="labelBE2">Nombre Campaña</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:14%">
                                     <label class="labelBE2">Segmento</label>
                                 </td>
                                 <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
@@ -154,17 +146,13 @@
                                 <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
                                     <label class="labelBE2">Fecha Termino</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:12%">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:13%">
                                     <label class="labelBE2">Responsable</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:12%">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:13%">
                                     <label class="labelBE2">Estado</label>
                                 </td>
                                 <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 8%;">
-                                    <label class="labelBE2">Ver</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 8%;">
-                                    <label class="labelBE2">Cancelar</label>
                                 </td>
                             </tr>
                         </table>

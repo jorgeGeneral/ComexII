@@ -102,6 +102,22 @@ namespace ComexII.Controllers
         {
             return View();
         }
+        public ActionResult ComexIIConsultaPrecios()
+        {
+            return View();
+        } 
+        public ActionResult ComexIIConsultaHistoricoCampañas()
+        {
+            return View();
+        }
+        public ActionResult ComexIITarifasCampañasHistorica()
+        {
+            return View();
+        }
+        public ActionResult ComexIIConsultaHistoricoPreciosEspeciales()
+        {
+            return View();
+        }
     }
     
 }
