@@ -108,6 +108,11 @@
                     </td>
                 </tr>
                 <tr>
+                    <td colspan="3">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Datos Generales :</label></b>
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <label class="labelBE2">Nombre Empresa</label>
                     </td>
@@ -148,7 +153,6 @@
                     </td>
                 </tr>
             </table>
-
             <table style="width: 100%; border-top: 5px">
                 <tr>
                     <td>
@@ -156,13 +160,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td width="20%">
                         <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tipo Producto</label></b>
                     </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="custom-select" style="width: 80%; float: left">
+                    <td width="30%">
+                        <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboTipoProducto" onchange="cambiaGrillaTarifado()">
                                 <option value="0" selected="selected">Seleccione</option>
                                 <option value="1">ODP al Exterior</option>
@@ -172,9 +174,25 @@
                             </select>
                         </div>
                     </td>
+                    <td width="60%">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tipo Moneda</label></b>
+                    </td>
+                    <td width="30%">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboTipoMoneda">
+                                <option value="0" selected="selected">Seleccione</option>
+                                <option value="1">Dolar (USD)</option>
+                                <option value="2">Euro (EUR)</option>
+                                <option value="3">Peso (CLP)</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td width="60%">&nbsp;</td>
                 </tr>
             </table>
-
             <table style="width: 100%; border-top: 5px">
                 <tr>
                     <td>
@@ -188,7 +206,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblTarifadoData" style="width: 70%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
+                        <table id="tblTarifadoData" style="width: 80%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
                 </tr>
             </table>
