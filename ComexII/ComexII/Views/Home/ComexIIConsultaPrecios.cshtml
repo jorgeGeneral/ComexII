@@ -104,37 +104,39 @@
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
-                    <td>
-                        <label class="labelBE2">Nombre Empresa</label>
+                    <td width="9%">
+                        <label class="labelBE2">Nombre Empresa:</label>
                     </td>
-                    <td>
-                        <label class="labelBE2" id="lbl">: Sociedad Importadora Lorden S.A.</label>
+                    <td width="18%">
+                        <label class="labelBE2" id="lbl">Sociedad Importadora Lorden S.A.</label>
                     </td>
-                    <td>
-                        <label class="labelBE2">Rut Empresa</label>
+                    <td width="8%">
+                        <label class="labelBE2">Rut Empresa:</label>
                     </td>
-                    <td>
-                        <label class="labelBE2" id="lbl">: 96.599.240-9</label>
+                    <td width="12%">
+                        <label class="labelBE2" id="lbl">96.599.240-9</label>
                     </td>
-                    <td>
-                        <label class="labelBE2">Fecha - Hora</label>
+                    <td width="8%">
+                        <label class="labelBE2">Fecha - Hora:</label>
                     </td>
-                    <td>
-                        <label class="labelBE2" id="lbl">: 28/01/2020 - 10:00</label>
+                    <td width="12%">
+                        <label class="labelBE2" id="lbl">28/01/2020 - 10:00</label>
+                    </td>
+                    <td width="20%">
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <label class="labelBE2">Segmento</label>
+                    <td width="8%">
+                        <label class="labelBE2">Segmento:</label>
                     </td>
                     <td>
-                        <label class="labelBE2" id="lbl">: Grandes Empresas</label>
+                        <label class="labelBE2" id="lbl">Grandes Empresas</label>
+                    </td>
+                    <td width="8%">
+                        <label class="labelBE2">Ejecutivo:</label>
                     </td>
                     <td>
-                        <label class="labelBE2">Ejecutivo</label>
-                    </td>
-                    <td>
-                        <label class="labelBE2" id="lbl">: Hernandez Javier</label>
+                        <label class="labelBE2" id="lbl">Hernandez Javier</label>
                     </td>
                     <td>
                         &nbsp;
@@ -143,22 +145,24 @@
                         &nbsp;
                     </td>
                 </tr>
-                <tr><td colspan="6"></td></tr>
-                <tr><td colspan="6"></td></tr>
+                <tr><td colspan="7"></td></tr>
+                <tr><td colspan="7"></td></tr>
+                <tr><td colspan="7"></td></tr>
             </table>
 
             <table style="width: 100%; border-top: 5px">
                 <tr><td></td></tr>
                 <tr>
                     <td>
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Matriz de Tarifado</label></b>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tarifas de Campaña</label></b>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciosMT" style="width: 70%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
+                        <table id="tblPreciosTC" style="width: 100%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
                 </tr>
+                <tr><td id="lblNoPreciosTC" style="text-align: center; display: none"><label class="labelBE"> No existe campaña vigente para este cliente</label></td></tr>
                 <tr><td></td></tr>
                 <tr><td></td></tr>
             </table>
@@ -172,27 +176,27 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciosPE" style="width: 70%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
+                        <table id="tblPreciosPE" style="width: 100%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
                 </tr>
+                <tr><td id="lblNoPreciosPE" style="text-align: center; display: none"><label class="labelBE"> No existe precio especial vigente para este cliente</label></td></tr>
                 <tr><td></td></tr>
                 <tr><td></td></tr>
             </table>
-            
+
             <table style="width: 100%; border-top: 5px">
                 <tr><td></td></tr>
                 <tr>
                     <td>
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tarifas de Campaña</label></b>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Matriz de Tarifado</label></b>
                     </td>
                 </tr>
                 <tr>
                     <td>
-
-                        <table id="tblPreciosTC" style="width: 70%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
+                        <table id="tblPreciosMT" style="width: 100%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
                 </tr>
-                <tr><td id="lblNoPreciosTC" style="text-align: center; display: none"><label class="labelBE"> No existe campaña vigente para este cliente</label></td></tr>
+                <tr><td></td></tr>
                 <tr><td></td></tr>
                 <tr><td></td></tr>
             </table>
