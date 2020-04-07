@@ -33,20 +33,20 @@ function cambiaGrilla() {
 
 function cambiaGrillaEstructuraPrecio() {
     if (document.getElementById("cboTipoProducto").value == "2") {
-        document.getElementById("tblTarifado").style.width = "90%";
-        document.getElementById("tblTarifado2").style.width = "90%";
-        document.getElementById("tblTarifado3").style.width = "90%";
-        document.getElementById("tblTarifado4").style.width = "90%";
-        document.getElementById("tblTarifado5").style.width = "90%";
-        document.getElementById("tblTarifado6").style.width = "90%";
-        document.getElementById("tblTarifado7").style.width = "90%";
-        document.getElementById("tdca").colSpan = "6";
-        document.getElementById("tdca2").colSpan = "6";
-        document.getElementById("tdca3").colSpan = "6";
-        document.getElementById("tdca4").colSpan = "6";
-        document.getElementById("tdca5").colSpan = "6";
-        document.getElementById("tdca6").colSpan = "6";
-        document.getElementById("tdca7").colSpan = "6";
+        document.getElementById("tblTarifado").style.width = "100%";
+        document.getElementById("tblTarifado2").style.width = "100%";
+        document.getElementById("tblTarifado3").style.width = "100%";
+        document.getElementById("tblTarifado4").style.width = "100%";
+        document.getElementById("tblTarifado5").style.width = "100%";
+        document.getElementById("tblTarifado6").style.width = "100%";
+        document.getElementById("tblTarifado7").style.width = "100%";
+        document.getElementById("tdca").colSpan = "8";
+        document.getElementById("tdca2").colSpan = "8";
+        document.getElementById("tdca3").colSpan = "8";
+        document.getElementById("tdca4").colSpan = "8";
+        document.getElementById("tdca5").colSpan = "8";
+        document.getElementById("tdca6").colSpan = "8";
+        document.getElementById("tdca7").colSpan = "8";
         document.getElementById("td1").style.display = "";
         document.getElementById("td2").style.display = "";
         document.getElementById("td3").style.display = "";
@@ -143,13 +143,13 @@ function cambiaGrillaEstructuraPrecio() {
         document.getElementById("tdf15").style.display = "";
         $(".tr_mod3").show();
     } else {
-        document.getElementById("tblTarifado").style.width = "50%";
-        document.getElementById("tblTarifado2").style.width = "50%";
-        document.getElementById("tblTarifado3").style.width = "50%";
-        document.getElementById("tblTarifado4").style.width = "50%";
-        document.getElementById("tblTarifado5").style.width = "50%";
-        document.getElementById("tblTarifado6").style.width = "50%";
-        document.getElementById("tblTarifado7").style.width = "50%";
+        document.getElementById("tblTarifado").style.width = "60%";
+        document.getElementById("tblTarifado2").style.width = "60%";
+        document.getElementById("tblTarifado3").style.width = "60%";
+        document.getElementById("tblTarifado4").style.width = "60%";
+        document.getElementById("tblTarifado5").style.width = "60%";
+        document.getElementById("tblTarifado6").style.width = "60%";
+        document.getElementById("tblTarifado7").style.width = "60%";
         document.getElementById("td1").style.display = "none";
         document.getElementById("td2").style.display = "none";
         document.getElementById("td3").style.display = "none";
@@ -298,23 +298,15 @@ function cambiaGrillaPrecioEspecial() {
         document.getElementById("tblPreciosEspeciales").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 19%;"><label class="labelBE2">Tipo Producto</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 17%;"><label class="labelBE2">Costo SWIFT</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 17%;"><label class="labelBE2">Comisión</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 17%;"><label class="labelBE2">Comisión Prorroga</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 15%;"><label class="labelBE2">Spread Ejecutivo (%)</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 15%;"><label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label></td></tr>';
         document.getElementById("tblPreciosEspeciales").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">ODP al Exterior</label></td ><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">50,00  (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">20 (CLP)</label></td><td id="td4" style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td><td id="td5" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td><td id="td6" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td></tr>';
     }
-
     if (document.getElementById("cboTipoProducto").value == "2") {
         document.getElementById("tblPreciosEspeciales").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 19%;"><label class="labelBE2">Tipo Producto</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 17%;"><label class="labelBE2">Costo SWIFT</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 17%;"><label class="labelBE2">Comisión</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 17%;"><label class="labelBE2">Comisión Prorroga</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 15%;"><label class="labelBE2">Spread Ejecutivo (%)</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 15%;"><label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label></td></tr>';
-        
-        document.getElementById("tblPreciosEspeciales").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Financiamiento Contado</label></td ><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">50,00  (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">20 (CLP)</label></td><td id="td4" style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">23 (CLP)</label></td><td id="td5" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">2,50</label></td><td id="td6" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">21/05/2017</label></td></tr>';
-        
+         document.getElementById("tblPreciosEspeciales").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Financiamiento Contado</label></td ><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">50,00  (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">20 (CLP)</label></td><td id="td4" style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">23 (CLP)</label></td><td id="td5" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">2,50</label></td><td id="td6" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">21/05/2017</label></td></tr>';
     }
-
     if (document.getElementById("cboTipoProducto").value == "3") {
         document.getElementById("tblPreciosEspeciales").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 19%;"><label class="labelBE2">Tipo Producto</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 17%;"><label class="labelBE2">Costo SWIFT</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 17%;"><label class="labelBE2">Comisión</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 17%;"><label class="labelBE2">Comisión Prorroga</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 15%;"><label class="labelBE2">Spread Ejecutivo (%)</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 15%;"><label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label></td></tr>';
-        
         document.getElementById("tblPreciosEspeciales").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Otro Financiamiento</label></td ><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">50,00  (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">20 (CLP)</label></td><td id="td4" style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td><td id="td5" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td><td id="td6" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td></tr>';
     }
-
     if (document.getElementById("cboTipoProducto").value == "4") {
-
-        // Ejemplo tabla con titulos naranjos
         document.getElementById("tblPreciosEspeciales").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 19%;"><label class="labelBE2">Tipo Producto</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 17%;"><label class="labelBE2">Costo SWIFT</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 17%;"><label class="labelBE2">Comisión</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 17%;"><label class="labelBE2">Comisión Prorroga</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 15%;"><label class="labelBE2">Spread Ejecutivo (%)</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 15%;"><label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label></td></tr>';
         document.getElementById("tblPreciosEspeciales").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">ODP al Exterior</label></td ><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">50,00  (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">20 (CLP)</label></td><td id="td4" style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td><td id="td5" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td><td id="td6" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td></tr>';
         document.getElementById("tblPreciosEspeciales").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Financiamiento Contado</label></td ><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">50,00  (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">20 (CLP)</label></td><td id="td4" style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">23 (CLP)</label></td><td id="td5" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">2,50</label></td><td id="td6" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">21/05/2017</label></td></tr>';
@@ -337,33 +329,15 @@ function habilita(radio, txt1, txt2) {
 function cambiaGrillaTarifa() {
     if (document.getElementById("cboTipoProducto").value == "2") {
         document.getElementById("tblTarifado").style.width = "70%";
-        $("#td1").show();
-        $("#td2").show();
-        $("#td3").show();
-        $("#td4").show();
-        $("#td5").show();
-        $("#td6").show();
-        $("#td7").show();
-        $("#td8").show();
-        $("#td9").show();
-        $("#td10").show();
-        $("#td11").show();
-        $("#td12").show();
+        $("#td1").show(); $("#td2").show(); $("#td3").show(); $("#td4").show();
+        $("#td5").show(); $("#td6").show(); $("#td7").show(); $("#td8").show();
+        $("#td9").show(); $("#td10").show(); $("#td11").show(); $("#td12").show();
         $(".tr_mod").show();
     } else {
         document.getElementById("tblTarifado").style.width = "40%";
-        $("#td1").hide();
-        $("#td2").hide();
-        $("#td3").hide();
-        $("#td4").hide();
-        $("#td5").hide();
-        $("#td6").hide();
-        $("#td7").hide();
-        $("#td8").hide();
-        $("#td9").hide();
-        $("#td10").hide();
-        $("#td11").hide();
-        $("#td12").hide();
+        $("#td1").hide(); $("#td2").hide(); $("#td3").hide(); $("#td4").hide();
+        $("#td5").hide(); $("#td6").hide(); $("#td7").hide(); $("#td8").hide();
+        $("#td9").hide(); $("#td10").hide(); $("#td11").hide(); $("#td12").hide();
         $(".tr_mod").hide();
     }
 }
@@ -392,7 +366,6 @@ function cambiaTipoProducto() {
         $(".tr_mod").hide();
     }
 }
-
 
 function agregarFila() {
     eliminarFila();
@@ -866,81 +839,123 @@ function habilitaDeshabilitaCamposEstructura(idCampo, idOpcion) {
             if (idOpcion == 1) {
                 document.getElementById("in1").disabled = false; document.getElementById("in2").disabled = false; document.getElementById("in3").disabled = false;
                 document.getElementById("in4").disabled = false; document.getElementById("in5").disabled = false; document.getElementById("in6").disabled = false;
+                document.getElementById("in7").disabled = false; document.getElementById("in8").disabled = false; document.getElementById("in9").disabled = false;
+                document.getElementById("in10").disabled = false; document.getElementById("in11").disabled = false; document.getElementById("in12").disabled = false;
                 document.getElementById("fein1").disabled = false; document.getElementById("hoin1").disabled = false;
             }
             else {
+                alert("Datos guardados correctamente");
                 document.getElementById("in1").disabled = true; document.getElementById("in2").disabled = true; document.getElementById("in3").disabled = true;
                 document.getElementById("in4").disabled = true; document.getElementById("in5").disabled = true; document.getElementById("in6").disabled = true;
-                alert("Datos guardados correctamente");
+                document.getElementById("in7").disabled = true; document.getElementById("in8").disabled = true; document.getElementById("in9").disabled = true;
+                document.getElementById("in10").disabled = true; document.getElementById("in11").disabled = true; document.getElementById("in12").disabled = true;
+                document.getElementById("fein1").disabled = true; document.getElementById("hoin1").disabled = true;
             }
             break;
         case 2:
             if (idOpcion == 1) {
-                document.getElementById("in7").disabled = false; document.getElementById("in8").disabled = false; document.getElementById("in9").disabled = false;
-                document.getElementById("in10").disabled = false; document.getElementById("in11").disabled = false; document.getElementById("in12").disabled = false;
-                document.getElementById("in13").disabled = false; document.getElementById("in14").disabled = false;
+                document.getElementById("in13").disabled = false; document.getElementById("in14").disabled = false; document.getElementById("in15").disabled = false;
+                document.getElementById("in16").disabled = false; document.getElementById("in17").disabled = false; document.getElementById("in18").disabled = false;
+                document.getElementById("in19").disabled = false; document.getElementById("in20").disabled = false; document.getElementById("in21").disabled = false;
+                document.getElementById("in22").disabled = false; document.getElementById("in23").disabled = false; document.getElementById("in24").disabled = false;
+                document.getElementById("in25").disabled = false; document.getElementById("in26").disabled = false; document.getElementById("in27").disabled = false;
+                document.getElementById("in28").disabled = false;
                 document.getElementById("fein2").disabled = false; document.getElementById("hoin2").disabled = false;
             }
             else {
-                document.getElementById("in7").disabled = true; document.getElementById("in8").disabled = true; document.getElementById("in9").disabled = true;
-                document.getElementById("in10").disabled = true; document.getElementById("in11").disabled = true; document.getElementById("in12").disabled = true;
-                document.getElementById("in13").disabled = true; document.getElementById("in14").disabled = true;
                 alert("Datos guardados correctamente");
+                document.getElementById("in13").disabled = true; document.getElementById("in14").disabled = true; document.getElementById("in15").disabled = true;
+                document.getElementById("in16").disabled = true; document.getElementById("in17").disabled = true; document.getElementById("in18").disabled = true;
+                document.getElementById("in19").disabled = true; document.getElementById("in20").disabled = true; document.getElementById("in21").disabled = true;
+                document.getElementById("in22").disabled = true; document.getElementById("in23").disabled = true; document.getElementById("in24").disabled = true;
+                document.getElementById("in25").disabled = true; document.getElementById("in26").disabled = true; document.getElementById("in27").disabled = true;
+                document.getElementById("in28").disabled = true;
+                document.getElementById("fein2").disabled = true; document.getElementById("hoin2").disabled = true;
             }
             break;
         case 3:
             if (idOpcion == 1) {
-                document.getElementById("in15").disabled = false; document.getElementById("in16").disabled = false; document.getElementById("in17").disabled = false;
-                document.getElementById("in18").disabled = false; document.getElementById("in19").disabled = false; document.getElementById("in20").disabled = false;
+                document.getElementById("in29").disabled = false; document.getElementById("in30").disabled = false; document.getElementById("in31").disabled = false;
+                document.getElementById("in32").disabled = false; document.getElementById("in33").disabled = false; document.getElementById("in34").disabled = false;
+                document.getElementById("in35").disabled = false; document.getElementById("in36").disabled = false; document.getElementById("in37").disabled = false;
+                document.getElementById("in38").disabled = false; document.getElementById("in39").disabled = false; document.getElementById("in40").disabled = false;
+                document.getElementById("fein3").disabled = false; document.getElementById("hoin3").disabled = false;
             }
             else {
-                document.getElementById("in15").disabled = true; document.getElementById("in16").disabled = true; document.getElementById("in17").disabled = true;
-                document.getElementById("in18").disabled = true; document.getElementById("in19").disabled = true; document.getElementById("in20").disabled = true;
                 alert("Datos guardados correctamente");
+                document.getElementById("in29").disabled = true; document.getElementById("in30").disabled = true; document.getElementById("in31").disabled = true;
+                document.getElementById("in32").disabled = true; document.getElementById("in33").disabled = true; document.getElementById("in34").disabled = true;
+                document.getElementById("in35").disabled = true; document.getElementById("in36").disabled = true; document.getElementById("in37").disabled = true;
+                document.getElementById("in38").disabled = true; document.getElementById("in39").disabled = true; document.getElementById("in40").disabled = true;
+                document.getElementById("fein3").disabled = true; document.getElementById("hoin3").disabled = true;
             }
             break;
         case 4:
             if (idOpcion == 1) {
-                document.getElementById("in21").disabled = false; document.getElementById("in22").disabled = false; document.getElementById("in23").disabled = false;
-                document.getElementById("in24").disabled = false; document.getElementById("in25").disabled = false; document.getElementById("in26").disabled = false;
+                document.getElementById("in41").disabled = false; document.getElementById("in42").disabled = false; document.getElementById("in43").disabled = false;
+                document.getElementById("in44").disabled = false; document.getElementById("in45").disabled = false; document.getElementById("in46").disabled = false;
+                document.getElementById("in47").disabled = false; document.getElementById("in48").disabled = false; document.getElementById("in49").disabled = false;
+                document.getElementById("in50").disabled = false; document.getElementById("in51").disabled = false; document.getElementById("in52").disabled = false;
+                document.getElementById("fein4").disabled = false; document.getElementById("hoin4").disabled = false;
             }
             else {
-                document.getElementById("in21").disabled = true; document.getElementById("in22").disabled = true; document.getElementById("in23").disabled = true;
-                document.getElementById("in24").disabled = true; document.getElementById("in25").disabled = true; document.getElementById("in26").disabled = true;
                 alert("Datos guardados correctamente");
+                document.getElementById("in41").disabled = true; document.getElementById("in42").disabled = true; document.getElementById("in43").disabled = true;
+                document.getElementById("in44").disabled = true; document.getElementById("in45").disabled = true; document.getElementById("in46").disabled = true;
+                document.getElementById("in47").disabled = true; document.getElementById("in48").disabled = true; document.getElementById("in49").disabled = true;
+                document.getElementById("in50").disabled = true; document.getElementById("in51").disabled = true; document.getElementById("in52").disabled = true;
+                document.getElementById("fein4").disabled = true; document.getElementById("hoin4").disabled = true;
             }
             break;
         case 5:
             if (idOpcion == 1) {
-                document.getElementById("in27").disabled = false; document.getElementById("in28").disabled = false; document.getElementById("in29").disabled = false;
-                document.getElementById("in30").disabled = false; document.getElementById("in31").disabled = false; document.getElementById("in32").disabled = false;
+                document.getElementById("in53").disabled = false; document.getElementById("in54").disabled = false; document.getElementById("in55").disabled = false;
+                document.getElementById("in56").disabled = false; document.getElementById("in57").disabled = false; document.getElementById("in58").disabled = false;
+                document.getElementById("in59").disabled = false; document.getElementById("in60").disabled = false; document.getElementById("in61").disabled = false;
+                document.getElementById("in62").disabled = false; document.getElementById("in63").disabled = false; document.getElementById("in64").disabled = false;
+                document.getElementById("fein5").disabled = false; document.getElementById("hoin5").disabled = false;
             }
             else {
-                document.getElementById("in27").disabled = true; document.getElementById("in28").disabled = true; document.getElementById("in29").disabled = true;
-                document.getElementById("in30").disabled = true; document.getElementById("in31").disabled = true; document.getElementById("in32").disabled = true;
                 alert("Datos guardados correctamente");
+                document.getElementById("in53").disabled = true; document.getElementById("in54").disabled = true; document.getElementById("in55").disabled = true;
+                document.getElementById("in56").disabled = true; document.getElementById("in57").disabled = true; document.getElementById("in58").disabled = true;
+                document.getElementById("in59").disabled = true; document.getElementById("in60").disabled = true; document.getElementById("in61").disabled = true;
+                document.getElementById("in62").disabled = true; document.getElementById("in63").disabled = true; document.getElementById("in64").disabled = true;
+                document.getElementById("fein5").disabled = true; document.getElementById("hoin5").disabled = true;
             }
             break;
         case 6:
             if (idOpcion == 1) {
-                document.getElementById("in33").disabled = false; document.getElementById("in34").disabled = false; document.getElementById("in35").disabled = false;
-                document.getElementById("in36").disabled = false; document.getElementById("in37").disabled = false; document.getElementById("in38").disabled = false;
+                document.getElementById("in65").disabled = false; document.getElementById("in66").disabled = false; document.getElementById("in67").disabled = false;
+                document.getElementById("in68").disabled = false; document.getElementById("in69").disabled = false; document.getElementById("in70").disabled = false;
+                document.getElementById("in71").disabled = false; document.getElementById("in72").disabled = false; document.getElementById("in73").disabled = false;
+                document.getElementById("in74").disabled = false; document.getElementById("in75").disabled = false; document.getElementById("in76").disabled = false;
+                document.getElementById("fein6").disabled = false; document.getElementById("hoin6").disabled = false;
             }
             else {
-                document.getElementById("in33").disabled = true; document.getElementById("in34").disabled = true; document.getElementById("in35").disabled = true;
-                document.getElementById("in36").disabled = true; document.getElementById("in37").disabled = true; document.getElementById("in38").disabled = true;
                 alert("Datos guardados correctamente");
+                document.getElementById("in65").disabled = true; document.getElementById("in66").disabled = true; document.getElementById("in67").disabled = true;
+                document.getElementById("in68").disabled = true; document.getElementById("in69").disabled = true; document.getElementById("in70").disabled = true;
+                document.getElementById("in71").disabled = true; document.getElementById("in72").disabled = true; document.getElementById("in73").disabled = true;
+                document.getElementById("in74").disabled = true; document.getElementById("in75").disabled = true; document.getElementById("in76").disabled = true;
+                document.getElementById("fein6").disabled = true; document.getElementById("hoin6").disabled = true;
             }
             break;
         case 7:
             if (idOpcion == 1) {
-                document.getElementById("in39").disabled = false; document.getElementById("in40").disabled = false; document.getElementById("in41").disabled = false;
-                document.getElementById("in42").disabled = false; document.getElementById("in43").disabled = false; document.getElementById("in44").disabled = false;
+                document.getElementById("in77").disabled = false; document.getElementById("in78").disabled = false; document.getElementById("in79").disabled = false;
+                document.getElementById("in80").disabled = false; document.getElementById("in81").disabled = false; document.getElementById("in82").disabled = false;
+                document.getElementById("in83").disabled = false; document.getElementById("in84").disabled = false; document.getElementById("in85").disabled = false;
+                document.getElementById("in86").disabled = false; document.getElementById("in87").disabled = false; document.getElementById("in88").disabled = false;
+                document.getElementById("fein7").disabled = false; document.getElementById("hoin7").disabled = false;
             }
             else {
-                document.getElementById("in39").disabled = true; document.getElementById("in40").disabled = true; document.getElementById("in41").disabled = true;
-                document.getElementById("in42").disabled = true; document.getElementById("in43").disabled = true; document.getElementById("in44").disabled = true;
                 alert("Datos guardados correctamente");
+                document.getElementById("in77").disabled = true; document.getElementById("in78").disabled = true; document.getElementById("in79").disabled = true;
+                document.getElementById("in80").disabled = true; document.getElementById("in81").disabled = true; document.getElementById("in82").disabled = true;
+                document.getElementById("in83").disabled = true; document.getElementById("in84").disabled = true; document.getElementById("in85").disabled = true;
+                document.getElementById("in86").disabled = true; document.getElementById("in87").disabled = true; document.getElementById("in88").disabled = true;
+                document.getElementById("fein7").disabled = true; document.getElementById("hoin7").disabled = true;
             }
             break;
     }
@@ -1046,4 +1061,13 @@ function cargaHistoricoPE() {
     document.getElementById("tblHistoricoPE").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">ODP al Exterior</label></td ><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">50,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">20 (CLP)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">02/02/2019</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">02/02/2020</label></td></tr>';
     document.getElementById("tblHistoricoPE").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Financiamiento Contado</label></td ><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">50,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">20 (CLP)</label></td><td id="td4" style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">23 (CLP)</label></td><td id="td5" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">2,50</label></td><td id="td6" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">21/05/2017</label></td></tr><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">02/02/2019</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">02/02/2020</label></td></tr>';
     document.getElementById("tblHistoricoPE").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">Otro Financiamiento</label></td ><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">50,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">20 (CLP)</label></td><td id="td4" style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td><td id="td5" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td><td id="td6" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">--</label></td></tr><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">02/02/2019</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">02/02/2020</label></td></tr>';
+}
+
+//**************************
+//carga informacion estructura de precio
+//**************************
+function cargaEstruturaPrecioData() {
+
+
+
 }
