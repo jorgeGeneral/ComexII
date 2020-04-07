@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body>
+<body onload="cambiaGrillaTarifado();">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -166,8 +166,7 @@
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboTipoProducto" onchange="cambiaGrillaTarifado()">
-                                <option value="0" selected="selected">Seleccione</option>
-                                <option value="1">ODP al Exterior</option>
+                                <option value="1" selected="selected">ODP al Exterior</option>
                                 <option value="2">Financiamiento Contado</option>
                                 <option value="3">Otro Financiamiento</option>
                                 <option value="4">Todos los productos</option>
@@ -182,9 +181,8 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoMoneda">
-                                <option value="0" selected="selected">Seleccione</option>
-                                <option value="1">Dolar (USD)</option>
+                            <select id="cboTipoMoneda" onchange="cambiaGrillaTarifado()">
+                                <option value="1" selected="selected">Dolar (USD)</option>
                                 <option value="2">Euro (EUR)</option>
                                 <option value="3">Peso (CLP)</option>
                             </select>
@@ -206,7 +204,22 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblTarifadoData" style="width: 80%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
+                        <table id="tblTarifadoData" style="width: 90%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblTarifadoData1" style="width: 90%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblTarifadoData2" style="width: 90%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblTarifadoData3" style="width: 90%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
                 </tr>
             </table>
@@ -293,6 +306,6 @@
         @Scripts.Render("~/bundles/bootstrap")
 
     </center>
-
+    
 </body>
 </html>
