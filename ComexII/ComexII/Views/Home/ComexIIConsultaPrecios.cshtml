@@ -104,27 +104,31 @@
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
-                    <td>
+                    <td colspan="9">
                         &nbsp;
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">
+                    <td colspan="9">
                         <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Datos Generales :</label></b>
                     </td>
                 </tr>
                 <tr>
-                    <td width="9%">
+                    <td width="10%">
                         <label class="labelBE2">Nombre Empresa:</label>
                     </td>
                     <td width="18%">
                         <label class="labelBE2" id="lbl">Sociedad Importadora Lorden S.A.</label>
                     </td>
                     <td width="8%">
+                    </td>
+                    <td width="10%">
                         <label class="labelBE2">Rut Empresa:</label>
                     </td>
-                    <td width="12%">
+                    <td width="16%">
                         <label class="labelBE2" id="lbl">96.599.240-9</label>
+                    </td>
+                    <td width="8%">
                     </td>
                     <td width="8%">
                         <label class="labelBE2">Fecha - Hora:</label>
@@ -132,32 +136,27 @@
                     <td width="12%">
                         <label class="labelBE2" id="lbl">28/01/2020 - 10:00</label>
                     </td>
-                    <td width="20%">
+                    <td width="10%">
                     </td>
                 </tr>
                 <tr>
-                    <td width="8%">
+                    <td width="10%">
                         <label class="labelBE2">Segmento:</label>
                     </td>
-                    <td>
+                    <td width="18%">
                         <label class="labelBE2" id="lbl">Grandes Empresas</label>
                     </td>
                     <td width="8%">
+                    </td>
+                    <td width="10%">
                         <label class="labelBE2">Ejecutivo:</label>
                     </td>
-                    <td>
+                    <td width="16%">
                         <label class="labelBE2" id="lbl">Hernandez Javier</label>
                     </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
+                    <td width="38%" colspan="4">
                     </td>
                 </tr>
-                <tr><td colspan="7"></td></tr>
-                <tr><td colspan="7"></td></tr>
-                <tr><td colspan="7"></td></tr>
             </table>
 
             <table style="width: 100%; border-top: 5px">
@@ -173,7 +172,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciosTC" style="width: 100%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
+                        <table id="tblPreciosTC" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
                 </tr>
                 <tr><td id="lblNoPreciosTC" style="text-align: center; display: none"><label class="labelBE"> No existe campaña vigente para este cliente</label></td></tr>
@@ -194,12 +193,40 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciosPE" style="width: 100%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
+                        <table id="tblPreciosPE" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
                 </tr>
                 <tr><td id="lblNoPreciosPE" style="text-align: center; display: none"><label class="labelBE"> No existe precio especial vigente para este cliente</label></td></tr>
                 <tr><td></td></tr>
                 <tr><td></td></tr>
+            </table>
+
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Matriz de Tarifado</label></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tipo Moneda :</label></b>
+                    </td>
+                    <td width="30%">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboTipoMoneda" onchange="cambioMonedaPrecios()">
+                                <option value="1" selected="selected">Dolar (USD)</option>
+                                <option value="2">Euro (EUR)</option>
+                                <option value="3">Peso (CLP)</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td width="60%">&nbsp;</td>
+                </tr>
             </table>
 
             <table style="width: 100%; border-top: 5px">
@@ -210,17 +237,19 @@
                 </tr>
                 <tr>
                     <td>
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Matriz de Tarifado</label></b>
+                        <table id="tblPreciosMT1" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciosMT" style="width: 100%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
+                        <table id="tblPreciosMT2" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
                 </tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
+                <tr>
+                    <td>
+                        <table id="tblPreciosMT3" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
+                    </td>
+                </tr>
             </table>
 
             <table style="width: 100%; border-top: 5px">

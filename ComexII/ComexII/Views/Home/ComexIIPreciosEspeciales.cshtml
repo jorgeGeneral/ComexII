@@ -61,7 +61,7 @@
 
 </head>
 
-<body>
+<body onload="cambiaGrillaPrecioEspecial()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -106,7 +106,7 @@
             </table>
             <table style="width: 100%; border-top: 5px">
                 <tr>
-                    <td>
+                    <td colspan="3">
                         &nbsp;
                     </td>
                 </tr>
@@ -142,7 +142,7 @@
             </table>
             <table style="width: 100%; border-top: 5px">
                 <tr>
-                    <td>
+                    <td colspan="3">
                         &nbsp;
                     </td>
                 </tr>
@@ -153,8 +153,7 @@
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboTipoProducto" onchange="cambiaGrillaPrecioEspecial()">
-                                <option value="0" selected="selected">Seleccione</option>
-                                <option value="1">ODP al Exterior</option>
+                                <option value="1" selected="selected">ODP al Exterior</option>
                                 <option value="2">Financiamiento Contado</option>
                                 <option value="3">Otro Financiamiento</option>
                                 <option value="4">Todos los productos</option>
@@ -177,7 +176,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciosEspeciales" style="width: 80%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
+                        <table id="tblPreciosEspeciales" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
             </table>
             <table style="width: 100%; border-top: 5px">
