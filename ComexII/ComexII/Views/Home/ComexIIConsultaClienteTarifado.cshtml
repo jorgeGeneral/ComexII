@@ -61,7 +61,7 @@
 
 </head>
 
-<body>
+<body onload="cargaTablaConsultaTarifado(0)">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -161,10 +161,10 @@
                         <label class="labelBE2">Rut Cliente :</label>
                     </td>
                     <td width="80%">
-                        <input id="txtRutCliente" type="text" onkeypress="validaEnterTarifado(event)" maxlength="10" size="40" />
+                        <input id="txtRutCliente" type="text" onkeypress="validaEnterTarifado(event)" maxlength="10" size="45" />
                     </td>
                     <td align="right">
-                        <button id="btnConsultar" class="botonBE" onclick="cargaTablaConsultaTarifado()">
+                        <button id="btnConsultar" class="botonBE" onclick="cargaTablaConsultaTarifado(2)">
                             Consultar
                         </button>
                     </td>
@@ -183,36 +183,12 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Resultados</label></b>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Resultados: </label></b>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <table id="tblResultado" style="width: 100%; border: 1px solid; border-color: darkgray">
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:17%">
-                                    <label class="labelBE2">Rut Cliente</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:17%">
-                                    <label class="labelBE2">Nombre Cliente</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:17%">
-                                    <label class="labelBE2">Segmento Cliente</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:17%">
-                                    <label class="labelBE2">Ejecutivo</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
-                                    <label class="labelBE2">Precios</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
-                                    <label class="labelBE2">Histórico  de Campañas</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width:10%">
-                                    <label class="labelBE2">Histórico  de Precios Especiales</label>
-                                </td>
-                            </tr>
-                        </table>
+                        <table id="tblResultado" style="width: 100%; border: 1px solid; border-color: darkgray"></table>
                     </td>
             </table>
             
