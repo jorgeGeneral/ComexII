@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body>
+<body onload="cargaEstruturaPrecioData()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -97,6 +97,7 @@
                 </tr>
                 <tr>
                     <td align="right">
+                        <a href="#"><img src="~/Content/Images/excel-icon.png" alt="Exportar" height="20" width="20">&nbsp;exportar</a>&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="#"><img src="~/Content/Images/print-icon.png" alt="Imprimir" height="20" width="20">&nbsp;imprimir</a>
                     </td>
                 </tr>
@@ -114,23 +115,22 @@
                     </td>
                     <td width="20%">
                         <div class="custom-select" style="width: 100%; float: left">
-                            <select id="cboTipoProducto" onchange="cambiaGrillaEstructuraPrecio()">
-                                <option value="1" selected="selected">Seleccione</option>
-                                <option value="1">ODP al Exterior</option>
+                            <select id="cboTipoProducto" onchange="cargaEstruturaPrecioData()">
+                                <option value="1" selected="selected">ODP al Exterior</option>
                                 <option value="2">Financiamiento Contado</option>
                                 <option value="3">Otro Financiamiento</option>
                             </select>
                         </div>
                     </td>
+                </tr>
                 <tr>
                     <td width="20%">
                         <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tipo Moneda: </label></b>
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoMoneda">
-                                <option value="0" selected="selected">Seleccione</option>
-                                <option value="1">Dolar (USD)</option>
+                            <select id="cboTipoMoneda" onchange="cargaEstruturaPrecioData()">
+                                <option value="1" selected="selected">Dolar (USD)</option>
                                 <option value="2">Euro (EUR)</option>
                                 <option value="3">Peso (CLP)</option>
                             </select>
@@ -138,8 +138,6 @@
                     </td>
                     <td width="60%">&nbsp;</td>
                 </tr>
-                </tr>
-
             </table>
 
             <table style="width: 100%; border-top: 5px">
@@ -150,1023 +148,110 @@
                 </tr>
                 <tr>
                     <td>
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tabla de Precios :</label></b>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tabla de Precios: </label></b>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblTarifado" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td id="tdca" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="5">
-                                    <label class="cabeceraBE2">Microempresas</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Tramo</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR Garantizado</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo BEN</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray;">
-                                    <label class="labelBE2">Comisión</label>
-                                </td>
-                                <td id="td1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión Prorroga</label>
-                                </td>
-                                <td id="td2" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
-                                </td>
-                                <td id="td3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">0 - 500 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in1" type="text" value="50,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in2" type="text" value="320,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in3" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in4" type="text" value="220,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="td4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">12,00 (USD)</label>
-                                </td>
-                                <td id="td5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">4,50</label>
-                                </td>
-                                <td id="td6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">01/12/2015</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">501 - 1,000 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in5" type="text" value="654,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in6" type="text" value="75,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in7" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in8" type="text" value="75,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="td7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">14,00 (USD)</label>
-                                </td>
-                                <td id="td8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">3,50</label>
-                                </td>
-                                <td id="td9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">14/06/2012</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">1,001 - 1,500 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in9" type="text" value="123,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in10" type="text" value="123,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in11" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in12" type="text" value="90,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="td10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">85,00 (USD)</label>
-                                </td>
-                                <td id="td11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">1,50</label>
-                                </td>
-                                <td id="td12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">18/09/2013</label>
-                                </td>
-                            </tr>
-                        </table>
-                        <table id="tblTarifadocontroles" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr>
-                                <td width="15%" rowspan="1">
-                                    <label class="labelBE2">Fecha Vigencia :</label>
-                                </td>
-                                <td width="35%">
-                                    <label class="labelBE2">Desde</label> <input id="fein1" disabled size="13" maxlength="10" type="text" placeholder="01/02/2020" />&nbsp&nbsp<label class="labelBE2">Hora</label> <input id="hoin1" disabled size="8" maxlength="5" type="text" placeholder="00:00" />
-                                </td>
-                                <td width="20%">
-                                    <button style="width:100px; text-align:center" id="btnModificarMicro" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(1, 1)">Editar</button>
-                                </td>
-                                <td width="20%">
-                                    <button style="width:100px; text-align:center" id="btnGuardarMicro" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(1, 0)">Guardar</button>
-                                </td>
-                            </tr>
-                        </table>
-                        <br />
-                        <table id="tblTarifado2" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td id="tdca2" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="5">
-                                    <label class="cabeceraBE2">Pequeña Empresa</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Tramo</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR Garantizado</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo BEN</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión</label>
-                                </td>
-                                <td id="tda1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión Prorroga</label>
-                                </td>
-                                <td id="tda2" style="text-align: right; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
-                                </td>
-                                <td id="tda3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">1,501 - 2,000 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in13" type="text" value="351,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in14" type="text" value="351,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in15" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in16" type="text" value="20,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tda4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">23,00 (USD)</label>
-                                </td>
-                                <td id="tda5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">2,50</label>
-                                </td>
-                                <td id="tda6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">24/11/2019</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">2,001 - 2,500 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in17" type="text" value="234,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in18" type="text" value="234,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in19" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in20" type="text" value="54,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tda7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">13,00 (USD)</label>
-                                </td>
-                                <td id="tda8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">2,34</label>
-                                </td>
-                                <td id="tda9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">27/08/2016</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">2,501 - 3,000 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in21" type="text" value="200,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in22" type="text" value="200,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in23" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in24" type="text" value="45,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tda10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">33,00 (USD)</label>
-                                </td>
-                                <td id="tda11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">1,20</label>
-                                </td>
-                                <td id="tda12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">15/05/2011</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">3,001 - 3,500 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in25" type="text" value="200,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in26" type="text" value="200,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in27" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in28" type="text" value="45,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdf13" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">33,00 (USD)</label>
-                                </td>
-                                <td id="tdf14" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">1,20</label>
-                                </td>
-                                <td id="tdf15" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">15/05/2011</label>
-                                </td>
-                            </tr>
-                        </table>
-                        <table id="tblTarifadocontroles" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr>
-                                <td width="15%" rowspan="1">
-                                    <label class="labelBE2">Fecha Vigencia :</label>
-                                </td>
-                                <td width="35%">
-                                    <label class="labelBE2">Desde</label> <input id="fein2" disabled size="13" maxlength="10" type="text" placeholder="01/02/2020" />&nbsp&nbsp<label class="labelBE2">Hora</label> <input id="hoin2" disabled size="8" maxlength="5" type="text" placeholder="00:00" />
-                                </td>
-                                <td align="center" width="20%">
-                                    <button style="width:100px; text-align:center" id="btnModificarPequeña" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(2, 1)">Editar</button>
-                                </td>
-                                <td align="center" width="20%">
-                                    <button style="width:100px; text-align:center" id="btnGuardarPequeña" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(2, 0)">Guardar</button>
-                                </td>
-                            </tr>
-                        </table>
-                        <br />
-                        <table id="tblTarifado3" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td id="tdca3" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="5">
-                                    <label class="cabeceraBE2">Medianas Empresas</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Tramo</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR Garantizado</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo BEN</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión</label>
-                                </td>
-                                <td id="tdb1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión Prorroga</label>
-                                </td>
-                                <td id="tdb2" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
-                                </td>
-                                <td id="tdb3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">3,001 - 3,500 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in29" type="text" value="250,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in30" type="text" value="250,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in31" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in32" type="text" value="76,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdb4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">43,00 (USD)</label>
-                                </td>
-                                <td id="tdb5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">6,35</label>
-                                </td>
-                                <td id="tdb6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">30/08/2012</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">3,501 - 4,000 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in33" type="text" value="221,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in34" type="text" value="221,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in35" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in36" type="text" value="24,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdb7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">17,00 (USD)</label>
-                                </td>
-                                <td id="tdb8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">6,10</label>
-                                </td>
-                                <td id="tdb9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">30/06/2017</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">4,001 - 4,500 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in37" type="text" value="200,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in38" type="text" value="200,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in39" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in40" type="text" value="65,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdb10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">81,00 (USD)</label>
-                                </td>
-                                <td id="tdb11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">3,56</label>
-                                </td>
-                                <td id="tdb12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">19/02/2014</label>
-                                </td>
-                            </tr>
-                        </table>
-                        <table id="tblTarifadocontroles" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr>
-                                <td width="15%" rowspan="1">
-                                    <label class="labelBE2">Fecha Vigencia :</label>
-                                </td>
-                                <td width="35%">
-                                    <label class="labelBE2">Desde</label> <input id="fein3" disabled size="13" maxlength="10" type="text" placeholder="01/01/2020" />&nbsp&nbsp<label class="labelBE2">Hora</label> <input id="hoin3" disabled size="8" maxlength="5" type="text" placeholder="00:10" />
-                                </td>
-                                <td align="center" width="20%">
-                                    <button style="width:100px; text-align:center" id="btnModificarMedianas" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(3, 1)">Editar</button>
-                                </td>
-                                <td align="center" width="20%">
-                                    <button style="width:100px; text-align:center" id="btnGuardarMedianas" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(3, 0)">Guardar</button>
-                                </td>
-                            </tr>
-                        </table>
-                        <br />
-                        <table id="tblTarifado4" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td id="tdca4" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="5">
-                                    <label class="cabeceraBE2">Grandes empresas</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Tramo</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR Garantizado</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo BEN</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión</label>
-                                </td>
-                                <td id="tdc1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión Prorroga</label>
-                                </td>
-                                <td id="tdc2" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
-                                </td>
-                                <td id="tdc3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">4,501 - 5,000 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in41" type="text" value="250,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in42" type="text" value="250,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in43" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in44" type="text" value="28,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdc4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">33,00 (USD)</label>
-                                </td>
-                                <td id="tdc5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">1,12</label>
-                                </td>
-                                <td id="tdc6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">06/10/2014</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">5,001 - 5,500 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in45" type="text" value="245,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in46" type="text" value="245,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in47" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in48" type="text" value="24,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdc7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">34,00 (USD)</label>
-                                </td>
-                                <td id="tdc8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">7,10</label>
-                                </td>
-                                <td id="tdc9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">12/09/2018</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">5,501 - 6,000 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in49" type="text" value="123,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in50" type="text" value="123,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in51" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in52" type="text" value="45,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdc10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">63,00 (USD)</label>
-                                </td>
-                                <td id="tdc11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">3,50</label>
-                                </td>
-                                <td id="tdc12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">11/03/2010</label>
-                                </td>
-                            </tr>
-                        </table>
-                        <table id="tblTarifadocontroles" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr>
-                                <td width="15%" rowspan="1">
-                                    <label class="labelBE2">Fecha Vigencia :</label>
-                                </td>
-                                <td width="35%">
-                                    <label class="labelBE2">Desde</label> <input id="fein4" disabled size="13" maxlength="10" type="text" placeholder="01/02/2020" />&nbsp&nbsp<label class="labelBE2">Hora</label> <input id="hoin4" disabled size="8" maxlength="5" type="text" placeholder="00:00" />
-                                </td>
-                                <td align="center" width="20%">
-                                    <button style="width:100px; text-align:center" id="btnModificarGrandes" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(4, 1)">Editar</button>
-                                </td>
-                                <td align="center" width="20%">
-                                    <button style="width:100px; text-align:center" id="btnGuardarGrandes" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(4, 0)">Guardar</button>
-                                </td>
-                            </tr>
-                        </table>
-                        <br />
-                        <table id="tblTarifado5" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td id="tdca5" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="5">
-                                    <label class="cabeceraBE2">Inmobiliaria</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Tramo</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR Garantizado</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo BEN</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión</label>
-                                </td>
-                                <td id="tdd1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión Prorroga</label>
-                                </td>
-                                <td id="tdd2" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
-                                </td>
-                                <td id="tdd3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">6,001 - 6,500 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in53" type="text" value="356,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in54" type="text" value="356,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in55" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in56" type="text" value="35,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdd4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">45,00 (USD)</label>
-                                </td>
-                                <td id="tdd5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">8,50</label>
-                                </td>
-                                <td id="tdd6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">04/05/2011</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">6,501 - 7,000 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in57" type="text" value="321,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in58" type="text" value="321,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in59" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in60" type="text" value="42,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdd7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">34,00 (USD)</label>
-                                </td>
-                                <td id="tdd8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">1,78</label>
-                                </td>
-                                <td id="tdd9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">05/12/2013</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">7,001 - 7,500 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in61" type="text" value="324,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in62" type="text" value="324,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in63" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in64" type="text" value="60,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdd10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">13,00 (USD)</label>
-                                </td>
-                                <td id="tdd11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">9,12</label>
-                                </td>
-                                <td id="tdd12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">29/07/2014</label>
-                                </td>
-                            </tr>
-                        </table>
-                        <table id="tblTarifadocontroles" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr>
-                                <td width="15%" rowspan="1">
-                                    <label class="labelBE2">Fecha Vigencia :</label>
-                                </td>
-                                <td width="35%">
-                                    <label class="labelBE2">Desde</label> <input id="fein5" disabled size="13" maxlength="10" type="text" placeholder="01/02/2020" />&nbsp&nbsp<label class="labelBE2">Hora</label> <input id="hoin5" disabled size="8" maxlength="5" type="text" placeholder="00:00" />
-                                </td>
-                                <td align="center" width="20%">
-                                    <button style="width:100px; text-align:center" id="btnModificarInmobiliaria" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(5, 1)">Editar</button>
-                                </td>
-                                <td align="center" width="20%">
-                                    <button style="width:100px; text-align:center" id="btnGuardarInmobiliaria" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(5, 0)">Guardar</button>
-                                </td>
-                            </tr>
-                        </table>
-                        <br />
-                        <table id="tblTarifado6" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td id="tdca6" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="5">
-                                    <label class="cabeceraBE2">Institucional</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Tramo</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR Garantizado</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo BEN</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión</label>
-                                </td>
-                                <td id="tde1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión Prorroga</label>
-                                </td>
-                                <td id="tde2" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
-                                </td>
-                                <td id="tde3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">7,501 - 8,000 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in65" type="text" value="124,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in66" type="text" value="124,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in67" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in68" type="text" value="50,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tde4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">43,00 (USD)</label>
-                                </td>
-                                <td id="tde5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">6,50</label>
-                                </td>
-                                <td id="tde6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">18/04/2011</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">8,001 - 8,500 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in69" type="text" value="543,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in70" type="text" value="543,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in71" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in72" type="text" value="24,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tde7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">42,00 (USD)</label>
-                                </td>
-                                <td id="tde8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">1,89</label>
-                                </td>
-                                <td id="tde9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">31/04/2010</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">8,501 - 9,000 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in73" type="text" value="234,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in74" type="text" value="234,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in75" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in76" type="text" value="60,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tde10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">13,00 (USD)</label>
-                                </td>
-                                <td id="tde11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">12,90</label>
-                                </td>
-                                <td id="tde12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">02/02/2016</label>
-                                </td>
-                            </tr>
-                        </table>
-                        <table id="tblTarifadocontroles" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr>
-                                <td width="15%" rowspan="1">
-                                    <label class="labelBE2">Fecha Vigencia :</label>
-                                </td>
-                                <td width="35%">
-                                    <label class="labelBE2">Desde</label> <input id="fein6" disabled size="13" maxlength="10" type="text" placeholder="01/02/2020" />&nbsp&nbsp<label class="labelBE2">Hora</label> <input id="hoin6" disabled size="8" maxlength="5" type="text" placeholder="00:00" />
-                                </td>
-                                <td align="center" width="20%">
-                                    <button style="width:100px; text-align:center" id="btnModificarInstitucional" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(6, 1)">Editar</button>
-                                </td>
-                                <td align="center" width="20%">
-                                    <button style="width:100px; text-align:center" id="btnGuardarInstitucional" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(6, 0)">Guardar</button>
-                                </td>
-                            </tr>
-                        </table>
-                        <br />
-                        <table id="tblTarifado7" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td id="tdca7" style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="5">
-                                    <label class="cabeceraBE2">Corporativa</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Tramo</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo OUR Garantizado</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Costo BEN</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión</label>
-                                </td>
-                                <td id="tdf1" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Comisión Prorroga</label>
-                                </td>
-                                <td id="tdf2" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Spread Ejecutivo (%)</label>
-                                </td>
-                                <td id="tdf3" style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">9,001 - 9,500 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in77" type="text" value="412,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in78" type="text" value="412,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in79" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in80" type="text" value="12,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdf4" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">34,00 (USD)</label>
-                                </td>
-                                <td id="tdf5" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">5,45</label>
-                                </td>
-                                <td id="tdf6" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">13/05/2018</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">9,501 - 10,000 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in81" type="text" value="123,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in82" type="text" value="123,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in83" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in84" type="text" value="43,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdf7" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">12,00 (USD)</label>
-                                </td>
-                                <td id="tdf8" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">5,75</label>
-                                </td>
-                                <td id="tdf9" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">04/05/2013</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">10,001 - 10,500 (USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in85" type="text" value="132,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in86" type="text" value="132,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in87" type="text" value="0" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(CLP)</label>
-                                </td>
-                                <td style="text-align: right; border: 1px solid; border-color: darkgray">
-                                    <input id="in88" type="text" value="50,00" size="10" disabled style="text-align:center" maxlength="30" />
-                                    <label class="labelBE2">(USD)</label>
-                                </td>
-                                <td id="tdf10" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">34,00 (USD)</label>
-                                </td>
-                                <td id="tdf11" style="text-align: right; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">4,60</label>
-                                </td>
-                                <td id="tdf12" style="text-align: center; display: none; border: 1px solid; border-color: darkgray">
-                                    <label class="labelBE2">24/09/2019</label>
-                                </td>
-                            </tr>
-                        </table>
-                        <table id="tblTarifadocontroles" style="width: 60%; border: 1px solid; border-color: darkgray">
-                            <tr>
-                                <td width="15%" rowspan="1">
-                                    <label class="labelBE2">Fecha Vigencia :</label>
-                                </td>
-                                <td width="35%">
-                                    <label class="labelBE2">Desde</label> <input id="fein7" disabled size="13" maxlength="10" type="text" placeholder="06/04/2020" />&nbsp&nbsp<label class="labelBE2">Hora</label> <input id="hoin7" disabled size="8" maxlength="5" type="text" placeholder="23:59" />
-                                </td>
-                                <td align="center" width="20%">
-                                    <button style="width:100px; text-align:center" id="btnModificarCorporativa" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(7, 1)">Editar</button>
-                                </td>
-                                <td align="center" width="20%">
-                                    <button style="width:100px; text-align:center" id="btnGuardarCorporativa" class="botonBE" onclick="habilitaDeshabilitaCamposEstructura(7, 0)">Guardar</button>
-                                </td>
-                            </tr>
-                        </table>
+                        <table id="tblPrecioData1" style="width: 90%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPreciocontroles1" style="width: 70%; border: 1px solid; border-color: darkgray"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPrecioData2" style="width: 90%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPreciocontroles2" style="width: 70%; border: 1px solid; border-color: darkgray"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPrecioData3" style="width: 90%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPreciocontroles3" style="width: 70%; border: 1px solid; border-color: darkgray"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPrecioData4" style="width: 90%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPreciocontroles4" style="width: 70%; border: 1px solid; border-color: darkgray"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPrecioData5" style="width: 90%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPreciocontroles5" style="width: 70%; border: 1px solid; border-color: darkgray"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPrecioData6" style="width: 90%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPreciocontroles6" style="width: 70%; border: 1px solid; border-color: darkgray"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPrecioData7" style="width: 90%; border: 0px solid; border-color: darkgray; text-decoration-color: white"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPreciocontroles7" style="width: 70%; border: 1px solid; border-color: darkgray"></table>
+                    </td>
+                </tr>
             </table>
-
         </div>
 
         @Scripts.Render("~/bundles/jquery")
