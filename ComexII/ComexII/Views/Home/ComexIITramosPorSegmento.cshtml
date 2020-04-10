@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body>
+<body onload="cargaTramosSegmento();">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -99,7 +99,7 @@
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
-                    <td>
+                    <td colspan="3">
                         &nbsp;
                     </td>
                 </tr>
@@ -110,11 +110,13 @@
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboSegmento" onchange="cargaTramosSegmento()">
-                                <option value="1" selected="selected">Seleccione</option>
-                                <option value="2">Corporativo</option>
-                                <option value="3">MicroEmpresa</option>
-                                <option value="4">Pequeña Empresa</option>
-                                <option value="5">Grandes Empresas</option>
+                                <option value="1" selected="selected">Microempresas</option>
+                                <option value="2">Pequeña Empresa</option>
+                                <option value="3">Medianas Empresas</option>
+                                <option value="4">Grandes Empresas</option>
+                                <option value="5">Inmobiliaria</option>
+                                <option value="6">Institucional</option>
+                                <option value="7">Corporativa</option>
                             </select>
                         </div>
                     </td>
@@ -129,27 +131,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4">
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tramos</label></b>
+                    <td>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tramos Vigentes :</label></b>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4">
-                        <table id="tblTramos" style="width: 40%; border: 1px solid; border-color: darkgray">
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray"></td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Nombre</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Monto desde</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray">
-                                    <label class="labelBE2">Monto hasta</label>
-                                </td>
-                            </tr>
+                    <td>
+                        <table id="tblTramos" style="width: 50%; border: 1px solid; border-color: darkgray">
                         </table>
                     </td>
+                </tr>
             </table>
 
             <table style="width: 100%; border-top: 5px">
@@ -159,7 +150,26 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="5">
+                    <td>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tramos Nuevos :</label></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblTramosNuevos" style="width: 50%; border: 1px solid; border-color: darkgray">
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
                         <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Parametros :</label></b>
                     </td>
                 </tr>
