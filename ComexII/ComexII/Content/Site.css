@@ -189,6 +189,20 @@ img.icon-det:hover {
     transition-duration: 0.1s;
 }
 
+.botonBE:Disabled {
+    background-color: #C19E96;
+    border: none;
+    color: white;
+    padding: 5px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.1s;
+}
+
 .botonBERed {
     background-color: #FF3333;
     border: none;

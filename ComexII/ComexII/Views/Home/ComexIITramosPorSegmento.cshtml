@@ -105,7 +105,7 @@
                 </tr>
                 <tr>
                     <td width="20%">
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Segmento</label></b>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Segmento :</label></b>
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
@@ -117,6 +117,21 @@
                                 <option value="5">Inmobiliaria</option>
                                 <option value="6">Institucional</option>
                                 <option value="7">Corporativa</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td width="60%">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tipo Moneda :</label></b>
+                    </td>
+                    <td width="30%">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboTipoMoneda" onchange="cargaTramosSegmento()">
+                                <option value="1" selected="selected">Dolar (USD)</option>
+                                <option value="2">Euro (EUR)</option>
+                                <option value="3">Peso (CLP)</option>
                             </select>
                         </div>
                     </td>
@@ -200,13 +215,16 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <button id="btnAgregar" class="botonBE">
+                        <button id="btnAgregar" class="botonBE" onclick="agregarTramo()">
                             Agregar
                         </button>
-                        <button id="btnModificar" class="botonBE">
-                            Modificar
+                        <button id="btnEditar" disabled class="botonBE">
+                            Editar
                         </button>
-                        <button id="btnEliminar" class="botonBE">
+                        <button id="btnActualizar" disabled class="botonBE">
+                            Actualizar
+                        </button>
+                        <button id="btnEliminar" class="botonBE" onclick="eliminarTramo()">
                             Eliminar
                         </button>
                     </td>
