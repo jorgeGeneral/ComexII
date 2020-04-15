@@ -111,29 +111,34 @@
                 </tr>
                 <tr>
                     <td>
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tabla de Parámetros</label></b>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Lista :</label></b>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <table id="myTable" style="width: 100%; border: 1px solid; border-color: darkgray">
                             <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="60'">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="6">
+                                    <label class="cabeceraBE2">Parámetros</label>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid; border-color: darkgray">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="5%">
                                     <label class="labelBE2"></label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="420">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="30%">
                                     <label class="labelBE2">Parámetro</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="150">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="13%">
                                     <label class="labelBE2">Valor</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="160">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%">
                                     <label class="labelBE2">Usuario</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="160">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="18%">
                                     <label class="labelBE2">Fecha - Hora</label>
                                 </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="290">
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="24%">
                                     <label class="labelBE2">Observación</label>
                                 </td>
                             </tr>
@@ -145,7 +150,7 @@
                                     Cantidad de borradores permitidos por cliente
                                 </td>
                                 <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <input id="txt1" type="text" value="50" size="30" disabled style="text-align:center" maxlength="10" />
+                                    <input id="txt1" type="text" value="50" size="25" disabled style="text-align:center" maxlength="10" />
                                 </td>
                                 <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
                                     rjara8
@@ -165,7 +170,7 @@
                                     Cantidad de órdenes de pago por solicitud
                                 </td>
                                 <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <input id="txt3" type="text" value="20" size="30" disabled style="text-align:center" maxlength="10" />
+                                    <input id="txt3" type="text" value="20" size="25" disabled style="text-align:center" maxlength="10" />
                                 </td>
                                 <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
                                     rjara8
@@ -185,7 +190,7 @@
                                     Hora para caducidad de solicitud con compra de divisa sin autorizar
                                 </td>
                                 <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <input id="txt5" type="text" value="15:00" size="30" disabled style="text-align:center" maxlength="10" />
+                                    <input id="txt5" type="text" value="15:00" size="25" disabled style="text-align:center" maxlength="10" />
                                 </td>
                                 <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
                                     wparra
@@ -209,8 +214,7 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <button id="btnGrabar" class="botonBE">Grabar</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button id="btnCancelar" class="botonBE">Cancelar</button>
+                        <button id="btnActualizar" class="botonBE" onclick="actualizarParametros()">Actualizar</button>
                     </td>
                 </tr>
             </table>

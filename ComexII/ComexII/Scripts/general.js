@@ -102,17 +102,6 @@ function cambiaGrillaPrecioEspecial() {
     }
 }
 
-function habilita(radio, txt1, txt2) {
-    var i = (document.getElementById("myTable").rows.length - 1) * 2;
-    for (x = 1; x <= i; x++) {
-        document.getElementById("txt" + x).disabled = true;
-        document.getElementById("txt" + x).disabled = true;
-    }
-    if (radio.checked) {
-        document.getElementById(txt1).disabled = false;
-        document.getElementById(txt2).disabled = false;
-    }
-}
 
 function cambiaGrillaTarifa() {
     if (document.getElementById("cboTipoProducto").value == "2") {
@@ -621,18 +610,46 @@ function cargaTramosSegmento() {
 }
 
 function agregarTramo() {
+    // Funcion para bajar el scroll
+    var y = $(window).scrollTop();
+    $('html, body').animate({ scrollTop: y + 150 }, 100) //milisegundo
+
+
     var len = $('#tblTramosNuevos tr').length;
     if (len == 0) {
         $('#tblTramosNuevos').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="2"><label class="cabeceraBE2">Tramos por Segmento</label></td></tr>');
         $('#tblTramosNuevos').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray"><label class="labelBE2">Monto desde</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray"><label class="labelBE2">Monto hasta</label></td></tr>');
-        $('#tblTramosNuevos').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="trDesde1" type="text" value="0" size="10" style="text-align:right; width:50%" maxlength="15"/>&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="trHasta1" type="text" value="0" size="10" style="text-align:right; width:50%" maxlength="15"/>&nbsp;<label class="labelBE2">(USD)</label></td></tr>');
+        $('#tblTramosNuevos').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="trDesde1" disabled type="text" value="0" size="10" style="text-align:right; width:50%" maxlength="15"/>&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="trHasta1" disabled type="text" value="0" size="10" style="text-align:right; width:50%" maxlength="15"/>&nbsp;<label class="labelBE2">(USD)</label></td></tr>');
     } else {
         len--;
-        $('#tblTramosNuevos').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="trDesde' + len + '" type="text" value="0" size="10" style="text-align:right; width:50%" maxlength="15"/>&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="trHasta' + len + '" type="text" value="0" size="10" style="text-align:right; width:50%" maxlength="15"/>&nbsp;<label class="labelBE2">(USD)</label></td></tr>');
+        $('#tblTramosNuevos').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="trDesde' + len + '" disabled type="text" value="0" size="10" style="text-align:right; width:50%" maxlength="15"/>&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="trHasta' + len + '" disabled type="text" value="0" size="10" style="text-align:right; width:50%" maxlength="15"/>&nbsp;<label class="labelBE2">(USD)</label></td></tr>');
     }
     $('#btnEditar').removeAttr('disabled');
     $('#btnActualizar').removeAttr('disabled');
 }
+
+function editarTramo() {
+    var len = $('#tblTramosNuevos tr').length;
+    if (len > 0) {
+        for (var i = 1; i < (len - 1); i++) {
+            $('#trDesde'+i).removeAttr('disabled');
+            $('#trHasta'+i).removeAttr('disabled');
+        }
+    }
+}
+
+function actualizarTramo() {
+    var len = $('#tblTramosNuevos tr').length;
+    alert("Datos guardados correctamente");
+
+    if (len > 0) {
+        for (var i = 1; i < (len - 1); i++) {
+            $('#trDesde' + i).attr('disabled', 'disabled');
+            $('#trHasta' + i).attr('disabled', 'disabled');
+        }
+    }
+}
+
 
 function eliminarTramo() {
     $('#tblTramosNuevos').empty();
@@ -646,6 +663,35 @@ function eliminarTramo() {
 
 
 
+////////////////////////////////////
+//      Parametros
+////////////////////////////////////
+function actualizarParametros() {
+    var i = ($('#myTable tr').length - 2) * 2;
+    for (x = 1; x <= i; x++) {
+        $('#txt' + x).prop('disabled',true);
+    }
+    $('#r1').prop('checked', false);
+    $('#r2').prop('checked', false);
+    $('#r3').prop('checked', false);
+
+    alert("Datos guardados correctamente");
+}
+
+function habilita(radio, txt1, txt2) {
+    var i = ($('#myTable tr').length - 2) * 2;
+    for (x = 1; x <= i; x++) {
+        $('#txt' + x).prop('disabled', true);
+    }
+    if (radio.checked) {
+        $('#' + txt1).prop('disabled', false);
+        $('#' + txt2).prop('disabled', false);
+    }
+}
+
+////////////////////////////////////
+//      Fin Parametros
+////////////////////////////////////
 
 ////////////////////////////////////
 //      Bandeja de Autorización
