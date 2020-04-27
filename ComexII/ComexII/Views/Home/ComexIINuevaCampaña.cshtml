@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body>
+<body onload="grillaNuevaCampaña()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -104,6 +104,11 @@
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="5">
                         <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Parametros :</label></b>
                     </td>
@@ -142,77 +147,40 @@
                 </tr>
                 <tr>
                     <td width="20%">
-                        <label class="labelBE2">Seleccione Monto Transado para Campaña :</label>
-                    </td>
-                    <td width="20%">
-                        <div class="custom-select" style="width: 100%; float: left">
-                            <select id="cboSegmentoParam"></select>
-                        </div>
-                    </td>
-                    <td width="60%">&nbsp</td>
-                </tr>
-                <tr>
-                    <td width="20%">
-                        <label class="labelBE2">Costo SWIFT (por MT 103) :</label>
-                    </td>
-                    <td width="20%">
-                        <input type="text" size="27" style="text-align:right" />
-                    </td>
-                    <td width="60%">&nbsp</td>
-                </tr>
-                <tr>
-                    <td width="20%">
-                        <label class="labelBE2">Comisión:</label>
-                    </td>
-                    <td width="20%">
-                        <input type="text" size="27" style="text-align:right" />
-                    </td>
-
-                    <td width="60%">&nbsp</td>
-                </tr>
-                <tr>
-                    <td width="20%">
                         <label class="labelBE2">Fecha de Vigencia :</label>
                     </td>
                     <td width="20%" colspan="2">
                         <label class="labelBE2">Desde</label> <input type="text" placeholder="dd/mm/aaaa" />  <label class="labelBE2">Hasta</label> <input type="text" placeholder="dd/mm/aaaa" />
                     </td>
                 </tr>
-                <tr class="tr_mod" style="display: none;">
-                    <td width="20%">
-                        <label class="labelBE2">Comisión Prorroga (USD) :</label>
+            </table>
+            <table style="width: 100%; border-top: 5px">
+                <tr>
+                    <td>
+                        &nbsp;
                     </td>
-                    <td width="20%">
-                        <input type="text" size="27" style="text-align:right" />
-                    </td>
-                    <td width="60%">&nbsp</td>
                 </tr>
-                <tr class="tr_mod" style="display: none;">
-                    <td width="20%">
-                        <label class="labelBE2">Spread Ejecutivo (%) :</label>
+                <tr>
+                    <td>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tabla de Datos:</label></b>
                     </td>
-                    <td width="20%">
-                        <input type="text" size="27" style="text-align:right" />
-                    </td>
-                    <td width="60%">&nbsp</td>
                 </tr>
-                <tr class="tr_mod" style="display: none;">
-                    <td width="20%">
-                        <label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label>
+                <tr>
+                    <td>
+                        <table id="tblNuevaCamp" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
-                    <td width="20%">
-                        <input type="text" placeholder="dd/mm/aaaa" size="27" />
-                    </td>
-                    <td width="60%">&nbsp</td>
-                </tr>
-
             </table>
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
                     <td align="right">
-                        <button id="btnCrearCampaña" class="botonBE" onclick="msgCrearCampaña()">Crear Campaña</button>
-                        <button id="btnCancelarCampaña" class="botonBE" onclick="msgCancelaCampaña()">Cancelar</button>
+                        <button id="btnEdita" class="botonBE">Editar</button>
+                        <button id="btnSolicitaAutorizar" class="botonBE" onclick="msgCrearCampaña()">Solicita Autorizar</button>
                         <button id="btnVolver" class="botonBE" onclick="javascript:window.history.back()">Volver</button>
                     </td>
                 </tr>
