@@ -134,6 +134,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\arrow5.png" />
     <Content Include="Content\Images\cabecera.png" />
     <Content Include="Content\Images\cancel.png" />
     <Content Include="Content\Images\cancel1.png" />
@@ -143,9 +144,7 @@
     <Content Include="Content\Images\delete2.png" />
     <Content Include="Content\Images\excel-icon.png" />
     <Content Include="Content\Images\flecha.jpg" />
-    <Content Include="Content\Images\img\calendar.gif" />
-    <Content Include="Content\Images\lupa.png" />
-    <Content Include="Content\Images\lupa1.png" />
+    <Content Include="Content\Images\calendar.gif" />
     <Content Include="Content\Images\lupa2.png" />
     <Content Include="Content\Images\print-icon.png" />
     <Content Include="favicon.ico" />
@@ -201,6 +200,7 @@
     <Content Include="Views\Gestion\ComexIIConsultaHistoricoCampañas.cshtml" />
     <Content Include="Views\Gestion\ComexIITarifasCampañasHistorica.cshtml" />
     <Content Include="Views\Gestion\ComexIIConsultaHistoricoPreciosEspeciales.cshtml" />
+    <Content Include="Views\Gestion\ComexIIBandejaPE.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

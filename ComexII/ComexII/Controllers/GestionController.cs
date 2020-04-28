@@ -54,6 +54,10 @@ namespace ComexII.Controllers
         {
             return View();
         }
+        public ActionResult ComexIIBandejaPE()
+        {
+            return View();
+        }
         public ActionResult ComexIIMonitoreoCompraDivisa()
         {
             return View();
