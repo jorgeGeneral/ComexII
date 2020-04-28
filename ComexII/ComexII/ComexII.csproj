@@ -200,7 +200,12 @@
     <Content Include="Views\Gestion\ComexIIConsultaHistoricoCampañas.cshtml" />
     <Content Include="Views\Gestion\ComexIITarifasCampañasHistorica.cshtml" />
     <Content Include="Views\Gestion\ComexIIConsultaHistoricoPreciosEspeciales.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Gestion\ComexIIBandejaPE.cshtml" />
+=======
+    <Content Include="Views\Gestion\ComexIIIngresoPreciosEspeciales.cshtml" />
+    <Content Include="Views\Gestion\ComexIIRutClienteIngresoPrecioEspecial.cshtml" />
+>>>>>>> 5c54969b83253181807c911419a54182060a1b12
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
