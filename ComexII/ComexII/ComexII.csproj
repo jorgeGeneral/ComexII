@@ -120,7 +120,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\GestionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UtilitarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -175,29 +178,29 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\ComexIIEstructuraPrecio.cshtml" />
-    <Content Include="Views\Home\ComexIIMatrizTarifado.cshtml" />
-    <Content Include="Views\Home\ComexIIParametrizacionGastos.cshtml" />
-    <Content Include="Views\Home\ComexIIParametros.cshtml" />
-    <Content Include="Views\Home\ComexIIPreciosEspeciales.cshtml" />
-    <Content Include="Views\Home\ComexIITarifasCampañas.cshtml" />
-    <Content Include="Views\Home\ComexIIRutCliente.cshtml" />
+    <Content Include="Views\Gestion\ComexIIEstructuraPrecio.cshtml" />
+    <Content Include="Views\Cliente\ComexIIMatrizTarifado.cshtml" />
+    <Content Include="Views\Utilitario\ComexIIParametrizacionGastos.cshtml" />
+    <Content Include="Views\Utilitario\ComexIIParametros.cshtml" />
+    <Content Include="Views\Cliente\ComexIIPreciosEspeciales.cshtml" />
+    <Content Include="Views\Gestion\ComexIITarifasCampañas.cshtml" />
+    <Content Include="Views\Cliente\ComexIIRutCliente.cshtml" />
     <Content Include="Views\Home\ComexIIConsultaDetalleCliente.cshtml" />
     <Content Include="Views\Home\ComexIIClonaDatos.cshtml" />
-    <Content Include="Views\Home\ComexIIConsultaClienteTarifado.cshtml" />
-    <Content Include="Views\Home\ComexIITramosPorSegmento.cshtml" />
-    <Content Include="Views\Home\ComexIIBandejaAutorizaciones.cshtml" />
-    <Content Include="Views\Home\ComexIIConsultaCampañas.cshtml" />
-    <Content Include="Views\Home\ComexIIMonitoreoCompraDivisa.cshtml" />
-    <Content Include="Views\Home\ComexIIHistoricoCompraDivisa.cshtml" />
-    <Content Include="Views\Home\ComexIIParametroControlCompraDivisa.cshtml" />
-    <Content Include="Views\Home\ComexIIControlTiempoCompraDivisa.cshtml" />
-    <Content Include="Views\Home\ComexIIRutClientePreciosEspeciales.cshtml" />
-    <Content Include="Views\Home\ComexIINuevaCampaña.cshtml" />
-    <Content Include="Views\Home\ComexIIConsultaPrecios.cshtml" />
-    <Content Include="Views\Home\ComexIIConsultaHistoricoCampañas.cshtml" />
-    <Content Include="Views\Home\ComexIITarifasCampañasHistorica.cshtml" />
-    <Content Include="Views\Home\ComexIIConsultaHistoricoPreciosEspeciales.cshtml" />
+    <Content Include="Views\Gestion\ComexIIConsultaClienteTarifado.cshtml" />
+    <Content Include="Views\Utilitario\ComexIITramosPorSegmento.cshtml" />
+    <Content Include="Views\Gestion\ComexIIBandejaAutorizaciones.cshtml" />
+    <Content Include="Views\Gestion\ComexIIConsultaCampañas.cshtml" />
+    <Content Include="Views\Gestion\ComexIIMonitoreoCompraDivisa.cshtml" />
+    <Content Include="Views\Gestion\ComexIIHistoricoCompraDivisa.cshtml" />
+    <Content Include="Views\Utilitario\ComexIIParametroControlCompraDivisa.cshtml" />
+    <Content Include="Views\Utilitario\ComexIIControlTiempoCompraDivisa.cshtml" />
+    <Content Include="Views\Cliente\ComexIIRutClientePreciosEspeciales.cshtml" />
+    <Content Include="Views\Gestion\ComexIINuevaCampaña.cshtml" />
+    <Content Include="Views\Gestion\ComexIIConsultaPrecios.cshtml" />
+    <Content Include="Views\Gestion\ComexIIConsultaHistoricoCampañas.cshtml" />
+    <Content Include="Views\Gestion\ComexIITarifasCampañasHistorica.cshtml" />
+    <Content Include="Views\Gestion\ComexIIConsultaHistoricoPreciosEspeciales.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

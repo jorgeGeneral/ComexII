@@ -491,8 +491,8 @@ C:\Respaldo\Trabajo\Proyectos\ComexII\ComexII\ComexII\bin\es\System.Web.Razor.re
 C:\Respaldo\Trabajo\Proyectos\ComexII\ComexII\ComexII\bin\es\System.Web.WebPages.resources.dll
 C:\Respaldo\Trabajo\Proyectos\ComexII\ComexII\ComexII\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Respaldo\Trabajo\Proyectos\ComexII\ComexII\ComexII\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Respaldo\Trabajo\Proyectos\ComexII\ComexII\ComexII\obj\Debug\ComexII.csprojAssemblyReference.cache
 C:\Respaldo\Trabajo\Proyectos\ComexII\ComexII\ComexII\obj\Debug\ComexII.csproj.CoreCompileInputs.cache
 C:\Respaldo\Trabajo\Proyectos\ComexII\ComexII\ComexII\obj\Debug\ComexII.csproj.CopyComplete
 C:\Respaldo\Trabajo\Proyectos\ComexII\ComexII\ComexII\obj\Debug\ComexII.dll
 C:\Respaldo\Trabajo\Proyectos\ComexII\ComexII\ComexII\obj\Debug\ComexII.pdb
+C:\Respaldo\Trabajo\Proyectos\ComexII\ComexII\ComexII\obj\Debug\ComexII.csprojAssemblyReference.cache
