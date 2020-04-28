@@ -105,6 +105,32 @@
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
+                    <td width="20%">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Funcionalidad :</label></b>
+                    </td>
+                    <td width="30%">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboTipoFuncionalidad" onchange="armaParametrosPantalla()">
+                                <option value="0" selected="selected">Seleccione</option>
+                                <option value="1">pantalla 1</option>
+                                <option value="2">pantalla 2</option>
+                                <option value="3">pantalla 3</option>
+                                <option value="4">pantalla 4</option>
+                                <option value="5">pantalla 5</option>
+                                <option value="6">pantalla 6</option>
+                                <option value="7">pantalla 7</option>
+                                <option value="8">pantalla 8</option>
+                                <option value="9">pantalla 9</option>
+                                <option value="10">pantalla 10</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td width="60%">&nbsp;</td>
+                </tr>
+            </table>
+
+            <table style="width: 100%; border-top: 5px">
+                <tr>
                     <td>
                         &nbsp;
                     </td>
@@ -116,93 +142,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="myTable" style="width: 100%; border: 1px solid; border-color: darkgray">
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="6">
-                                    <label class="cabeceraBE2">Parámetros</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="5%">
-                                    <label class="labelBE2"></label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="30%">
-                                    <label class="labelBE2">Parámetro</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="13%">
-                                    <label class="labelBE2">Valor</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%">
-                                    <label class="labelBE2">Usuario</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="18%">
-                                    <label class="labelBE2">Fecha - Hora</label>
-                                </td>
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="24%">
-                                    <label class="labelBE2">Observación</label>
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <input id="r1" type="radio" value="1" name="cambia" onchange="habilita(r1,'txt1', 'txt2')" />
-                                </td>
-                                <td class="labelBE2" style="text-align: left; border: 1px solid; border-color: darkgray">
-                                    Cantidad de borradores permitidos por cliente
-                                </td>
-                                <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <input id="txt1" type="text" value="50" size="25" disabled style="text-align:center" maxlength="10" />
-                                </td>
-                                <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    rjara8
-                                </td>
-                                <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    20/12/2018 - 10:02:35
-                                </td>
-                                <td class="labelBE2" style="text-align: left;border: 1px solid; border-color: darkgray">
-                                    <input id="txt2" type="text" value="Máximo solicitado por Waldo Parra y Mauricio Peña" size="60" disabled maxlength="50" />
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <input id="r2" type="radio" value="2" name="cambia" onchange="habilita(r2,'txt3','txt4')">
-                                </td>
-                                <td class="labelBE2" style="text-align: left; border: 1px solid; border-color: darkgray">
-                                    Cantidad de órdenes de pago por solicitud
-                                </td>
-                                <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <input id="txt3" type="text" value="20" size="25" disabled style="text-align:center" maxlength="10" />
-                                </td>
-                                <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    rjara8
-                                </td>
-                                <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    01/11/2018 - 14:35:30
-                                </td>
-                                <td class="labelBE2" style="text-align: left; border: 1px solid; border-color: darkgray">
-                                    <input id="txt4" type="text" size="60" disabled maxlength="50" />
-                                </td>
-                            </tr>
-                            <tr style="border: 1px solid; border-color: darkgray">
-                                <td style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <input id="r3" type="radio" value="3" name="cambia" onchange="habilita(r3, 'txt5', 'txt6')">
-                                </td>
-                                <td class="labelBE2" style="text-align: left; border: 1px solid; border-color: darkgray">
-                                    Hora para caducidad de solicitud con compra de divisa sin autorizar
-                                </td>
-                                <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    <input id="txt5" type="text" value="15:00" size="25" disabled style="text-align:center" maxlength="10" />
-                                </td>
-                                <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    wparra
-                                </td>
-                                <td class="labelBE2" style="text-align: center; border: 1px solid; border-color: darkgray">
-                                    20/12/2018 - 11:30:14
-                                </td>
-                                <td class="labelBE2" style="text-align: left; border: 1px solid; border-color: darkgray">
-                                    <input id="txt6" type="text" size="60" disabled maxlength="50" />
-                                </td>
-                            </tr>
-                        </table>
+                        <table id="tablaParametros" style="width: 100%; border: 1px solid; border-color: darkgray"></table>
                     </td>
             </table>
 
@@ -214,7 +154,7 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <button id="btnActualizar" class="botonBE" onclick="actualizarParametros()">Actualizar</button>
+                        <button id="btnAutorizar" class="botonBE" disabled onclick="actualizarParametros()">Solicita Autorización</button>
                     </td>
                 </tr>
             </table>

@@ -134,6 +134,7 @@ function msgEliminaCampaña() {
 }
 
 function msgCrearCampaña() {
+    editaNuevaCampaña(2);
     alert("Campaña se creo correctamente, queda pendiente de aprobación");
 }
 /////////////////// Nueva Campaña ////////////////////
@@ -660,38 +661,6 @@ function eliminarTramo() {
 
 ////////////////////////////////////
 //      Fin Tramos por segmento
-////////////////////////////////////
-
-
-
-////////////////////////////////////
-//      Parametros
-////////////////////////////////////
-function actualizarParametros() {
-    var i = ($('#myTable tr').length - 2) * 2;
-    for (x = 1; x <= i; x++) {
-        $('#txt' + x).prop('disabled',true);
-    }
-    $('#r1').prop('checked', false);
-    $('#r2').prop('checked', false);
-    $('#r3').prop('checked', false);
-
-    alert("Datos guardados correctamente");
-}
-
-function habilita(radio, txt1, txt2) {
-    var i = ($('#myTable tr').length - 2) * 2;
-    for (x = 1; x <= i; x++) {
-        $('#txt' + x).prop('disabled', true);
-    }
-    if (radio.checked) {
-        $('#' + txt1).prop('disabled', false);
-        $('#' + txt2).prop('disabled', false);
-    }
-}
-
-////////////////////////////////////
-//      Fin Parametros
 ////////////////////////////////////
 
 ////////////////////////////////////
@@ -1807,13 +1776,128 @@ function cancelaCampana() {
 
 function grillaNuevaCampaña() {
 
-
     document.getElementById("tblNuevaCamp").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="5"><label class="cabeceraBE2">Microempresas</label></td></tr>';
     document.getElementById("tblNuevaCamp").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray"><label class="labelBE2">Tramo</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray"><label class="labelBE2">Costo Swift</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray"><label class="labelBE2">Costo OUR</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray"><label class="labelBE2">Costo OUR Garantizado</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray;"><label class="labelBE2">Comisión</label></td><td style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray"><label class="labelBE2">Comisión Prorroga</label></td><td style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray"><label class="labelBE2">Spread Ejecutivo (%)</label></td><td style="text-align: center; display: none; border: 1px solid; border-color: darkgray; background-color: lightgray"><label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label></td></tr>';
-    document.getElementById("tblNuevaCamp").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">0 - 500 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="in1" type="text" value="0" size="10" disabled style="text-align:right; width:80%" maxlength="15"/>&nbsp;<label class="labelBE2">(CLP)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="in2" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="in3" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="in4" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td></tr>';
-    document.getElementById("tblNuevaCamp").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">501 - 1,000 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="in5" type="text" value="0" size="10" disabled style="text-align:right; width:80%" maxlength="15"/>&nbsp;<label class="labelBE2">(CLP)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="in6" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="in7" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="in8" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td></tr>';
-    document.getElementById("tblNuevaCamp").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">1,001 - 1,500 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="in9" type="text" value="0" size="10" disabled style="text-align:right; width:80%" maxlength="15"/>&nbsp;<label class="labelBE2">(CLP)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="in10" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="in11" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="in12" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td></tr>';
-
-
+    document.getElementById("tblNuevaCamp").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">0 - 500 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="cm1" type="text" value="0" size="10" disabled style="text-align:right; width:80%" maxlength="15"/>&nbsp;<label class="labelBE2">(CLP)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="cm2" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="cm3" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="cm4" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td></tr>';
+    document.getElementById("tblNuevaCamp").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">501 - 1,000 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="cm5" type="text" value="0" size="10" disabled style="text-align:right; width:80%" maxlength="15"/>&nbsp;<label class="labelBE2">(CLP)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="cm6" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="cm7" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="cm8" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td></tr>';
+    document.getElementById("tblNuevaCamp").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">1,001 - 1,500 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="cm9" type="text" value="0" size="10" disabled style="text-align:right; width:80%" maxlength="15"/>&nbsp;<label class="labelBE2">(CLP)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="cm10" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="cm11" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><input id="cm12" type="text" value="0,00" size="10" disabled style="text-align:right; width:80%" maxlength="15" />&nbsp;<label class="labelBE2">(USD)</label></td></tr>';
 
 }
+
+function editaNuevaCampaña(id) {
+
+    switch (id) {
+        case 1:
+            document.getElementById("cm1").disabled = false; document.getElementById("cm2").disabled = false; document.getElementById("cm3").disabled = false;
+            document.getElementById("cm4").disabled = false; document.getElementById("cm5").disabled = false; document.getElementById("cm6").disabled = false;
+            document.getElementById("cm7").disabled = false; document.getElementById("cm8").disabled = false; document.getElementById("cm9").disabled = false;
+            document.getElementById("cm10").disabled = false; document.getElementById("cm11").disabled = false; document.getElementById("cm12").disabled = false;
+            document.getElementById("btnSolicitaAutorizar").disabled = false;
+            document.getElementById("btnEdita").disabled = true;
+            break;
+        case 2:
+            document.getElementById("cm1").disabled = true; document.getElementById("cm2").disabled = true; document.getElementById("cm3").disabled = true;
+            document.getElementById("cm4").disabled = true; document.getElementById("cm5").disabled = true; document.getElementById("cm6").disabled = true;
+            document.getElementById("cm7").disabled = true; document.getElementById("cm8").disabled = true; document.getElementById("cm9").disabled = true;
+            document.getElementById("cm10").disabled = true; document.getElementById("cm11").disabled = true; document.getElementById("cm12").disabled = true;
+            document.getElementById("btnSolicitaAutorizar").disabled = true;
+            document.getElementById("btnEdita").disabled = false;
+            break;
+    }
+
+}
+
+//****************************************************************
+//Funcionalidad parametros por pantalla
+
+function armaParametrosPantalla() {
+
+    var idFuncionalidad = document.getElementById("cboTipoFuncionalidad").value;
+    $('#tablaParametros').empty();
+
+    switch (idFuncionalidad) {
+        case "1":
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="7"><label class="cabeceraBE2">Pantalla 1</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="4%"><label class="labelBE2"></label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Parámetro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Valor</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Tipo Parametro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Usuario</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Fecha - Hora</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Observación</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '';
+            break;
+        case "2":
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="7"><label class="cabeceraBE2">Pantalla 2</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="4%"><label class="labelBE2"></label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Parámetro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Valor</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Tipo Parametro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Usuario</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Fecha - Hora</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Observación</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '';
+            break;
+        case "3":
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="7"><label class="cabeceraBE2">Pantalla 3</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="4%"><label class="labelBE2"></label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Parámetro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Valor</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Tipo Parametro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Usuario</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Fecha - Hora</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Observación</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '';
+            break;
+        case "4":
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="7"><label class="cabeceraBE2">Pantalla 4</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="4%"><label class="labelBE2"></label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Parámetro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Valor</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Tipo Parametro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Usuario</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Fecha - Hora</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Observación</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '';
+            break;
+        case "5":
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="7"><label class="cabeceraBE2">Pantalla 5</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="4%"><label class="labelBE2"></label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Parámetro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Valor</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Tipo Parametro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Usuario</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Fecha - Hora</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Observación</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '';
+            break;
+        case "6":
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="7"><label class="cabeceraBE2">Pantalla 6</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="4%"><label class="labelBE2"></label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Parámetro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Valor</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Tipo Parametro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Usuario</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Fecha - Hora</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Observación</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '';
+            break;
+        case "7":
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="7"><label class="cabeceraBE2">Pantalla 7</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="4%"><label class="labelBE2"></label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Parámetro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Valor</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Tipo Parametro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Usuario</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Fecha - Hora</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Observación</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '';
+            break;
+        case "8":
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="7"><label class="cabeceraBE2">Pantalla 8</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="4%"><label class="labelBE2"></label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Parámetro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Valor</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Tipo Parametro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Usuario</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Fecha - Hora</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Observación</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '';
+            break;
+        case "9":
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="7"><label class="cabeceraBE2">Pantalla 9</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="4%"><label class="labelBE2"></label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Parámetro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Valor</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Tipo Parametro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Usuario</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Fecha - Hora</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Observación</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '';
+            break;
+        case "10":
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="7"><label class="cabeceraBE2">Pantalla 10</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="4%"><label class="labelBE2"></label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Parámetro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Valor</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Tipo Parametro</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Usuario</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="10%"><label class="labelBE2">Fecha - Hora</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray" width="28%"><label class="labelBE2">Observación</label></td></tr>';
+            document.getElementById("tablaParametros").insertRow(-1).innerHTML = '';
+            break;
+    }
+
+}
+
+//****************************************************************
+//      Parametros
+//****************************************************************
+function actualizarParametros() {
+    var i = ($('#myTable tr').length - 2) * 2;
+    for (x = 1; x <= i; x++) {
+        $('#txt' + x).prop('disabled', true);
+    }
+    $('#r1').prop('checked', false);
+    $('#r2').prop('checked', false);
+    $('#r3').prop('checked', false);
+
+    alert("Datos guardados correctamente");
+}
+
+function habilita(radio, txt1, txt2) {
+    var i = ($('#myTable tr').length - 2) * 2;
+    for (x = 1; x <= i; x++) {
+        $('#txt' + x).prop('disabled', true);
+    }
+    if (radio.checked) {
+        $('#' + txt1).prop('disabled', false);
+        $('#' + txt2).prop('disabled', false);
+    }
+}
+
+//****************************************************************
+//      Fin Parametros
+//****************************************************************
+
+
