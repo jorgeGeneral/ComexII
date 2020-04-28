@@ -62,5 +62,13 @@ namespace ComexII.Controllers
         {
             return View();
         }
+        public ActionResult ComexIIIngresoPreciosEspeciales()
+        {
+            return View();
+        }
+        public ActionResult ComexIIRutClienteIngresoPrecioEspecial()
+        {
+            return View();
+        }
     }
 }
