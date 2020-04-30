@@ -108,20 +108,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="right">
-                        <b><label class="labelBE">Gerente :</label></b>
+                    <td>
+                        &nbsp;<b><label class="labelBE">Gerente :</label></b>
                     </td>
                     <td>
-                        @*<div class="custom-select" style="width: 90%; float: left">
-            <select id="cboGerente">
-                <option value="1" selected="selected">Seleccione</option>
-                <option value="2">Gerente Ejemplo Prueba</option>
-            </select>
-        </div>*@
                         <b><label class="labelBE">Alexis Herrera</label></b>
                     </td>
-                    <td align="right">
-                        <b><label class="labelBE">Jefe Grupo :</label></b>
+                    <td>
+                        &nbsp;<b><label class="labelBE">Jefe Grupo :</label></b>
                     </td>
                     <td>
                         <div class="custom-select" style="width: 90%; float: left">
@@ -132,8 +126,8 @@
                             </select>
                         </div>
                     </td>
-                    <td align="right">
-                        <b><label class="labelBE">Ejecutivos :</label></b>
+                    <td>
+                        &nbsp;<b><label class="labelBE">Ejecutivos :</label></b>
                     </td>
                     <td>
                         <div class="custom-select" style="width: 90%; float: left">
@@ -146,11 +140,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="right">
+                    <td>
+                        &nbsp;<b><label class="labelBE">N° Solicitud :</label></b>
+                    </td>
+                    <td>
+                        <input id="txtSolicitud" type="text" size="15" />
+                    </td>
+                    <td>
                         &nbsp;<b><label class="labelBE">Estado :</label></b>
                     </td>
                     <td>
-                        <div class="custom-select" style="width: 80%; float: left">
+                        <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboEstadoBdj">
                                 <option value="1" selected="selected">Pendiente de Firma</option>
                                 <option value="2">Rechazado</option>
@@ -159,13 +159,12 @@
                             </select>
                         </div>
                     </td>
-                    <td align="right">
+                    <td>
                         &nbsp;<b><label class="labelBE">Fecha Ingreso :</label></b>
                     </td>
                     <td>
                         <input id="txtFechaBdj" type="text" size="15" placeholder="dd/mm/yyyy" />
                     </td>
-                    <td colspan="2"></td>
                 </tr>
             </table>
 
@@ -195,9 +194,9 @@
                     <td>
                         <table id="tblResulBandeja" style="width: 100%; border: 1px solid; border-color: darkgray">
                             <tr style="border: 1px solid; border-color: darkgray">
-                                @*<td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 8%;">
-                                    <label class="labelBE2">Ejecutivo</label>
-                                </td>*@
+                                <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 8%;">
+                                    <label class="labelBE2">Solicitud</label>
+                                </td>
                                 <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 15%;">
                                     <label class="labelBE2">Nombre ejecutivo</label>
                                 </td>

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Bandeja Precios Especiales";
+    ViewBag.Title = "Bandeja Campañas";
 }
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0" />
     <link rel="shortcut icon" href="" />
-    <meta name="description" content="Comex II - Bandeja Precios Especiales" />
+    <meta name="description" content="Comex II - Bandeja Campañas" />
     <meta name="author" content="Sermaluc S.A." />
 
     @Styles.Render("~/Content/css")
@@ -59,11 +59,11 @@
 
 </head>
 
-<body onload="cargaBandejaPE()">
+<body onload="cargaBandejaCampañas()">
     <center>
         <div id="wait" class="modal"></div>
 
-        <div id="dialog-message" title="Bandeja Precios Especiales" style="display: none">
+        <div id="dialog-message" title="Bandeja Campañas" style="display: none">
             <br />
             <strong>
                 <label class="labelBE" id="lblMsg" style="text-align: center"></label>
@@ -90,9 +90,7 @@
             <table style="width: 100%">
                 <tr>
                     <td colspan="4">
-                        <div class="Titulo1BE">
-                            Bandeja Precios Especiales
-                        </div>
+                        <div class="Titulo1BE">Bandeja Campañas</div>
                     </td>
                 </tr>
                 <tr>
@@ -114,55 +112,39 @@
                     </td>
                 </tr>
                 <tr>
-                    <td width="14%">
-                        <label class="labelBE2">Nombre Empresa:</label>
-                    </td>
-                    <td width="20%">
-                        <label class="labelBE2" id="lbl">Sociedad Importadora Lorden S.A.</label>
-                    </td>
-                    <td width="6%">
-                    </td>
-                    <td width="12%">
-                        <label class="labelBE2">Rut Empresa:</label>
+                    <td width="10%">
+                        &nbsp;<label class="labelBE2">Segmento:</label>
                     </td>
                     <td width="14%">
-                        <label class="labelBE2" id="lbl">96.599.240-9</label>
-                    </td>
-                    <td width="4%">
-                    </td>
-                    <td width="14%">
-                        <label class="labelBE2">Segmento:</label>
-                    </td>
-                    <td width="18%">
                         <label class="labelBE2" id="lbl">Grandes Empresas</label>
                     </td>
                     <td width="8%">
                     </td>
-                </tr>
-                <tr>
-                    <td width="14%">
-                        <label class="labelBE2">Ejecutivo:</label>
+                    <td width="10%">
+                        &nbsp;<label class="labelBE2">Ejecutivo:</label>
                     </td>
-                    <td width="20%">
+                    <td width="14%">
                         <label class="labelBE2" id="lbl">Hernandez Javier</label>
                     </td>
-                    <td width="6%">
+                    <td width="44%">
                     </td>
-                    <td width="12%">
-                        <label class="labelBE2">N° Solicitud:</label>
+                </tr>
+                <tr>
+                    <td width="10%">
+                        &nbsp;<label class="labelBE2">N° Solicitud:</label>
                     </td>
                     <td width="14%">
                         <label class="labelBE2" id="lbl">000015</label>
                     </td>
-                    <td width="4%">
+                    <td width="8%">
+                    </td>
+                    <td width="10%">
+                        &nbsp;<label class="labelBE2">Fecha Ingreso:</label>
                     </td>
                     <td width="14%">
-                        <label class="labelBE2">Fecha Ingreso:</label>
-                    </td>
-                    <td width="18%">
                         <label class="labelBE2" id="lbl">27/04/2020</label>
                     </td>
-                    <td width="8%">
+                    <td width="44%">
                     </td>
                 </tr>
             </table>
@@ -181,7 +163,7 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <table id="tblAntesBandejaPE" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
+                        <table id="tblAntesBandejaCampaña" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
                 </tr>
                 <tr>
@@ -203,7 +185,7 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <table id="tblDespuesBandejaPE" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
+                        <table id="tblDespuesBandejaCampaña" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
                 </tr>
             </table>
