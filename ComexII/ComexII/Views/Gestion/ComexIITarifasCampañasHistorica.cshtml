@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body onload="cambiaGrillaHistCamp();">
+<body>
     <center>
         <div id="wait" class="modal"></div>
 
@@ -115,10 +115,8 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoProducto" onchange="cambiaGrillaHistCamp()">
-                                <option value="1" selected="selected">ODP al Exterior</option>
-                                <option value="2">Financiamiento Contado</option>
-                                <option value="3">Otro Financiamiento</option>
+                            <select id="cboTipoProducto" disabled>
+                                <option value="2" selected="selected">Financiamiento Contado</option>
                             </select>
                         </div>
                     </td>
@@ -141,52 +139,102 @@
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
-                    <td colspan="5">
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tabla de Precios</label></b>
+                    <td colspan="9">
+                        &nbsp;
                     </td>
                 </tr>
                 <tr>
-                    <td width="8%">
-                        <label class="labelBE2">Id Campaña :</label>
+                    <td colspan="9">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Datos Generales :</label></b>
                     </td>
-                    <td width="20%">
-                        <input type="text" disabled value="0005" />
-                    </td>
-                    <td width="8%">
-                        <label class="labelBE2">Nombre :</label>
-                    </td>
-                    <td width="20%">
-                        <input type="text" disabled value="Campaña Fiestas Patrias 2020" size="30"/>
-                    </td>
-                    <td width="44%"></td>
                 </tr>
                 <tr>
+                    <td width="10%">
+                        <label class="labelBE2">Id Campaña:</label>
+                    </td>
+                    <td width="18%">
+                        <label class="labelBE2" id="lblId"></label>
+                    </td>
                     <td width="8%">
-                        <label class="labelBE2">Fecha Inicio :</label>
                     </td>
-                    <td width="20%">
-                        <input type="text" disabled placeholder="05/09/2020" />
+                    <td width="10%">
+                        <label class="labelBE2">Nombre:</label>
+                    </td>
+                    <td width="16%">
+                        <label class="labelBE2" id="lblNombre"></label>
                     </td>
                     <td width="8%">
-                        <label class="labelBE2">Fecha Fin :</label>
                     </td>
-                    <td width="20%">
-                        <input type="text" disabled placeholder="05/10/2020" />
+                    <td width="8%">
+                        <label class="labelBE2">Responsable:</label>
                     </td>
-                    <td width="44%"></td>
+                    <td width="12%">
+                        <label class="labelBE2" id="lblResponsable"></label>
+                    </td>
+                    <td width="10%"></td>
+                </tr>
+                <tr>
+                    <td width="10%">
+                        <label class="labelBE2">Segmento:</label>
+                    </td>
+                    <td width="18%">
+                        <label class="labelBE2" id="lblSegmento"></label>
+                    </td>
+                    <td width="8%">
+                    </td>
+                    <td width="10%">
+                        <label class="labelBE2">Estado:</label>
+                    </td>
+                    <td width="16%">
+                        <label class="labelBE2" id="lblEstado"></label>
+                    </td>
+                    <td width="8%">
+                    </td>
+                    <td width="10%"></td>
+                </tr>
+                <tr>
+                    <td width="10%">
+                        <label class="labelBE2">Fecha Inicio:</label>
+                    </td>
+                    <td width="18%">
+                        <label class="labelBE2" id="lblFecInicio"></label>
+                    </td>
+                    <td width="8%">
+                    </td>
+                    <td width="10%">
+                        <label class="labelBE2">Fecha Fin:</label>
+                    </td>
+                    <td width="16%">
+                        <label class="labelBE2" id="lblFecFin"></label>
+                    </td>
+                    <td width="10%"></td>
                 </tr>
                 <tr><td colspan="5"></td></tr>
                 <tr><td colspan="5"></td></tr>
                 <tr><td colspan="5"></td></tr>
                 <tr>
-                    <td colspan="5">
-                        <table id="tblTarifado" style="width: 40%; border: 1px solid; border-color: darkgray">
-                        </table>
+                    <td colspan="8">
+                        <table id="tblTarifado" style="width: 90%; border: 1px solid; border-color: darkgray"></table>
                     </td>
+                </tr>
             </table>
-
             <table style="width: 100%; border-top: 5px">
                 <tr>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" width="10%">
+                        <button id="btnCancelar" class="botonBE" onclick="cancelaCampana()">
+                            Cancelar
+                        </button>
+                    </td>
+                    <td align="left" width="10%">
+                        <button id="btnEliminar" class="botonBE" onclick="eliminaCampana()">
+                            Eliminar
+                        </button>
+                    </td>
                     <td align="right">
                         <button id="btnVolver" class="botonBE" onclick="javascript:window.history.back()">
                             Volver
@@ -194,12 +242,17 @@
                     </td>
                 </tr>
             </table>
+
         </div>
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
 
     </center>
+
+    <script>
+        cargaDataHisCampaña();
+    </script>
 
 </body>
 </html>
