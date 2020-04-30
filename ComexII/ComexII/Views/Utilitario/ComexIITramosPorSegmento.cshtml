@@ -152,8 +152,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblTramos" style="width: 50%; border: 1px solid; border-color: darkgray">
-                        </table>
+                        <table id="tblTramos" style="width: 35%; border: 1px solid; border-color: darkgray"></table>
                     </td>
                 </tr>
             </table>
@@ -166,13 +165,14 @@
                 </tr>
                 <tr>
                     <td>
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tramos Nuevos :</label></b>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px"/>&nbsp;<b><label class="labelBE">Tramos Nuevos :</label></b>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <table id="tblTramosNuevos" style="width: 50%; border: 1px solid; border-color: darkgray">
-                        </table>
+                    <td width="20%" colspan="2">
+                        <label class="labelBE2">Monto Desde:</label>&nbsp;<input style="text-align:right" type="text" placeholder="0" />
+                        <label class="labelBE2">Monto Hasta:</label>&nbsp;<input style="text-align:right" type="text" placeholder="0" />
+                        <button id="btnAgregar" class="botonBE" onclick="agregarTramo()">Agregar Tramo</button>
                     </td>
                 </tr>
             </table>
@@ -184,11 +184,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <td align="left">
+                        <button id="btnEditar" class="botonBE" onclick="editarTramo()">Editar Tramos</button>
+                        <button id="btnEditar" class="botonBE" onclick="editarTramo()">Eliminar Tramos</button>
+                    </td>
                     <td align="right">
-                        <button id="btnAgregar" class="botonBE" onclick="agregarTramo()">Agregar</button>
-                        <button id="btnEditar" disabled class="botonBE" onclick="editarTramo()">Editar</button>
-                        <button id="btnActualizar" disabled class="botonBE" onclick="actualizarTramo()">Actualizar</button>
-                        <button id="btnEliminar" class="botonBE" onclick="eliminarTramo()">Eliminar</button>
+                        <button id="btnActualizar" class="botonBE" onclick="actualizarTramo()">Solicita Autorizar</button>
                     </td>
                 </tr>
             </table>
