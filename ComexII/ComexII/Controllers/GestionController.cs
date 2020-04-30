@@ -58,6 +58,14 @@ namespace ComexII.Controllers
         {
             return View();
         }
+        public ActionResult ComexIIBandejaTramos()
+        {
+            return View();
+        }
+        public ActionResult ComexIIBandejaCampañas()
+        {
+            return View();
+        }
         public ActionResult ComexIIMonitoreoCompraDivisa()
         {
             return View();
