@@ -139,12 +139,17 @@
     <Content Include="Content\Images\cancel.png" />
     <Content Include="Content\Images\cancel1.png" />
     <Content Include="Content\Images\cancel2.png" />
+    <Content Include="Content\Images\check_nok.png" />
+    <Content Include="Content\Images\check_ok2.png" />
     <Content Include="Content\Images\clienteRut.png" />
     <Content Include="Content\Images\delete1.png" />
     <Content Include="Content\Images\delete2.png" />
     <Content Include="Content\Images\excel-icon.png" />
     <Content Include="Content\Images\flecha.jpg" />
     <Content Include="Content\Images\calendar.gif" />
+    <Content Include="Content\Images\Line2_nok1.png" />
+    <Content Include="Content\Images\Line2_nok2.png" />
+    <Content Include="Content\Images\Line2_ok.png" />
     <Content Include="Content\Images\lupa2.png" />
     <Content Include="Content\Images\print-icon.png" />
     <Content Include="favicon.ico" />
