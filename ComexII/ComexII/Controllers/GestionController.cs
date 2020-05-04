@@ -62,7 +62,7 @@ namespace ComexII.Controllers
         {
             return View();
         }
-        public ActionResult ComexIIBandejaCampañas()
+        public ActionResult ComexIIBandejaCampaña()
         {
             return View();
         }

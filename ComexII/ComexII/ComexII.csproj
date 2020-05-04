@@ -203,7 +203,7 @@
     <Content Include="Views\Gestion\ComexIIBandejaPE.cshtml" />
     <Content Include="Views\Gestion\ComexIIIngresoPreciosEspeciales.cshtml" />
     <Content Include="Views\Gestion\ComexIIRutClienteIngresoPrecioEspecial.cshtml" />
-    <Content Include="Views\Gestion\ComexIIBandejaCampañas.cshtml" />
+    <Content Include="Views\Gestion\ComexIIBandejaCampaña.cshtml" />
     <Content Include="Views\Gestion\ComexIIBandejaTramos.cshtml" />
   </ItemGroup>
   <ItemGroup>
