@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body onload="cargaTipoProducto(), cargaTipoSegmento(), grillaNuevaCampaña()">
+<body onload="cargaTipoProducto(), cargaTipoSegmento(), cargaTipoMoneda(), grillaNuevaCampaña()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -131,6 +131,17 @@
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboSegmento" onchange="llenarCombo()"></select>
+                        </div>
+                    </td>
+                    <td width="60%">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <label class="labelBE2">Tipo Moneda :</label>
+                    </td>
+                    <td width="30%">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboTipoMoneda"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>
