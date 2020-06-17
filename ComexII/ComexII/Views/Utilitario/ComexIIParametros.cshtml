@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body>
+<body onload="cargaTipoFuncionalidadPantalla(), armaParametrosPantalla()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -110,19 +110,7 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoFuncionalidad" onchange="armaParametrosPantalla()">
-                                <option value="0" selected="selected">Seleccione</option>
-                                <option value="1">pantalla 1</option>
-                                <option value="2">pantalla 2</option>
-                                <option value="3">pantalla 3</option>
-                                <option value="4">pantalla 4</option>
-                                <option value="5">pantalla 5</option>
-                                <option value="6">pantalla 6</option>
-                                <option value="7">pantalla 7</option>
-                                <option value="8">pantalla 8</option>
-                                <option value="9">pantalla 9</option>
-                                <option value="10">pantalla 10</option>
-                            </select>
+                            <select id="cboTipoFuncionalidad" onchange="armaParametrosPantalla()"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>

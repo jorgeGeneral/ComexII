@@ -61,7 +61,7 @@
 
 </head>
 
-<body onload="CargaDataIngresoPrecioEspeciales()">
+<body onload="cargaTipoProducto(), CargaDataIngresoPrecioEspeciales()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -145,11 +145,7 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoProducto" onchange="CargaDataIngresoPrecioEspeciales()">
-                                <option value="1" selected="selected">ODP al Exterior</option>
-                                <option value="2">Financiamiento Contado</option>
-                                <option value="3">Otro Financiamiento</option>
-                            </select>
+                            <select id="cboTipoProducto" onchange="CargaDataIngresoPrecioEspeciales()"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>

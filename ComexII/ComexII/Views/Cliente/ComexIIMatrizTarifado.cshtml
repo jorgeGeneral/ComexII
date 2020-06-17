@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body onload="cambiaGrillaTarifado();">
+<body onload="cargaTipoProducto(), cargaTipoMoneda(), cambiaGrillaTarifado()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -171,12 +171,7 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoProducto" onchange="cambiaGrillaTarifado()">
-                                <option value="1" selected="selected">ODP al Exterior</option>
-                                <option value="2">Financiamiento Contado</option>
-                                <option value="3">Otro Financiamiento</option>
-                                <option value="4">Todos los productos</option>
-                            </select>
+                            <select id="cboTipoProducto" onchange="cambiaGrillaTarifado()"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>
@@ -187,11 +182,7 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoMoneda" onchange="cambiaGrillaTarifado()">
-                                <option value="1" selected="selected">Dolar (USD)</option>
-                                <option value="2">Euro (EUR)</option>
-                                <option value="3">Peso (CLP)</option>
-                            </select>
+                            <select id="cboTipoMoneda" onchange="cambiaGrillaTarifado()"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>

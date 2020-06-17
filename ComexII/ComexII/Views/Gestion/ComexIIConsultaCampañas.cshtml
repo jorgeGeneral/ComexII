@@ -61,7 +61,7 @@
 
 </head>
 
-<body onload="cargaListadoCampañas()">
+<body onload="cargaTipoSegmento(), cargaListadoCampañas()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -112,12 +112,7 @@
                     </td>
                     <td width="30%" align="left">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboSegmento">
-                                <option value="1" selected="selected">Corporativo</option>
-                                <option value="2">Micro</option>
-                                <option value="3">Pequeña</option>
-                                <option value="4">Grandes Empresas</option>
-                            </select>
+                            <select id="cboSegmento"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>

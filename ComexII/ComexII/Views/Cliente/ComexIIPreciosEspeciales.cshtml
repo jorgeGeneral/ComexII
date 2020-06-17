@@ -61,7 +61,7 @@
 
 </head>
 
-<body onload="cambiaGrillaPrecioEspecial()">
+<body onload="cargaTipoProducto(), cambiaGrillaPrecioEspecial()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -143,13 +143,7 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoProducto" onchange="cambiaGrillaPrecioEspecial()">
-                                <option value="1" selected="selected">ODP al Exterior</option>
-                                <option value="2">Financiamiento Contado</option>
-                                <option value="3">Otro Financiamiento</option>
-                                <option value="4">Carta de Creditos</option>
-                                <option value="5">Todos los productos</option>
-                            </select>
+                            <select id="cboTipoProducto" onchange="cambiaGrillaPrecioEspecial()"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>

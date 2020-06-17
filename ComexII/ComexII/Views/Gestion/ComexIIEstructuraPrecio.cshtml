@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body onload="cargaEstruturaPrecioData()">
+<body onload="cargaTipoProducto(), cargaTipoMoneda(), cargaEstruturaPrecioData()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -115,11 +115,7 @@
                     </td>
                     <td width="20%">
                         <div class="custom-select" style="width: 100%; float: left">
-                            <select id="cboTipoProducto" onchange="cargaEstruturaPrecioData()">
-                                <option value="1" selected="selected">ODP al Exterior</option>
-                                <option value="2">Financiamiento Contado</option>
-                                <option value="3">Otro Financiamiento</option>
-                            </select>
+                            <select id="cboTipoProducto" onchange="cargaEstruturaPrecioData()"></select>
                         </div>
                     </td>
                 </tr>
@@ -129,11 +125,7 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoMoneda" onchange="cargaEstruturaPrecioData()">
-                                <option value="1" selected="selected">Dolar (USD)</option>
-                                <option value="2">Euro (EUR)</option>
-                                <option value="3">Peso (CLP)</option>
-                            </select>
+                            <select id="cboTipoMoneda" onchange="cargaEstruturaPrecioData()"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>

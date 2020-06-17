@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body>
+<body onload="cargaTipoMoneda()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -218,11 +218,7 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoMoneda" onchange="cambioMonedaPrecios()">
-                                <option value="1" selected="selected">Dolar (USD)</option>
-                                <option value="2">Euro (EUR)</option>
-                                <option value="3">Peso (CLP)</option>
-                            </select>
+                            <select id="cboTipoMoneda" onchange="cambioMonedaPrecios()"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>

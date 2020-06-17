@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body onload="cargaTramosSegmento();">
+<body onload="cargaTipoSegmento(), cargaTipoMoneda(), cargaTramosSegmento()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -109,15 +109,7 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboSegmento" onchange="cargaTramosSegmento()">
-                                <option value="1" selected="selected">Microempresas</option>
-                                <option value="2">Pequeña Empresa</option>
-                                <option value="3">Medianas Empresas</option>
-                                <option value="4">Grandes Empresas</option>
-                                <option value="5">Inmobiliaria</option>
-                                <option value="6">Institucional</option>
-                                <option value="7">Corporativa</option>
-                            </select>
+                            <select id="cboSegmento" onchange="cargaTramosSegmento()"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>
@@ -128,11 +120,7 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoMoneda" onchange="cargaTramosSegmento()">
-                                <option value="1" selected="selected">Dolar (USD)</option>
-                                <option value="2">Euro (EUR)</option>
-                                <option value="3">Peso (CLP)</option>
-                            </select>
+                            <select id="cboTipoMoneda" onchange="cargaTramosSegmento()"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>

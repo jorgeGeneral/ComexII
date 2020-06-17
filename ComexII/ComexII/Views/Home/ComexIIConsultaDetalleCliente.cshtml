@@ -60,7 +60,7 @@
 
 </head>
 
-<body>
+<body onload="cargaTipoGerente(), cargaTipoJefe(), cargaTipoEjecutivo()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -115,10 +115,7 @@
                     </td>
                     <td>
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboGerente">
-                                <option value="1" selected="selected">Seleccione</option>
-                                <option value="2">Gerente Ejemplo Prueba</option>
-                            </select>
+                            <select id="cboGerente"></select>
                         </div>
                     </td>
                 </tr>
@@ -128,11 +125,7 @@
                     </td>
                     <td>
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboJefe">
-                                <option value="1" selected="selected">Seleccione</option>
-                                <option value="2">Jefe Ejemplo Prueba</option>
-                                <option value="3">Todos</option>
-                            </select>
+                            <select id="cboJefe"></select>
                         </div>
                     </td>
                 </tr>
@@ -142,11 +135,7 @@
                     </td>
                     <td>
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboEjecutivo">
-                                <option value="1" selected="selected">Seleccione</option>
-                                <option value="2">Ejecutivo Ejemplo Prueba</option>
-                                <option value="3">Todos</option>
-                            </select>
+                            <select id="cboEjecutivo"></select>
                         </div>
                     </td>
                 </tr>

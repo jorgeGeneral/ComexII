@@ -60,7 +60,7 @@
     </style>
 </head>
 
-<body>
+<body onload="cargaTipoJefe(), cargaTipoEjecutivo(), cargaTipoEstadoBandeja()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -119,11 +119,7 @@
                     </td>
                     <td>
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboJefe">
-                                <option value="1" selected="selected">Seleccione</option>
-                                <option value="2">Jefe Ejemplo Prueba</option>
-                                <option value="3">Todos</option>
-                            </select>
+                            <select id="cboJefe"></select>
                         </div>
                     </td>
                     <td>
@@ -131,11 +127,7 @@
                     </td>
                     <td>
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboEjecutivo">
-                                <option value="1" selected="selected">Seleccione</option>
-                                <option value="2">Ejecutivo Ejemplo Prueba</option>
-                                <option value="3">Todos</option>
-                            </select>
+                            <select id="cboEjecutivo"></select>
                         </div>
                     </td>
                 </tr>
@@ -151,12 +143,7 @@
                     </td>
                     <td>
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboEstadoBdj">
-                                <option value="1" selected="selected">Pendiente de Firma</option>
-                                <option value="2">Rechazado</option>
-                                <option value="3">Autorizado</option>
-                                <option value="4">Todos</option>
-                            </select>
+                            <select id="cboEstadoBdj"></select>
                         </div>
                     </td>
                     <td>
@@ -200,9 +187,6 @@
                                 <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 15%;">
                                     <label class="labelBE2">Nombre ejecutivo</label>
                                 </td>
-                                @*<td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 8%;">
-                                    <label class="labelBE2">Estado Solicitud</label>
-                                </td>*@
                                 <td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 10%;">
                                     <label class="labelBE2">Fecha Ingreso</label>
                                 </td>

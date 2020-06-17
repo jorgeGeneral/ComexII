@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body>
+<body onload="cargaTipoProducto(), cargaTipoSegmento()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -109,11 +109,7 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoProducto" onchange="cambiaGrillaTarifa()">
-                                <option value="1" selected="selected">ODP al Exterior</option>
-                                <option value="2">Financiamiento Contado</option>
-                                <option value="3">Otro Financiamiento</option>
-                            </select>
+                            <select id="cboTipoProducto" onchange="cambiaGrillaTarifa()"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>
@@ -124,13 +120,7 @@
                     </td>
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboSegmento" onchange="agregarFila()">
-                                <option value="1" selected="selected">Seleccione</option>
-                                <option value="2">Corporativo</option>
-                                <option value="3">Micro</option>
-                                <option value="4">Pequeña</option>
-                                <option value="5">Grandes Empresas</option>
-                            </select>
+                            <select id="cboSegmento" onchange="agregarFila()"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>
