@@ -61,7 +61,7 @@
 
 </head>
 
-<body onload="cargaTipoProducto(), CargaDataIngresoPrecioEspeciales()">
+<body onload="cargaTipoProducto(), cargaTipoMoneda(), CargaDataIngresoPrecioEspeciales()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -146,6 +146,17 @@
                     <td width="30%">
                         <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboTipoProducto" onchange="CargaDataIngresoPrecioEspeciales()"></select>
+                        </div>
+                    </td>
+                    <td width="60%">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tipo Moneda :</label></b>
+                    </td>
+                    <td width="30%">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboTipoMoneda"></select>
                         </div>
                     </td>
                     <td width="60%">&nbsp;</td>
