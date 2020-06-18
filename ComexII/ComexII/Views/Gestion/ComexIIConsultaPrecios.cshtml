@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body onload="cargaTipoMoneda()">
+<body onload="cargaTipoMoneda(),consultaPrecios()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -266,6 +266,5 @@
         @Scripts.Render("~/bundles/bootstrap")
 
     </center>
-    <script>consultaPrecios();</script>
 </body>
 </html>
