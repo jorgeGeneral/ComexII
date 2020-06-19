@@ -1110,7 +1110,7 @@ function consultaPrecios() {
     $('#tblPreciosMT1').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label id="lblTramo13" class="labelBE2">1,001 - 1,500 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label id="lblMonOur13" class="labelBE2">45,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label id="lblMonOurGar13" class="labelBE2">45,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">0 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">30,00 (USD)</label></td></tr>');
 
     $('#tblPreciosMT2').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: #FF9D25" colspan="8"><label class="cabeceraBE2">Financiamiento Contado (Fecha Vigencia Desde: 02-05-2020 - Hasta: 01-06-2020)</label></td></tr>');
-    $('#tblPreciosMT2').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 15%;"><label class="labelBE2">Tramo</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 12%;"><label class="labelBE2">Gasto OUR</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 12%;"><label class="labelBE2">Gasto OUR Garantizado</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 12%;"><label class="labelBE2">Gasto Swift</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 12%;"><label class="labelBE2">Comisión</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 12%;"><label class="labelBE2">Comisión Prorroga</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 11%;"><label class="labelBE2">Spread Ejecutivo (%)</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 14%;"><label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label></td></tr>');
+    $('#tblPreciosMT2').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 20%;"><label class="labelBE2">Tramo</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 12%;"><label class="labelBE2">Gasto OUR</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 12%;"><label class="labelBE2">Gasto OUR Garantizado</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 11%;"><label class="labelBE2">Gasto Swift</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 11%;"><label class="labelBE2">Comisión</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 11%;"><label class="labelBE2">Comisión Prorroga</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 10%;"><label class="labelBE2">Spread Ejecutivo (%)</label></td><td style="text-align: center; border: 1px solid; border-color: darkgray; background-color: lightgray; width: 13%;"><label class="labelBE2">Fecha Vencimiento Spread Ejecutivo</label></td></tr>');
     $('#tblPreciosMT2').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label id="lblTramo21" class="labelBE2">0 - 500 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label id="lblMonOur21" class="labelBE2">55,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label id="lblMonOurGar21" class="labelBE2">50,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">0 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">35,00 (USD)</label></td><td id="td4" style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">23,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">2,50</label></td><td id="td6" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">21/05/2017</label></td></tr>');
     $('#tblPreciosMT2').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label id="lblTramo22" class="labelBE2">501 - 1,000 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label id="lblMonOur22" class="labelBE2">60,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label id="lblMonOurGar22" class="labelBE2">80,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">0 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">40,00 (USD)</label></td><td id="td7" style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">24,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">3,50</label></td><td id="td9" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">12/08/2018</label></td></tr>');
     $('#tblPreciosMT2').append('<tr style="border: 1px solid; border-color: darkgray"><td style="text-align: center; border: 1px solid; border-color: darkgray"><label id="lblTramo23" class="labelBE2">1,001 - 1,500 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label id="lblMonOur23" class="labelBE2">90,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label id="lblMonOurGar23" class="labelBE2">70,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">0 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">45,00 (USD)</label></td><td id="td10" style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">25,00 (USD)</label></td><td style="text-align: right; border: 1px solid; border-color: darkgray"><label class="labelBE2">4,50</label></td><td id="td12" style="text-align: center; border: 1px solid; border-color: darkgray"><label class="labelBE2">31/12/2019</label></td></tr>');
@@ -1237,6 +1237,14 @@ function cambioMonedaPrecios() {
         $('#lblTramo12').html('1.000.001 - 2.000.000 (CLP)');
         $('#lblTramo13').html('2.000.001 - 3.000.000 (CLP)');
 
+        $('#lblMonOur11').html('20.250 (CLP)');
+        $('#lblMonOur12').html('28.350 (CLP)');
+        $('#lblMonOur13').html('36.450 (CLP)');
+
+        $('#lblMonOurGar11').html('20.250 (CLP)');
+        $('#lblMonOurGar12').html('28.350 (CLP)');
+        $('#lblMonOurGar13').html('36.450 (CLP)');
+
         //TABLA 2
         $('#lblTramo21').html('000.000 - 1.000.000 (CLP)');
         $('#lblTramo22').html('1.000.001 - 2.000.000 (CLP)');
@@ -1244,11 +1252,33 @@ function cambioMonedaPrecios() {
         $('#lblTramo24').html('3.000.001 - 4.000.000 (CLP)');
         $('#lblTramo25').html('4.000.001 - 5.000.000 (CLP)');
 
+        $('#lblMonOur21').html('44.550 (CLP)');
+        $('#lblMonOur22').html('48.600 (CLP)');
+        $('#lblMonOur23').html('72.900 (CLP)');
+        $('#lblMonOur24').html('40.500 (CLP)');
+        $('#lblMonOur25').html('81.000 (CLP)');
+
+        $('#lblMonOurGar21').html('40.500 (CLP)');
+        $('#lblMonOurGar22').html('64.800 (CLP)');
+        $('#lblMonOurGar23').html('56.700 (CLP)');
+        $('#lblMonOurGar24').html('64.800 (CLP)');
+        $('#lblMonOurGar25').html('72.900 (CLP)');
+
         //TABLA 3
         $('#lblTramo31').html('000.000 - 1.000.000 (CLP)');
         $('#lblTramo32').html('1.000.001 - 2.000.000 (CLP)');
         $('#lblTramo33').html('2.000.001 - 3.000.000 (CLP)');
         $('#lblTramo34').html('3.000.001 - 4.000.000 (CLP)');
+
+        $('#lblMonOur31').html('81.000 (CLP)');
+        $('#lblMonOur32').html('157.950 (CLP)');
+        $('#lblMonOur33').html('121.500 (CLP)');
+        $('#lblMonOur34').html('8.100 (CLP)');
+
+        $('#lblMonOurGar31').html('72.900 (CLP)');
+        $('#lblMonOurGar32').html('76.950 (CLP)');
+        $('#lblMonOurGar33').html('81.000 (CLP)');
+        $('#lblMonOurGar34').html('85.050 (CLP)');
     }
 
 }
