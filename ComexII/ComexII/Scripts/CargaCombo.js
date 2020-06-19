@@ -1,13 +1,15 @@
 ﻿
 /**Funcion carga productos*/
-function cargaTipoProducto(){
+function cargaTipoProducto(idCarga){
 
     var producto = document.getElementById('cboTipoProducto');
     producto.options[0] = new Option("ODP al Exterior", "0", "0");
     producto.options[1] = new Option("Financiamiento Contado", "1", "1");
     producto.options[2] = new Option("Otro Financiamiento", "2", "2");
     producto.options[3] = new Option("Carta de Creditos", "3", "3");
-    producto.options[4] = new Option("Todos los productos", "4", "4");
+    if (idCarga == 1) {
+        producto.options[4] = new Option("Todos los productos", "4", "4");
+    }
     producto.selectedIndex = 0;
 }
 
