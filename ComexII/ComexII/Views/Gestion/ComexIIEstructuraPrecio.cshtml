@@ -59,7 +59,8 @@
     </style>
 </head>
 
-<body onload="cargaTipoProducto(0), cargaTipoMoneda(), cargaEstruturaPrecioData()">
+@*<body onload="cargaTipoProducto(0), cargaTipoMoneda(), cargaEstruturaPrecioData()">*@
+<body onload="cargaTipoProducto(0), cargaEstruturaPrecioData()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -121,12 +122,12 @@
                 </tr>
                 <tr>
                     <td width="20%">
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tipo Moneda: </label></b>
+                        @*<img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tipo Moneda: </label></b>*@
                     </td>
                     <td width="30%">
-                        <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoMoneda" onchange="cargaEstruturaPrecioData()"></select>
-                        </div>
+                        @*<div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboTipoMoneda" onchange="cargaEstruturaPrecioData()" ></select>
+                        </div>*@
                     </td>
                     <td width="60%">&nbsp;</td>
                 </tr>
@@ -150,7 +151,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciocontroles1" style="width: 85%; border: 1px solid; border-color: darkgray"></table>
+                        <table id="tblPreciocontroles1" style="width: 90%; border: 1px solid; border-color: darkgray"></table>
                     </td>
                 </tr>
                 <tr>
@@ -165,7 +166,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciocontroles2" style="width: 80%; border: 1px solid; border-color: darkgray"></table>
+                        <table id="tblPreciocontroles2" style="width: 90%; border: 1px solid; border-color: darkgray"></table>
                     </td>
                 </tr>
                 <tr>
@@ -180,7 +181,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciocontroles3" style="width: 80%; border: 1px solid; border-color: darkgray"></table>
+                        <table id="tblPreciocontroles3" style="width: 90%; border: 1px solid; border-color: darkgray"></table>
                     </td>
                 </tr>
                 <tr>
@@ -195,7 +196,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciocontroles4" style="width: 80%; border: 1px solid; border-color: darkgray"></table>
+                        <table id="tblPreciocontroles4" style="width: 90%; border: 1px solid; border-color: darkgray"></table>
                     </td>
                 </tr>
                 <tr>
@@ -210,7 +211,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciocontroles5" style="width: 80%; border: 1px solid; border-color: darkgray"></table>
+                        <table id="tblPreciocontroles5" style="width: 90%; border: 1px solid; border-color: darkgray"></table>
                     </td>
                 </tr>
                 <tr>
@@ -225,7 +226,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciocontroles6" style="width: 80%; border: 1px solid; border-color: darkgray"></table>
+                        <table id="tblPreciocontroles6" style="width: 90%; border: 1px solid; border-color: darkgray"></table>
                     </td>
                 </tr>
                 <tr>
@@ -240,7 +241,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tblPreciocontroles7" style="width: 80%; border: 1px solid; border-color: darkgray"></table>
+                        <table id="tblPreciocontroles7" style="width: 90%; border: 1px solid; border-color: darkgray"></table>
                     </td>
                 </tr>
             </table>
