@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body onload="cargaTipoProducto(0), cargaTipoSegmento(), cargaTipoMoneda(), grillaNuevaCampaña()">
+<body onload="cargaTipoProducto(0), cargaTipoSegmento(), grillaNuevaCampaña()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -137,17 +137,6 @@
                 </tr>
                 <tr>
                     <td width="20%">
-                        <label class="labelBE2">Tipo Moneda :</label>
-                    </td>
-                    <td width="30%">
-                        <div class="custom-select" style="width: 90%; float: left">
-                            <select id="cboTipoMoneda" onchange="cambioMonedaNuevaCampaña()"></select>
-                        </div>
-                    </td>
-                    <td width="60%">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td width="20%">
                         <label class="labelBE2">Fecha de Vigencia :</label>
                     </td>
                     <td width="20%" colspan="2">
@@ -181,7 +170,7 @@
                 <tr>
                     <td align="right">
                         <button id="btnEdita" class="botonBE" onclick="editaNuevaCampaña(1)">Editar</button>
-                        <button id="btnSolicitaAutorizar" disabled class="botonBE" onclick="msgCrearCampaña()">Solicita Autorizar</button>
+                        <button id="btnGuardar" disabled class="botonBE">Guardar</button>
                         <button id="btnVolver" class="botonBE" onclick="javascript:window.history.back()">Volver</button>
                     </td>
                 </tr>
