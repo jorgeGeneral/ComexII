@@ -59,7 +59,8 @@
     </style>
 </head>
 
-<body onload="cargaTipoMoneda(),consultaPrecios()">
+@*<body onload="cargaTipoMoneda(),consultaPrecios()">*@
+<body onload="consultaPrecios()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -201,14 +202,14 @@
                 <tr><td></td></tr>
             </table>
 
-            <table style="width: 100%; border-top: 5px">
+            @*<table style="width: 100%; border-top: 5px">
                 <tr>
-                    <td colspan="3">
+                    <td >
                         &nbsp;
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">
+                    <td >
                         <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Matriz de Tarifado :</label></b>
                     </td>
                 </tr>
@@ -223,12 +224,17 @@
                     </td>
                     <td width="60%">&nbsp;</td>
                 </tr>
-            </table>
+            </table>*@
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
                     <td>
                         &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Matriz de Tarifado :</label></b>
                     </td>
                 </tr>
                 <tr>
@@ -244,6 +250,11 @@
                 <tr>
                     <td>
                         <table id="tblPreciosMT3" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="tblPreciosMT4" style="width: 90%; border: 1px solid; border-color: darkgray; text-decoration-color: white"></table>
                     </td>
                 </tr>
             </table>
