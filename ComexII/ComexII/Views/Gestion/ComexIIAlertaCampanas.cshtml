@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Parámetros";
+    ViewBag.Title = "Alerta vencimiento campañas";
 }
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0" />
     <link rel="shortcut icon" href="" />
-    <meta name="description" content="Comex II - Parámetros" />
+    <meta name="description" content="Comex II - Alerta vencimiento campañas" />
     <meta name="author" content="Sermaluc S.A." />
 
 
@@ -59,11 +59,11 @@
     </style>
 </head>
 
-<body onload="cargaDataMantenedorParametros()">
+<body onload="cargaTipoProducto(0), cargaTipoSegmento(), cargaDataAlertaCampana()">
     <center>
         <div id="wait" class="modal"></div>
 
-        <div id="dialog-message" title="Parámetros" style="display: none">
+        <div id="dialog-message" title="Alerta vencimiento campañas" style="display: none">
             <br />
             <strong>
                 <label class="labelBE" id="lblMsg" style="text-align: center"></label>
@@ -91,7 +91,7 @@
                 <tr>
                     <td>
                         <div class="Titulo1BE">
-                            Parámetros
+                            Alerta vencimiento campañas
                         </div>
                     </td>
                 </tr>
@@ -105,33 +105,72 @@
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
-                    <td>
+                    <td colspan="3">
                         &nbsp;
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Lista :</label></b>
+                    <td width="20%">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Tipo Producto: </label></b>
+                    </td>
+                    <td width="30%">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboTipoProducto"></select>
+                        </div>
+                    </td>
+                    <td width="60%">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Segmento: </label></b>
+                    </td>
+                    <td width="30%">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboSegmento"></select>
+                        </div>
+                    </td>
+                    <td width="60%">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <label class="labelBE2">Fecha :</label>
+                    </td>
+                    <td width="20%" colspan="2">
+                        <label class="labelBE2">Desde</label> <input type="text" placeholder="dd/mm/aaaa" />  <label class="labelBE2">Hasta</label> <input type="text" placeholder="dd/mm/aaaa" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <table id="tablaParametros" style="width: 100%; border: 1px solid; border-color: darkgray"></table>
+                    <td  width="80%" align="right">
+                        <button id="btnConsultar" class="botonBE">
+                            Consultar
+                        </button>
                     </td>
+                    <td align="right">
+                        <button id="btnLimpiar" class="botonBE">
+                            Limpiar
+                        </button>
+                    </td>
+                </tr>
             </table>
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
-                    <td>
+                    <td colspan="9">
                         &nbsp;
                     </td>
                 </tr>
                 <tr>
-                    <td align="right">
-                        <button id="btnGuardar" class="botonBE">Guardar</button>
+                    <td colspan="9">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Detalle :</label></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="9">
+                        <table id="tblVencimientoCampana" style="width: 90%; border: 1px solid; border-color: darkgray"></table>
                     </td>
                 </tr>
             </table>
+            
         </div>
 
         @Scripts.Render("~/bundles/jquery")

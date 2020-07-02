@@ -212,6 +212,8 @@
     <Content Include="Views\Gestion\ComexIIRutClienteIngresoPrecioEspecial.cshtml" />
     <Content Include="Views\Gestion\ComexIIBandejaCampaña.cshtml" />
     <Content Include="Views\Gestion\ComexIIBandejaTramos.cshtml" />
+    <None Include="Views\Gestion\ComexIIAlertaPrecios.cshtml" />
+    <Content Include="Views\Gestion\ComexIIAlertaCampanas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

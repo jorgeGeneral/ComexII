@@ -82,5 +82,15 @@ namespace ComexII.Controllers
         {
             return View();
         }
+
+        public ActionResult ComexIIAlertaCampanas()
+        {
+            return View();
+        }
+
+        public ActionResult ComexIIAlertaPrecios()
+        {
+            return View();
+        }
     }
 }
