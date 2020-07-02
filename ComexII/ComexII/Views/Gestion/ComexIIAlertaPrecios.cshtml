@@ -105,78 +105,83 @@
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
-                    <td>
+                    <td colspan="4">
                         &nbsp;
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="4">
                         <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Búsqueda: </label></b>
                     </td>
                 </tr>
                 <tr>
-                    <td width="20%">
+                    <td width="12%">
                         <b><label class="labelBE2">Gerente :</label></b>
                     </td>
-                    <td>
+                    <td width="33%">
                         <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboGerente"></select>
                         </div>
                     </td>
-                    <td width="0%">
+                    <td width="12%">
                         <label class="labelBE2">Tipo Producto :</label>
                     </td>
-                    <td width="30%">
+                    <td width="43%">
                         <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboTipoProducto"></select>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td width="20%">
+                    <td width="12%">
                         <b><label class="labelBE2">Jefe Grupo :</label></b>
                     </td>
-                    <td>
+                    <td width="33%">
                         <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboJefe"></select>
                         </div>
                     </td>
-                    <td width="20%">
+                    <td width="12%">
                         <label class="labelBE2">Fecha :</label>
                     </td>
-                    <td width="20%" colspan="2">
+                    <td width="43%" colspan="2">
                         <label class="labelBE2">Desde</label> <input type="text" placeholder="dd/mm/aaaa" />  <label class="labelBE2">Hasta</label> <input type="text" placeholder="dd/mm/aaaa" />
                     </td>
                 </tr>
                 <tr>
-                    <td width="20%">
+                    <td width="12%">
                         <b><label class="labelBE2">Ejecutivos :</label></b>
                     </td>
-                    <td>
+                    <td width="33%">
                         <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboEjecutivo"></select>
                         </div>
                     </td>
-                    <td width="20%">
+                    <td width="12%">
                         <b><label class="labelBE2">Fecha Termino :</label></b>
+                    </td>
+                    <td width="43%">
+                        &nbsp;
                     </td>
                 </tr>
                 <tr>
-                    <td width="20%">
+                    <td width="12%">
                         <label class="labelBE2">Rut Cliente :</label>
                     </td>
-                    <td width="80%">
+                    <td width="33%">
                         <input id="txtRutCliente" type="text" maxlength="10" size="45" />
                     </td>
-                    <td align="right">
-                        <button id="btnConsultar" class="botonBE">
-                            Consultar
-                        </button>
+                    <td width="12%">
+                        &nbsp;
                     </td>
-                    <td align="right">
-                        <button id="btnLimpiar" class="botonBE">
-                            Limpiar
-                        </button>
+                    <td width="43%">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" colspan="4">
+                        <button id="btnConsultar" class="botonBE">Consultar</button>
+                        <button id="btnLimpiar" class="botonBE">Limpiar</button>
                     </td>
                 </tr>
             </table>
