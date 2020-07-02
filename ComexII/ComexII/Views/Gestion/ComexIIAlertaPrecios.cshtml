@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body onload="cargaTipoEjecutivo(), cargaTipoJefe(), cargaTipoGerente(), cargaDataAlertaPrecios()">
+<body onload="cargaTipoEjecutivo(), cargaTipoJefe(), cargaTipoGerente(), cargaTipoProducto(0), cargaDataAlertaPrecios()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -142,7 +142,7 @@
                         </div>
                     </td>
                     <td width="12%">
-                        <label class="labelBE2">Fecha :</label>
+                        <label class="labelBE2">Rango Fecha :</label>
                     </td>
                     <td width="43%" colspan="2">
                         <label class="labelBE2">Desde</label> <input type="text" placeholder="dd/mm/aaaa" />  <label class="labelBE2">Hasta</label> <input type="text" placeholder="dd/mm/aaaa" />
@@ -156,12 +156,6 @@
                         <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboEjecutivo"></select>
                         </div>
-                    </td>
-                    <td width="12%">
-                        <b><label class="labelBE2">Fecha Termino :</label></b>
-                    </td>
-                    <td width="43%">
-                        &nbsp;
                     </td>
                 </tr>
                 <tr>
