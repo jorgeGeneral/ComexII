@@ -58,5 +58,5 @@ function cargaTablaEstructuraPreciosSegmento() {
         //Grilla controles para todos los productos
         document.getElementById("tblPreciocontroles" + x).insertRow(-1).innerHTML = '<tr><td width="10%" rowspan="1"><label class="labelBE2">Fecha Vigencia :</label></td><td width="30%"><label class="labelBE2">Desde</label>&nbsp<input id="19' + x + '"disabled size="13" maxlength="10" type="text" placeholder="01/02/2020" style="text-align:center"/>&nbsp&nbsp<label class="labelBE2">Hora</label>&nbsp<input id="20' + x + '"disabled size="8" maxlength="5" type="text" placeholder="00:00" style="text-align:center"/></td><td width="15%"><button style="width:100%; text-align:center" id="btnEditaMicro" class="botonBE" onclick="habilitaDeshabilitaCamposEstructuraPrecioSegmento(' + x + ', 1)">Editar</button></td><td width="15%"><button style="width:100%; text-align:center" id="btnActualizaMicro" class="botonBE" onclick="habilitaDeshabilitaCamposEstructuraPrecioSegmento(' + x + ', 0)">Actualizar</button></td></tr>';
     }
-
 }
+

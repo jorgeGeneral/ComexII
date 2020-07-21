@@ -170,7 +170,7 @@
                 <tr>
                     <td align="right">
                         <button id="btnEdita" class="botonBE" onclick="editaNuevaCampaña(1)">Editar</button>
-                        <button id="btnGuardar" disabled class="botonBE">Guardar</button>
+                        <button id="btnGuardar" class="botonBE" disabled onclick="editaNuevaCampaña(2)">Guardar</button>
                         <button id="btnVolver" class="botonBE" onclick="javascript:window.history.back()">Volver</button>
                     </td>
                 </tr>
@@ -179,6 +179,7 @@
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/consultaCampanas")
 
     </center>
 

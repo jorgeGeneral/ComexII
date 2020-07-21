@@ -19,8 +19,30 @@ namespace ComexII
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            // General
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js", "~/Scripts/general.js", "~/Scripts/CargaCombo.js", "~/Scripts/CargaGrilla.js"));
+
+            // Pestaña Cliente
+            bundles.Add(new ScriptBundle("~/bundles/ConsultaPrecios").Include(
+                      "~/Scripts/Cliente/consultaPrecios.js"));
+
+            // Pestaña Gestion
+            bundles.Add(new ScriptBundle("~/bundles/ConsultaTarifas").Include(
+                      "~/Scripts/Gestion/consultaTarifas.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/historicoPE").Include(
+                      "~/Scripts/Gestion/historicoPE.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/consultaCampanas").Include(
+                      "~/Scripts/Gestion/consultaCampanas.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ingresoPE").Include(
+                      "~/Scripts/Gestion/ingresoPE.js"));
+
+            // Pestaña Utilitario
+            bundles.Add(new ScriptBundle("~/bundles/ConsultaTarifas").Include(
+                      "~/Scripts/Gestion/consultaTarifas.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

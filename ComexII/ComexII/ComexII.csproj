@@ -160,8 +160,13 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\CargaCombo.js" />
+    <Content Include="Scripts\Cliente\consultaPrecios.js" />
     <Content Include="Scripts\general.js" />
     <Content Include="Scripts\CargaGrilla.js" />
+    <Content Include="Scripts\Gestion\consultaCampanas.js" />
+    <Content Include="Scripts\Gestion\consultaTarifas.js" />
+    <Content Include="Scripts\Gestion\historicoPE.js" />
+    <Content Include="Scripts\Gestion\ingresoPE.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -218,8 +223,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\Cliente\" />
-    <Folder Include="Scripts\Gestion\" />
     <Folder Include="Scripts\Utilitario\" />
   </ItemGroup>
   <ItemGroup>

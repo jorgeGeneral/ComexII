@@ -61,7 +61,7 @@
 
 </head>
 
-<body onload="cargaTipoProducto(1), CargaDataIngresoPrecioEspeciales(),cargaTipoCanal()">
+<body onload="cargaTipoProducto(1),cargaTipoCanal(),demo(),CargaDataIngresoPrecioEspeciales()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -186,7 +186,7 @@
                 <tr>
                     <td align="right">
                         <button id="btnEdita" class="botonBE" onclick="editaCamposPrecioEspecial(1)">Editar</button>
-                        <button id="btnGuardar" disabled class="botonBE">Guardar</button>
+                        <button id="btnGuardar" disabled class="botonBE" onclick="editaCamposPrecioEspecial(2)">Guardar</button>
                         <button id="btnVolver" class="botonBE" onclick="javascript:window.history.back()">Volver</button>
                     </td>
                 </tr>
@@ -195,12 +195,8 @@
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/ingresoPE")
 
     </center>
-    <script>
-        demo();
-    </script>
 </body>
-
-
 </html>
