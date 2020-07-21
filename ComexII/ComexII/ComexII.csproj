@@ -218,6 +218,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\Cliente\" />
+    <Folder Include="Scripts\Gestion\" />
+    <Folder Include="Scripts\Utilitario\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

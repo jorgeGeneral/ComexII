@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body onload="cargaTipoProducto(1), cargaTipoSegmento()">
+<body onload="cargaTipoProducto(1), cargaTipoSegmento(),cargaTipoCanal(),armaDataTarifaCampana()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -108,6 +108,17 @@
                     <td colspan="3">
                         &nbsp;
                     </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Canal :</label></b>
+                    </td>
+                    <td width="30%">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboCanal"></select>
+                        </div>
+                    </td>
+                    <td width="60%">&nbsp;</td>
                 </tr>
                 <tr>
                     <td width="20%">
@@ -186,7 +197,7 @@
                     </td>
                     <td width="8%">
                     </td>
-                    <td width="10%"></td>
+                    <td colspan="3" width="30%"></td>
                 </tr>
                 <tr>
                     <td width="10%">
@@ -201,13 +212,10 @@
                         <label class="labelBE2">Fecha Fin:</label>
                     </td>
                     <td width="16%">
-                        <label class="labelBE2" id="lblFecFin"></label>
+                        <input id="lblFecFin" type="text" size="10" disabled style="text-align:right; width:80%" maxlength="15" />
                     </td>
-                    <td width="10%"></td>
+                    <td colspan="4" width="38%"></td>
                 </tr>
-                <tr><td colspan="5"></td></tr>
-                <tr><td colspan="5"></td></tr>
-                <tr><td colspan="5"></td></tr>
                 <tr>
                     <td colspan="9">
                         <table id="tblCampanaTarifa" style="width: 90%; border: 1px solid; border-color: darkgray"></table>
@@ -221,20 +229,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="left" width="10%">
-                        <button id="btnCancelar" class="botonBE" onclick="cancelaCampana()">
-                            Cancelar
-                        </button>
+                    <td>
+                        <button id="btnDetener" class="botonBE" onclick="detenerCampana()">Detener</button>
+                        <button id="btnExtender" class="botonBE" onclick="extenderCampana()">Extender</button>
+                        <button id="btnEliminar" class="botonBE" onclick="eliminarCampana()">Eliminar</button>
+                        <button id="btnModificar" class="botonBE" onclick="modificarCampana()">Modificar</button>
                     </td>
-                    <td align="left" width="10%">
-                        <button id="btnEliminar" class="botonBE" onclick="eliminaCampana()">
-                            Eliminar
-                        </button>
-                    </td>
-                    <td align="right">
-                        <button id="btnVolver" class="botonBE" onclick="javascript:window.history.back()">
-                            Volver
-                        </button>
+                    <td>
+                        <button id="btnVolver" class="botonBE" onclick="javascript:window.history.back()">Volver</button>
                     </td>
                 </tr>
             </table>
@@ -245,10 +247,5 @@
         @Scripts.Render("~/bundles/bootstrap")
 
     </center>
-
-    <script>
-        armaDataTarifaCampana();
-    </script>
-
 </body>
 </html>

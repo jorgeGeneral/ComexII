@@ -61,7 +61,7 @@
 
 </head>
 
-<body onload="cargaTipoEjecutivo(), cargaTipoJefe(), cargaTipoGerente(), cargaTablaConsultaTarifado(0)">
+<body onload="cargaTipoEjecutivo(), cargaTipoJefe(), cargaTipoGerente(), cargaTablaConsultaTarifado(0),cargaTipoCanal()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -142,6 +142,16 @@
                     <td>
                         <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboEjecutivo"></select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <b><label class="labelBE2">Canal :</label></b>
+                    </td>
+                    <td>
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboCanal"></select>
                         </div>
                     </td>
                 </tr>

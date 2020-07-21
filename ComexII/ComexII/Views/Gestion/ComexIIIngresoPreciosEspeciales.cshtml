@@ -61,7 +61,7 @@
 
 </head>
 
-<body onload="cargaTipoProducto(1), CargaDataIngresoPrecioEspeciales()">
+<body onload="cargaTipoProducto(1), CargaDataIngresoPrecioEspeciales(),cargaTipoCanal()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -130,14 +130,24 @@
                         <label id="lblSegmento" class="labelBE2">Grandes Empresas</label>
                     </td>
                 </tr>
-                <tr>
-                </tr>
+                <td colspan="2">&nbsp;</td>
             </table>
             <table style="width: 100%; border-top: 5px">
                 <tr>
                     <td colspan="3">
                         &nbsp;
                     </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Canal :</label></b>
+                    </td>
+                    <td width="30%">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboCanal"></select>
+                        </div>
+                    </td>
+                    <td width="60%">&nbsp;</td>
                 </tr>
                 <tr>
                     <td width="20%">

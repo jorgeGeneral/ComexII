@@ -87,3 +87,12 @@ function cargaTipoFuncionalidadPantalla() {
     funcionalidad.selectedIndex = 0;
 }
 
+/**Funcion carga canal*/
+function cargaTipoCanal() {
+
+    var aux = document.getElementById('cboCanal');
+    aux.options[0] = new Option("App", "0", "0");
+    aux.options[1] = new Option("Web", "1", "1");
+    aux.options[2] = new Option("Presencial", "2", "2");
+    aux.selectedIndex = 0;
+}

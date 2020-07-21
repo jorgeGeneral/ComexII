@@ -61,7 +61,7 @@
 
 </head>
 
-<body onload="cargaTipoSegmento(), cargaListadoCampañas()">
+<body onload="cargaTipoSegmento(), cargaListadoCampañas(),cargaTipoCanal()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -105,17 +105,34 @@
                 </tr>
             </table>
             <table style="width: 100%; border-top: 5px">
-                <tr><td colspan="2"></td></tr>
+                <tr>
+                    <td colspan="4">
+                        &nbsp;
+                    </td>
+                </tr>
                 <tr>
                     <td width="20%" align="left">
-                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Segmento</label></b>
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Canal :</label></b>
+                    </td>
+                    <td width="30%" align="left">
+                        <div class="custom-select" style="width: 90%; float: left">
+                            <select id="cboCanal"></select>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%" align="left">
+                        <img src="~/Content/Images/flecha.jpg" style="width:12px;height:12px" />&nbsp;<b><label class="labelBE">Segmento :</label></b>
                     </td>
                     <td width="30%" align="left">
                         <div class="custom-select" style="width: 90%; float: left">
                             <select id="cboSegmento" onchange="cargaListadoCampañas()"></select>
                         </div>
                     </td>
-                    <td width="60%">&nbsp;</td>
+                    <td width="30%">&nbsp;</td>
                     <td align="right">
                         <button id="btnConsultar" class="botonBE" onclick="nuevaCampaña()">Nueva Campaña</button>
                     </td>
