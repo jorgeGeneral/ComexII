@@ -167,6 +167,9 @@
     <Content Include="Scripts\Gestion\consultaTarifas.js" />
     <Content Include="Scripts\Gestion\historicoPE.js" />
     <Content Include="Scripts\Gestion\ingresoPE.js" />
+    <Content Include="Scripts\Utilitario\mantParametros.js" />
+    <Content Include="Scripts\Utilitario\mantTramos.js" />
+    <Content Include="Scripts\Gestion\vencimientoPE.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -223,7 +226,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\Utilitario\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

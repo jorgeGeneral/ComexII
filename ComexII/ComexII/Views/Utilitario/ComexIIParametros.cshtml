@@ -59,7 +59,7 @@
     </style>
 </head>
 
-<body onload="cargaDataMantenedorParametros()">
+<body onload="cargaDataMantParametros()">
     <center>
         <div id="wait" class="modal"></div>
 
@@ -116,7 +116,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table id="tablaParametros" style="width: 100%; border: 1px solid; border-color: darkgray"></table>
+                        <table id="tblParametros" style="width: 100%; border: 1px solid; border-color: darkgray"></table>
                     </td>
             </table>
 
@@ -136,6 +136,7 @@
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/mantParametros")
 
     </center>
 

@@ -40,9 +40,15 @@ namespace ComexII
             bundles.Add(new ScriptBundle("~/bundles/ingresoPE").Include(
                       "~/Scripts/Gestion/ingresoPE.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/vencimientoPE").Include(
+                      "~/Scripts/Gestion/vencimientoPE.js"));
+
             // Pestaña Utilitario
-            bundles.Add(new ScriptBundle("~/bundles/ConsultaTarifas").Include(
-                      "~/Scripts/Gestion/consultaTarifas.js"));
+            bundles.Add(new ScriptBundle("~/bundles/mantParametros").Include(
+                      "~/Scripts/Utilitario/mantParametros.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/mantTramos").Include(
+                      "~/Scripts/Utilitario/mantTramos.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

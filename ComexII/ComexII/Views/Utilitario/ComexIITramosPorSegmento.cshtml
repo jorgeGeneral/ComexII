@@ -148,26 +148,26 @@
                 </tr>
                 <tr>
                     <td width="20%" colspan="2">
-                        <label class="labelBE2">Monto Desde:</label>&nbsp;<input style="text-align:right" type="text" placeholder="0" />
-                        <label class="labelBE2">Monto Hasta:</label>&nbsp;<input style="text-align:right" type="text" placeholder="0" />
-                        <button id="btnAgregar" class="botonBE" onclick="agregarTramo()">Agregar Tramo</button>
+                        <label class="labelBE2">Monto Desde:</label>&nbsp;<input id="montDesde" style="text-align:right" type="text" placeholder="0" />
+                        <label class="labelBE2">Monto Hasta:</label>&nbsp;<input id="montHasta" style="text-align:right" type="text" placeholder="0" />
+                        <button id="btnAgregar" class="botonBE" onclick="agregarTramos()">Agregar Tramo</button>
                     </td>
                 </tr>
             </table>
 
             <table style="width: 100%; border-top: 5px">
                 <tr>
-                    <td>
+                    <td colspan="2">
                         &nbsp;
                     </td>
                 </tr>
                 <tr>
                     <td align="left">
-                        <button id="btnEditar" class="botonBE" onclick="editarTramo()">Editar Tramos</button>
-                        <button id="btnEditar" class="botonBE" onclick="editarTramo()">Eliminar Tramos</button>
+                        <button id="btnEditar" class="botonBE" onclick="editarTramos()">Editar Tramos</button>
+                        <button id="btnEliminar" class="botonBE" onclick="eliminarTramos()">Eliminar Tramos</button>
                     </td>
                     <td align="right">
-                        <button id="btnActualizar" class="botonBE">Guardar</button>
+                        <button id="btnGuardar" class="botonBE" disabled onclick="guardarTramos()">Guardar</button>
                     </td>
                 </tr>
             </table>
@@ -175,6 +175,7 @@
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/mantTramos")
 
     </center>
 
